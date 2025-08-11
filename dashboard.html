@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Tracker Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdudesapp3565back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="main-wrapper">
+            
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">Money Tracker</div>
+                <div class="header-center">2025 August</div>
+                <div class="header-right">
+                    <div class="header-nav">
+                        <div class="nav-item">Filter</div>
+                        <div class="nav-item">Accounts</div>
+                        <div class="nav-item">Categories</div>
+                    </div>
+                    <div class="profile-avatar"></div>
+                </div>
+            </header>
+            
+            <!-- Content Section -->
+            <div class="content-section">
+                <!-- Income Cards -->
+                <div class="income-cards">
+                    <div class="income-card">
+                        <div class="income-card-content">
+                            <div class="income-info">
+                                <div class="income-label">Total Income</div>
+                                <div class="income-amount">₹100,000</div>
+                            </div>
+                            <div class="income-change">+15</div>
+                        </div>
+                    </div>
+                    <div class="income-card">
+                        <div class="income-card-content">
+                            <div class="income-info">
+                                <div class="income-label">Total Income</div>
+                                <div class="income-amount">₹100,000</div>
+                            </div>
+                            <div class="income-change">+15</div>
+                        </div>
+                    </div>
+                    <div class="income-card">
+                        <div class="income-card-content">
+                            <div class="income-info">
+                                <div class="income-label">Total Income</div>
+                                <div class="income-amount">₹100,000</div>
+                            </div>
+                            <div class="income-change">+15</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Left Section -->
+                    <div class="left-section">
+                        <!-- Income/Expense Cards -->
+                        <div class="income-expense-row">
+                            <div class="income-expense-card">
+                                <div class="card-background"></div>
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <div class="card-title">INCOME</div>
+                                        <div class="card-divider"></div>
+                                    </div>
+                                    <div class="card-items">
+                                        <div class="item-labels">Salary\
+Freelance\
+Gift\
+Other</div>
+                                        <div class="item-amounts">₹40,000\
+₹50,000\
+₹10,000\
+₹0</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="income-expense-card">
+                                <div class="card-background"></div>
+                                <div class="card-content">
+                                    <div class="card-header">
+                                        <div class="card-title">EXPENSE</div>
+                                        <div class="card-divider"></div>
+                                    </div>
+                                    <div class="card-items">
+                                        <div class="item-labels">Food\
+Home\
+Transport\
+Groceries\
+Utilities\
+Entertainment</div>
+                                        <div class="item-amounts">₹4,000\
+₹5,000\
+₹1,000\
+₹3,000\
+₹100\
+₹500</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Section -->
+                    <div class="right-section">
+                        <!-- Account Balances -->
+                        <div class="account-card">
+                            <div class="account-title">Accounts Balances</div>
+                            <div class="account-content">
+                                <div class="account-labels">Liquid\
+Bank\
+Savings</div>
+                                <div class="account-amounts">₹10,000\
+₹500,000\
+₹100,000</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Savings -->
+                        <div class="savings-card">
+                            <div class="savings-content">
+                                <div class="savings-title">Savings</div>
+                                <div class="savings-info">Current savings: ₹5,000\
+Target: ₹10,000</div>
+                            </div>
+                            <div class="savings-progress">
+                                <div class="progress-container">
+                                    <div class="circular-progress"></div>
+                                    <div class="progress-text">
+                                        <div class="progress-percentage">50%</div>
+                                        <div class="progress-saved">₹5,000 Saved</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Add Transaction -->
+                        <div class="transaction-card">
+                            <div class="transaction-header">
+                                <div class="transaction-title-row">
+                                    <div class="transaction-title">Add new transaction</div>
+                                    <div class="transaction-tabs">
+                                        <div class="tab-income">Income</div>
+                                        <div class="tab-expense">Expense</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-transaction">
+                                <div class="transaction-row">
+                                    <div class="transaction-item">
+                                        <img src="../assets/images/img_.png" alt="Food" class="transaction-icon" />
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                    </div>
+                                    <div class="transaction-amount">₹400</div>
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <button class="btn-clear">Clear</button>
+                                <button class="btn-save">Save for</button>
+                                <button class="btn-save-today">Save for Today</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottom Section -->
+                <div class="bottom-section">
+                    <!-- Bottom Left -->
+                    <div class="bottom-left">
+                        <div class="transactions-section">
+                            <!-- Transactions List -->
+                            <div class="transactions-list">
+                                <div class="transactions-title">Transactions</div>
+                                <div class="date-section">
+                                    <div class="date-header">02 Aug, Monday</div>
+                                    <div class="date-divider"></div>
+                                    <div class="transaction-list">
+                                        <div class="transaction-item-card">
+                                            <div class="transaction-item-content">
+                                                <div class="transaction-item-row">
+                                                    <img src="../assets/images/img_.png" alt="Food" class="transaction-item-icon" />
+                                                    <div class="transaction-item-details">
+                                                        <div class="transaction-item-name">Food</div>
+                                                        <div class="transaction-item-note">Note</div>
+                                                    </div>
+                                                </div>
+                                                <div class="transaction-item-amount">₹400</div>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-item-card">
+                                            <div class="transaction-item-content">
+                                                <div class="transaction-item-row">
+                                                    <img src="../assets/images/img_.png" alt="Food" class="transaction-item-icon" />
+                                                    <div class="transaction-item-details">
+                                                        <div class="transaction-item-name">Food</div>
+                                                        <div class="transaction-item-note">Note</div>
+                                                    </div>
+                                                </div>
+                                                <div class="transaction-item-amount">₹400</div>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-item-card">
+                                            <div class="transaction-item-content">
+                                                <div class="transaction-item-row">
+                                                    <img src="../assets/images/img_.png" alt="Food" class="transaction-item-icon" />
+                                                    <div class="transaction-item-details">
+                                                        <div class="transaction-item-name">Food</div>
+                                                        <div class="transaction-item-note">Note</div>
+                                                    </div>
+                                                </div>
+                                                <div class="transaction-item-amount">₹400</div>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-item-card">
+                                            <div class="transaction-item-content">
+                                                <div class="transaction-item-row">
+                                                    <img src="../assets/images/img_.png" alt="Food" class="transaction-item-icon" />
+                                                    <div class="transaction-item-details">
+                                                        <div class="transaction-item-name">Food</div>
+                                                        <div class="transaction-item-note">Note</div>
+                                                    </div>
+                                                </div>
+                                                <div class="transaction-item-amount">₹400</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="date-section" style="margin-top: 14px;">
+                                        <div class="date-header">01 Aug, Sunday</div>
+                                        <div class="date-divider"></div>
+                                        <div class="transaction-list">
+                                            <div class="transaction-item-card">
+                                                <div class="transaction-item-content">
+                                                    <div class="transaction-item-row">
+                                                        <img src="../assets/images/img_.png" alt="Food" class="transaction-item-icon" />
+                                                        <div class="transaction-item-details">
+                                                            <div class="transaction-item-name">Food</div>
+                                                            <div class="transaction-item-note">Note</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="transaction-item-amount">₹400</div>
+                                                </div>
+                                            </div>
+                                            <div class="transaction-item-card">
+                                                <div class="transaction-item-content">
+                                                    <div class="transaction-item-row">
+                                                        <img src="../assets/images/img_.png" alt="Food" class="transaction-item-icon" />
+                                                        <div class="transaction-item-details">
+                                                            <div class="transaction-item-name">Food</div>
+                                                            <div class="transaction-item-note">Note</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="transaction-item-amount">₹400</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Unpaid Bills -->
+                            <div class="bills-section">
+                                <div class="bills-title">Unpaid Bills</div>
+                                <div class="bills-list">
+                                    <div class="bill-item">
+                                        <div class="bill-content">
+                                            <div class="bill-info">
+                                                <div class="bill-name">Recharge</div>
+                                                <div class="bill-details">
+                                                    <div class="bill-amount">Amount : ₹1,000</div>
+                                                    <div class="bill-due">Due 30 Aug 2025</div>
+                                                </div>
+                                            </div>
+                                            <div class="bill-status">Done</div>
+                                        </div>
+                                    </div>
+                                    <div class="bill-item">
+                                        <div class="bill-content">
+                                            <div class="bill-info">
+                                                <div class="bill-name">Recharge</div>
+                                                <div class="bill-details">
+                                                    <div class="bill-amount">Amount : ₹1,000</div>
+                                                    <div class="bill-due">Due 30 Aug 2025</div>
+                                                </div>
+                                            </div>
+                                            <div class="bill-status">Done</div>
+                                        </div>
+                                    </div>
+                                    <div class="bill-item">
+                                        <div class="bill-content">
+                                            <div class="bill-info">
+                                                <div class="bill-name">Recharge</div>
+                                                <div class="bill-details">
+                                                    <div class="bill-amount">Amount : ₹1,000</div>
+                                                    <div class="bill-due">Due 30 Aug 2025</div>
+                                                </div>
+                                            </div>
+                                            <div class="bill-status">Done</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Right -->
+                    <div class="bottom-right">
+                        <!-- AI Advice -->
+                        <div class="advice-section">
+                            <div class="advice-title">AI Advice</div>
+                            <div class="advice-content">
+                                <div class="advice-text">Pay Yourself First, Then Spend. Before paying bills or making purchases, set aside at least 20% of your income for savings or investments.</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Budgeted Items -->
+                        <div class="budget-section">
+                            <div class="budget-title">Budgetted Items</div>
+                            <div class="budget-grid">
+                                <div class="budget-row">
+                                    <div class="budget-item">
+                                        <div class="budget-item-content">
+                                            <div class="budget-item-info">
+                                                <div class="budget-item-header">
+                                                    <img src="../assets/images/img_32x20.png" alt="Transport" class="budget-icon" />
+                                                    <div class="budget-category">Transport</div>
+                                                </div>
+                                                <div class="budget-details">Budget: ₹2,000\
+Spend: ₹1,000\
+Remaining: ₹1,000</div>
+                                            </div>
+                                            <div class="budget-progress">
+                                                <div class="budget-circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="budget-item">
+                                        <div class="budget-item-content">
+                                            <div class="budget-item-info">
+                                                <div class="budget-item-header">
+                                                    <img src="../assets/images/img_32x20.png" alt="Transport" class="budget-icon" />
+                                                    <div class="budget-category">Transport</div>
+                                                </div>
+                                                <div class="budget-details">Budget: ₹2,000\
+Spend: ₹1,000\
+Remaining: ₹1,000</div>
+                                            </div>
+                                            <div class="budget-progress">
+                                                <div class="budget-circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="budget-item">
+                                        <div class="budget-item-content">
+                                            <div class="budget-item-info">
+                                                <div class="budget-item-header">
+                                                    <img src="../assets/images/img_32x20.png" alt="Transport" class="budget-icon" />
+                                                    <div class="budget-category">Transport</div>
+                                                </div>
+                                                <div class="budget-details">Budget: ₹2,000\
+Spend: ₹1,000\
+Remaining: ₹1,000</div>
+                                            </div>
+                                            <div class="budget-progress">
+                                                <div class="budget-circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="budget-row">
+                                    <div class="budget-item">
+                                        <div class="budget-item-content">
+                                            <div class="budget-item-info">
+                                                <div class="budget-item-header">
+                                                    <img src="../assets/images/img_32x20.png" alt="Transport" class="budget-icon" />
+                                                    <div class="budget-category">Transport</div>
+                                                </div>
+                                                <div class="budget-details">Budget: ₹2,000\
+Spend: ₹1,000\
+Remaining: ₹1,000</div>
+                                            </div>
+                                            <div class="budget-progress">
+                                                <div class="budget-circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="budget-item">
+                                        <div class="budget-item-content">
+                                            <div class="budget-item-info">
+                                                <div class="budget-item-header">
+                                                    <img src="../assets/images/img_32x20.png" alt="Transport" class="budget-icon" />
+                                                    <div class="budget-category">Transport</div>
+                                                </div>
+                                                <div class="budget-details">Budget: ₹2,000\
+Spend: ₹1,000\
+Remaining: ₹1,000</div>
+                                            </div>
+                                            <div class="budget-progress">
+                                                <div class="budget-circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="budget-item">
+                                        <div class="budget-item-content">
+                                            <div class="budget-item-info">
+                                                <div class="budget-item-header">
+                                                    <img src="../assets/images/img_32x20.png" alt="Transport" class="budget-icon" />
+                                                    <div class="budget-category">Transport</div>
+                                                </div>
+                                                <div class="budget-details">Budget: ₹2,000\
+Spend: ₹1,000\
+Remaining: ₹1,000</div>
+                                            </div>
+                                            <div class="budget-progress">
+                                                <div class="budget-circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Saving Goals -->
+                        <div class="goals-section">
+                            <div class="goals-title">Saving goals</div>
+                            <div class="goals-grid">
+                                <div class="goal-item">
+                                    <div class="goal-title">💻 Buy a Laptop</div>
+                                    <div class="goal-details">Goal: ₹100,000\
+By September 13</div>
+                                    <div class="goal-progress-container">
+                                        <div class="goal-progress-wrapper">
+                                            <div class="goal-progress-text">
+                                                <div class="goal-percentage">59%</div>
+                                                <div class="goal-saved">₹59,000 Saved</div>
+                                            </div>
+                                            <div class="goal-circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <div class="goal-title">💻 Buy a Laptop</div>
+                                    <div class="goal-details">Goal: ₹100,000\
+By September 13</div>
+                                    <div class="goal-progress-container">
+                                        <div class="goal-progress-wrapper">
+                                            <div class="goal-progress-text">
+                                                <div class="goal-percentage">59%</div>
+                                                <div class="goal-saved">₹59,000 Saved</div>
+                                            </div>
+                                            <div class="goal-circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <div class="goal-title">💻 Buy a Laptop</div>
+                                    <div class="goal-details">Goal: ₹100,000\
+By September 13</div>
+                                    <div class="goal-progress-container">
+                                        <div class="goal-progress-wrapper">
+                                            <div class="goal-progress-text">
+                                                <div class="goal-percentage">59%</div>
+                                                <div class="goal-saved">₹59,000 Saved</div>
+                                            </div>
+                                            <div class="goal-circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <div class="goal-title">💻 Buy a Laptop</div>
+                                    <div class="goal-details">Goal: ₹100,000\
+By September 13</div>
+                                    <div class="goal-progress-container">
+                                        <div class="goal-progress-wrapper">
+                                            <div class="goal-progress-text">
+                                                <div class="goal-percentage">59%</div>
+                                                <div class="goal-saved">₹59,000 Saved</div>
+                                            </div>
+                                            <div class="goal-circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <!-- Income vs Expense Chart -->
+                    <div class="chart-container">
+                        <div class="chart-title">Income vs Expense Overview</div>
+                        <div class="chart-wrapper">
+                            <canvas id="incomeExpenseChart" role="img" aria-label="Income vs Expense line chart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Expense Breakdown Pie Chart -->
+                    <div class="pie-chart-section">
+                        <div class="chart-title">Expense Breakdown</div>
+                        <div class="pie-chart-content">
+                            <div class="pie-chart-wrapper">
+                                <div class="pie-chart-container">
+                                    <div class="pie-chart-circle"></div>
+                                    <div class="pie-chart-center">
+                                        <div class="pie-chart-amount">₹40,000</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pie-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background-color: #4f46e5;"></div>
+                                    <div class="legend-text">Food</div>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background-color: #ef4444;"></div>
+                                    <div class="legend-text">Transport</div>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background-color: #06b6d4;"></div>
+                                    <div class="legend-text">Groceries</div>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background-color: #f97316;"></div>
+                                    <div class="legend-text">Utilities</div>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background-color: #8b5cf6;"></div>
+                                    <div class="legend-text">Home</div>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background-color: #10b981;"></div>
+                                    <div class="legend-text">Entertainment</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Income vs Expense Chart
+        const ctx = document.getElementById('incomeExpenseChart')?.getContext('2d');
+        if (!ctx || typeof Chart === 'undefined') {
+            console.warn('Chart.js not available, showing placeholder');
+            document.getElementById('incomeExpenseChart').outerHTML = '<div class="chart-placeholder">Income vs Expense Chart Placeholder</div>';
+        } else {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Income',
+                        data: [85, 75, 90, 80, 95, 70, 85, 90, 75, 80, 70, 75],
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }, {
+                        label: 'Expense',
+                        data: [60, 65, 70, 75, 80, 85, 75, 70, 65, 60, 55, 50],
+                        borderColor: '#ef4444',
+                        backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: '#ffffffcc',
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleColor: '#ffffff',
+                            bodyColor: '#ffffff'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#ffffffcc'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: '#ffffffcc'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Interactive functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const incomeTab = document.querySelector('.tab-income');
+            const expenseTab = document.querySelector('.tab-expense');
+            
+            if (incomeTab && expenseTab) {
+                incomeTab.addEventListener('click', function() {
+                    incomeTab.style.color = '#2563eb';
+                    expenseTab.style.color = '#ae0306';
+                });
+                
+                expenseTab.addEventListener('click', function() {
+                    expenseTab.style.color = '#2563eb';
+                    incomeTab.style.color = '#686767';
+                });
+            }
+            
+            // Button interactions
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('Button clicked:', this.textContent);
+                });
+            });
+            
+            // Navigation interactions
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    console.log('Navigation clicked:', this.textContent);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
