@@ -12,46 +12,40 @@ body {
     overflow-x: hidden;
 }
 
-.container {
+
+.main-container {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
     padding: 16px;
-}
-
-@media (min-width: 640px) {
-    .container {
-        padding: 24px;
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        padding: 32px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .container {
-        padding: 48px;
-    }
-}
-
-/* Layout components */
-.main-wrapper {
     display: flex;
     flex-direction: column;
     gap: 25px;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .main-container {
+        padding: 24px;
+    }
 }
 
 @media (min-width: 768px) {
-    .main-wrapper {
+    .main-container {
+        padding: 32px;
         gap: 42px;
     }
 }
+
+@media (min-width: 1024px) {
+    .main-container {
+        padding: 48px;
+    }
+}
+
+/* Layout components */
+/* .main-wrapper removed, properties merged into .main-container */
 
 .header {
     display: flex;
@@ -170,7 +164,7 @@ body {
     }
 }
 
-.income-cards {
+.status-cards {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -178,13 +172,13 @@ body {
 }
 
 @media (min-width: 640px) {
-    .income-cards {
+    .status-cards {
         flex-direction: row;
         gap: 10px;
     }
 }
 
-.income-card {
+.status-card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,12 +191,12 @@ body {
 }
 
 @media (min-width: 640px) {
-    .income-card {
+    .status-card {
         width: 33.333%;
     }
 }
 
-.income-card-content {
+.status-card-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -210,7 +204,7 @@ body {
     padding: 0 12px;
 }
 
-.income-info {
+.status-info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -219,7 +213,7 @@ body {
     margin-left: 12px;
 }
 
-.income-label {
+.status-label {
     font-size: 12px;
     font-family: Poppins;
     font-weight: 600;
@@ -228,13 +222,13 @@ body {
 }
 
 @media (min-width: 768px) {
-    .income-label {
+    .status-label {
         font-size: 14px;
         line-height: 21px;
     }
 }
 
-.income-amount {
+.status-amount {
     font-size: 18px;
     font-family: Poppins;
     font-weight: 600;
@@ -243,13 +237,13 @@ body {
 }
 
 @media (min-width: 768px) {
-    .income-amount {
+    .status-amount {
         font-size: 24px;
         line-height: 36px;
     }
 }
 
-.income-change {
+.status-change {
     font-size: 16px;
     font-family: Poppins;
     font-weight: 600;
@@ -259,14 +253,14 @@ body {
 }
 
 @media (min-width: 768px) {
-    .income-change {
+    .status-change {
         font-size: 20px;
         line-height: 30px;
         margin-right: 24px;
     }
 }
 
-.main-content {
+.top-content-section {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -274,24 +268,20 @@ body {
 }
 
 @media (min-width: 1024px) {
-    .main-content {
+    .top-content-section {
         flex-direction: row;
         gap: 14px;
+        align-items: stretch;
     }
 }
 
 .left-section {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 100%;
-}
-
-@media (min-width: 1024px) {
-    .left-section {
-        width: 68%;
-        gap: 10px;
-    }
+    gap: 10px;
+    flex: 1 1 0%;
+    min-width: 0;
+    align-self: stretch;
 }
 
 .right-section {
@@ -299,6 +289,8 @@ body {
     flex-direction: column;
     gap: 8px;
     width: 100%;
+    max-width: 400px;
+    flex-shrink: 0;
 }
 
 @media (min-width: 1024px) {
@@ -308,34 +300,42 @@ body {
     }
 }
 
-.income-expense-row {
+.cashflow-cards {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 100%;
+    height: 100%;
+    align-items: stretch;
 }
 
 @media (min-width: 768px) {
-    .income-expense-row {
+    .cashflow-cards {
         flex-direction: row;
         gap: 10px;
+        height: 100%;
     }
 }
 
-.income-expense-card {
+.cashflow-table {
     position: relative;
     width: 100%;
-    height: 250px;
+    min-height: 250px;
+    height: 100%;
+    flex: 1 1 0%;
+    align-self: stretch;
 }
 
 @media (min-width: 768px) {
-    .income-expense-card {
+    .cashflow-table {
         width: 50%;
-        height: 360px;
+        height: 100%;
+        flex: 1 1 0%;
+        align-self: stretch;
     }
 }
 
-.card-background {
+.cf-table-scroller {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -928,7 +928,7 @@ body {
     }
 }
 
-.bottom-section {
+.middle-section {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -936,59 +936,63 @@ body {
 }
 
 @media (min-width: 1024px) {
-    .bottom-section {
+    .middle-section {
         flex-direction: row;
         gap: 16px;
+        align-items: stretch;
     }
 }
 
-.bottom-left {
+
+.middle-left {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 100%;
-}
-
-@media (min-width: 1024px) {
-    .bottom-left {
-        width: 68%;
-        gap: 10px;
-    }
-}
-
-.bottom-right {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-
-@media (min-width: 1024px) {
-    .bottom-right {
-        width: 32%;
-        gap: 14px;
-    }
-}
-
-.transactions-section {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
+    flex: 1 1 0%;
+    min-width: 0;
+    align-self: stretch;
 }
 
 @media (min-width: 768px) {
-    .transactions-section {
+    .middle-left {
         width: 32%;
         gap: 14px;
     }
 }
 
 @media (min-width: 1024px) {
-    .transactions-section {
-        width: 100%;
+    .middle-left {
+        width: 40%;
+        gap: 10px;
+        flex: 1 1 0%;
+        min-width: 0;
+        align-self: stretch;
     }
 }
+
+.middle-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    flex: 2 1 0%;
+    min-width: 0;
+    align-self: stretch;
+}
+
+@media (min-width: 1024px) {
+    .middle-right {
+        width: 66.66%;
+        gap: 14px;
+        flex: 2 1 0%;
+        min-width: 0;
+        align-self: stretch;
+    }
+}
+
+
+/* .transactions-section merged into .middle-left */
 
 .transactions-list {
     display: flex;
@@ -1000,6 +1004,9 @@ body {
     border-radius: 12px;
     padding: 14px 16px;
     box-shadow: 0px 0px 10px #1200da;
+    flex: 1 1 0%;
+    min-height: 0;
+    align-self: stretch;
 }
 
 @media (min-width: 768px) {
@@ -1193,6 +1200,9 @@ body {
     padding: 10px 28px;
     margin-right: 3px;
     box-shadow: 0px 0px 10px #0008ff;
+    min-height: 120px;
+    max-height: 220px;
+    overflow-y: auto;
 }
 
 @media (min-width: 768px) {
@@ -2078,11 +2088,11 @@ body {
         justify-content: space-between;
     }
     
-    .main-content {
+    .top-content-section {
         gap: 16px;
     }
     
-    .bottom-section {
+    .middle-section {
         gap: 16px;
     }
     

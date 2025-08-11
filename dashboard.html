@@ -10,9 +10,8 @@
 <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdudesapp3565back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="main-wrapper">
-            
+    <div class="main-container">
+
             <!-- Header -->
             <header class="header">
                 <div class="header-left">Money Tracker</div>
@@ -27,88 +26,86 @@
                 </div>
             </header>
             
-            <!-- Content Section -->
             <div class="content-section">
-                <!-- Income Cards -->
-                <div class="income-cards">
-                    <div class="income-card">
-                        <div class="income-card-content">
-                            <div class="income-info">
-                                <div class="income-label">Total Income</div>
-                                <div class="income-amount">₹100,000</div>
-                            </div>
-                            <div class="income-change">+15</div>
-                        </div>
-                    </div>
-                    <div class="income-card">
-                        <div class="income-card-content">
-                            <div class="income-info">
-                                <div class="income-label">Total Income</div>
-                                <div class="income-amount">₹100,000</div>
-                            </div>
-                            <div class="income-change">+15</div>
-                        </div>
-                    </div>
-                    <div class="income-card">
-                        <div class="income-card-content">
-                            <div class="income-info">
-                                <div class="income-label">Total Income</div>
-                                <div class="income-amount">₹100,000</div>
-                            </div>
-                            <div class="income-change">+15</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Main Content -->
-                <div class="main-content">
-                    <!-- Left Section -->
+                <div class="top-content-section">
                     <div class="left-section">
-                        <!-- Income/Expense Cards -->
-                        <div class="income-expense-row">
-                            <div class="income-expense-card">
-                                <div class="card-background"></div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">INCOME</div>
-                                        <div class="card-divider"></div>
+
+                        <!-- Income Cards -->
+                        <div class="status-cards">
+                            <div class="status-card">
+                                <div class="status-card-content">
+                                    <div class="status-info">
+                                        <div class="status-label">Total Income</div>
+                                        <div class="status-amount">₹100,000</div>
                                     </div>
-                                    <div class="card-items">
-                                        <div class="item-labels">Salary\
-Freelance\
-Gift\
-Other</div>
-                                        <div class="item-amounts">₹40,000\
-₹50,000\
-₹10,000\
-₹0</div>
-                                    </div>
+                                    <div class="status-change">+15</div>
                                 </div>
                             </div>
-                            <div class="income-expense-card">
-                                <div class="card-background"></div>
-                                <div class="card-content">
-                                    <div class="card-header">
-                                        <div class="card-title">EXPENSE</div>
-                                        <div class="card-divider"></div>
+                            <div class="status-card">
+                                <div class="status-card-content">
+                                    <div class="status-info">
+                                        <div class="status-label">Total Income</div>
+                                        <div class="status-amount">₹100,000</div>
                                     </div>
-                                    <div class="card-items">
-                                        <div class="item-labels">Food\
-Home\
-Transport\
-Groceries\
-Utilities\
-Entertainment</div>
-                                        <div class="item-amounts">₹4,000\
-₹5,000\
-₹1,000\
-₹3,000\
-₹100\
-₹500</div>
+                                    <div class="status-change">+15</div>
+                                </div>
+                            </div>
+                            <div class="status-card">
+                                <div class="status-card-content">
+                                    <div class="status-info">
+                                        <div class="status-label">Total Income</div>
+                                        <div class="status-amount">₹100,000</div>
                                     </div>
+                                    <div class="status-change">+15</div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="cashflow-cards">
+                            <!-- Income/Expense Cards -->
+                                <div class="cashflow-table">
+                                    <div class="cf-table-scroller"></div>
+                                    <div class="card-content">
+                                        <div class="card-header">
+                                            <div class="card-title">INCOME</div>
+                                            <div class="card-divider"></div>
+                                        </div>
+                                        <div class="card-items">
+                                            <div class="item-labels">Salary\
+    Freelance\
+    Gift\
+    Other</div>
+                                            <div class="item-amounts">₹40,000\
+    ₹50,000\
+    ₹10,000\
+    ₹0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cashflow-table">
+                                    <div class="cf-table-scroller"></div>
+                                    <div class="card-content">
+                                        <div class="card-header">
+                                            <div class="card-title">EXPENSE</div>
+                                            <div class="card-divider"></div>
+                                        </div>
+                                        <div class="card-items">
+                                            <div class="item-labels">Food\
+    Home\
+    Transport\
+    Groceries\
+    Utilities\
+    Entertainment</div>
+                                            <div class="item-amounts">₹4,000\
+    ₹5,000\
+    ₹1,000\
+    ₹3,000\
+    ₹100\
+    ₹500</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                     
                     <!-- Right Section -->
@@ -177,10 +174,9 @@ Target: ₹10,000</div>
                 </div>
                 
                 <!-- Bottom Section -->
-                <div class="bottom-section">
+                <div class="middle-section">
                     <!-- Bottom Left -->
-                    <div class="bottom-left">
-                        <div class="transactions-section">
+                    <div class="middle-left">
                             <!-- Transactions List -->
                             <div class="transactions-list">
                                 <div class="transactions-title">Transactions</div>
@@ -312,11 +308,10 @@ Target: ₹10,000</div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     
                     <!-- Bottom Right -->
-                    <div class="bottom-right">
+                    <div class="middle-right">
                         <!-- AI Advice -->
                         <div class="advice-section">
                             <div class="advice-title">AI Advice</div>
@@ -334,7 +329,7 @@ Target: ₹10,000</div>
                                         <div class="budget-item-content">
                                             <div class="budget-item-info">
                                                 <div class="budget-item-header">
-                                                    <img src="../assets/images/img_32x20.png" alt="Transport" class="budget-icon" />
+                                                    <div class="budget-icon">🚗</div>
                                                     <div class="budget-category">Transport</div>
                                                 </div>
                                                 <div class="budget-details">Budget: ₹2,000\
@@ -549,7 +544,6 @@ By September 13</div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
     
     <script>
