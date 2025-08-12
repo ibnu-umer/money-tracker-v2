@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money Tracker Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdudesapp3565back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+    <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdudesapp3565back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
 </head>
 <body>
     <div class="main-container">
@@ -18,9 +18,9 @@
                 <div class="header-center">2025 August</div>
                 <div class="header-right">
                     <div class="header-nav">
-                        <div class="nav-item">Filter</div>
-                        <div class="nav-item">Accounts</div>
-                        <div class="nav-item">Categories</div>
+                        <div class="nav-item"><img src="assets/setting.png" alt="Filter" class="nav-icon" />Filter</div>
+                        <div class="nav-item"><img src="assets/setting.png" alt="Accounts" class="nav-icon" />Accounts</div>
+                        <div class="nav-item"><img src="assets/setting.png" alt="Categories" class="nav-icon" />Categories</div>
                     </div>
                     <div class="profile-avatar"></div>
                 </div>
@@ -33,79 +33,70 @@
                         <!-- Income Cards -->
                         <div class="status-cards">
                             <div class="status-card">
-                                <div class="status-card-content">
-                                    <div class="status-info">
-                                        <div class="status-label">Total Income</div>
-                                        <div class="status-amount">₹100,000</div>
-                                    </div>
-                                    <div class="status-change">+15</div>
+                                <div class="status-info">
+                                    <div class="status-label">Total Income</div>
+                                    <div class="status-amount">₹100,000</div>
                                 </div>
+                                <div class="status-change">+15</div>
                             </div>
                             <div class="status-card">
-                                <div class="status-card-content">
-                                    <div class="status-info">
-                                        <div class="status-label">Total Income</div>
-                                        <div class="status-amount">₹100,000</div>
-                                    </div>
-                                    <div class="status-change">+15</div>
+                                <div class="status-info">
+                                    <div class="status-label">Total Income</div>
+                                    <div class="status-amount">₹100,000</div>
                                 </div>
+                                <div class="status-change">+15</div>
                             </div>
                             <div class="status-card">
-                                <div class="status-card-content">
-                                    <div class="status-info">
-                                        <div class="status-label">Total Income</div>
-                                        <div class="status-amount">₹100,000</div>
-                                    </div>
-                                    <div class="status-change">+15</div>
+                                <div class="status-info">
+                                    <div class="status-label">Total Income</div>
+                                    <div class="status-amount">₹100,000</div>
                                 </div>
+                                <div class="status-change">+15</div>
                             </div>
                         </div>
 
                         <div class="cashflow-cards">
                             <!-- Income/Expense Cards -->
-                                <div class="cashflow-table">
-                                    <div class="cf-table-scroller"></div>
-                                    <div class="card-content">
-                                        <div class="card-header">
-                                            <div class="card-title">INCOME</div>
-                                            <div class="card-divider"></div>
-                                        </div>
-                                        <div class="card-items">
-                                            <div class="item-labels">Salary\
-    Freelance\
-    Gift\
-    Other</div>
-                                            <div class="item-amounts">₹40,000\
-    ₹50,000\
-    ₹10,000\
-    ₹0</div>
-                                        </div>
-                                    </div>
+                            <div class="cashflow-table">
+                                <div class="card-header">
+                                    <div class="card-title">INCOME</div>
+                                    <div class="card-divider"></div>
                                 </div>
-                                <div class="cashflow-table">
-                                    <div class="cf-table-scroller"></div>
-                                    <div class="card-content">
-                                        <div class="card-header">
-                                            <div class="card-title">EXPENSE</div>
-                                            <div class="card-divider"></div>
-                                        </div>
-                                        <div class="card-items">
-                                            <div class="item-labels">Food\
-    Home\
-    Transport\
-    Groceries\
-    Utilities\
-    Entertainment</div>
-                                            <div class="item-amounts">₹4,000\
-    ₹5,000\
-    ₹1,000\
-    ₹3,000\
-    ₹100\
-    ₹500</div>
-                                        </div>
-                                    </div>
+                                <div class="cf-table-scroller">
+                                    <div class="cf-row"><span class="cf-label">Salary</span><span class="cf-amount">₹40,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Freelance</span><span class="cf-amount">₹50,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Gift</span><span class="cf-amount">₹10,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Other</span><span class="cf-amount">₹0</span></div>
+                                    <div class="cf-row"><span class="cf-label">Salary</span><span class="cf-amount">₹40,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Freelance</span><span class="cf-amount">₹50,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Gift</span><span class="cf-amount">₹10,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Other</span><span class="cf-amount">₹0</span></div>
+                                    <div class="cf-row"><span class="cf-label">Salary</span><span class="cf-amount">₹40,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Freelance</span><span class="cf-amount">₹50,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Gift</span><span class="cf-amount">₹10,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Other</span><span class="cf-amount">₹0</span></div>
+                                    <div class="cf-row"><span class="cf-label">Salary</span><span class="cf-amount">₹40,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Freelance</span><span class="cf-amount">₹50,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Gift</span><span class="cf-amount">₹10,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Other</span><span class="cf-amount">₹0</span></div>
                                 </div>
                             </div>
+                            
+                            <div class="cashflow-table">
+                                <div class="card-header">
+                                    <div class="card-title">EXPENSE</div>
+                                    <div class="card-divider"></div>
+                                </div>
+                                <div class="cf-table-scroller">
+                                    <div class="cf-row"><span class="cf-label">Food</span><span class="cf-amount">₹4,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Home</span><span class="cf-amount">₹5,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Transport</span><span class="cf-amount">₹1,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Groceries</span><span class="cf-amount">₹3,000</span></div>
+                                    <div class="cf-row"><span class="cf-label">Utilities</span><span class="cf-amount">₹100</span></div>
+                                    <div class="cf-row"><span class="cf-label">Entertainment</span><span class="cf-amount">₹500</span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Right Section -->
@@ -173,9 +164,8 @@ Target: ₹10,000</div>
                     </div>
                 </div>
                 
-                <!-- Bottom Section -->
+                <!-- Middle Section -->
                 <div class="middle-section">
-                    <!-- Bottom Left -->
                     <div class="middle-left">
                             <!-- Transactions List -->
                             <div class="transactions-list">
@@ -498,14 +488,14 @@ By September 13</div>
                     <div class="chart-container">
                         <div class="chart-title">Income vs Expense Overview</div>
                         <div class="chart-wrapper">
-                            <canvas id="incomeExpenseChart" role="img" aria-label="Income vs Expense line chart"></canvas>
+                            <!-- <canvas id="incomeExpenseChart" role="img" aria-label="Income vs Expense line chart"></canvas> -->
                         </div>
                     </div>
                     
                     <!-- Expense Breakdown Pie Chart -->
                     <div class="pie-chart-section">
                         <div class="chart-title">Expense Breakdown</div>
-                        <div class="pie-chart-content">
+                        <!-- <div class="pie-chart-content">
                             <div class="pie-chart-wrapper">
                                 <div class="pie-chart-container">
                                     <div class="pie-chart-circle"></div>
@@ -540,7 +530,7 @@ By September 13</div>
                                     <div class="legend-text">Entertainment</div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
