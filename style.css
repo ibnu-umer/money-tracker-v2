@@ -1,3 +1,69 @@
+.transactions-scroller {
+    flex: 1 1 0;
+    min-height: 0;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.tables-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    height: 420px;
+    align-items: stretch;
+} 
+
+.status-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.status-section > * {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.account-info-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.account-info-cards > * {
+    flex: 1 1 0;
+    min-width: 0;
+}
+.info-section {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.info-section > * {
+        min-width: 0;
+    }
+
+    .status-section {
+        flex: 0 1 60%;
+        min-width: 0;
+    }
+
+    .advice-section {
+        flex: 1 1 0%;
+        min-width: 0;
+}
+
 .nav-icon {
     width: 18px;
     height: 18px;
@@ -92,8 +158,6 @@ body {
         width: 80px;
         height: 80px;
         font-size: 1.1rem;
-    }
-        gap: 42px;
     }
 }
 
@@ -311,14 +375,14 @@ body {
 
 .top-content-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     width: 100%;
 }
 
 @media (min-width: 1024px) {
     .top-content-section {
-        flex-direction: row;
+        flex-direction: column;
         gap: 14px;
         align-items: stretch;
     }
@@ -760,7 +824,7 @@ body {
 
 .transaction-title {
     font-size: 14px;
-    font-family: Poppins;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-style: italic;
     line-height: 20px;
@@ -1061,9 +1125,8 @@ body {
 }
 
 
-/* .transactions-section merged into .middle-left */
 
-.transactions-list {
+.transactions-card {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -1087,12 +1150,13 @@ body {
 
 .transactions-title {
     font-size: 14px;
-    font-family: Poppins;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-style: italic;
     line-height: 20px;
     color: #797979;
     margin-left: 6px;
+    margin-bottom: 6px;
 }
 
 @media (min-width: 768px) {
@@ -1108,29 +1172,22 @@ body {
     flex-direction: column;
     width: 100%;
     background-color: #02004e;
-    margin-left: 3px;
+    margin: 0 8px;
 }
 
-@media (min-width: 768px) {
-    .date-section {
-        margin-left: 4px;
-    }
-}
 
 .date-header {
     font-size: 12px;
-    font-family: Poppins;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     line-height: 18px;
     color: #ffffff;
-    margin-left: 3px;
 }
 
 @media (min-width: 768px) {
     .date-header {
         font-size: 14px;
         line-height: 21px;
-        margin-left: 4px;
     }
 }
 
@@ -1138,14 +1195,8 @@ body {
     width: 100%;
     height: 1px;
     background-color: #797979;
-    margin: 2px 6px 0 3px;
 }
 
-@media (min-width: 768px) {
-    .date-divider {
-        margin: 2px 8px 0 4px;
-    }
-}
 
 .transaction-list {
     display: flex;
@@ -1158,52 +1209,46 @@ body {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin: 2px 0;
+    padding: 0px 10px;
+    gap: 16px;
+    margin-bottom: 5px;
 }
 
 .transaction-item-content {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
     background-color: #02004e;
     border-radius: 12px;
     padding: 4px;
     margin: 0 10px;
-}
 
-@media (min-width: 768px) {
-    .transaction-item-content {
+}
+    /* .transaction-item-content {
+        gap: 20px;
         padding: 6px;
         margin: 0 12px;
     }
-}
-
-.transaction-item-row {
     display: flex;
-    gap: 16px;
-    justify-content: flex-start;
-    align-items: center;
-    flex: 1;
-}
+    gap: 16px; */
 
-@media (min-width: 768px) {
-    .transaction-item-row {
-        gap: 20px;
-    }
-}
-
-.transaction-item-icon {
-    width: 20px;
-    height: 20px;
-}
 
 @media (min-width: 768px) {
     .transaction-item-icon {
-        width: 26px;
-        height: 26px;
+        font-size: 20px;
     }
 }
+
+@media (min-width: 1024px) {
+    .transaction-item-icon {
+        font-size: 26px;
+    }
+} 
 
 .transaction-item-details {
     display: flex;
@@ -1213,22 +1258,22 @@ body {
 
 .transaction-item-name {
     font-size: 14px;
-    font-family: Poppins;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     line-height: 21px;
     color: #ffffff;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .transaction-item-name {
-        font-size: 18px;
-        line-height: 27px;
+        font-size: 16px;
+        /* line-height: 25px; */
     }
 }
 
 .transaction-item-note {
     font-size: 10px;
-    font-family: Poppins;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     line-height: 15px;
     color: #b5b5b5;
@@ -1243,7 +1288,7 @@ body {
 
 .transaction-item-amount {
     font-size: 14px;
-    font-family: Poppins;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     line-height: 20px;
     color: #ffffff;
@@ -1445,7 +1490,7 @@ body {
 
 .advice-title {
     font-size: 14px;
-    font-family: Poppins;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-style: italic;
     line-height: 20px;
@@ -1469,7 +1514,7 @@ body {
 
 .advice-text {
     font-size: 14px;
-    font-family: Poppins;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     line-height: 20px;
     color: #ffffff;
