@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money Tracker Dashboard</title>
@@ -14,17 +14,24 @@
 
             <!-- Header -->
             <header class="header">
-                <div class="header-left">Money Tracker</div>
-                <div class="header-center">2025 August</div>
-                <div class="header-right">
-                    <div class="header-nav">
-                        <div class="nav-item"><img src="assets/setting.png" alt="Filter" class="nav-icon" />Filter</div>
-                        <div class="nav-item"><img src="assets/setting.png" alt="Accounts" class="nav-icon" />Accounts</div>
-                        <div class="nav-item"><img src="assets/setting.png" alt="Categories" class="nav-icon" />Categories</div>
+                <div class="header__logo">Money Tracker</div>
+                <div class="header__calendar">2025 August</div>
+                <div class="nav-bar">
+                    <div class="nav__options">
+                        <div class="nav__item">
+                            <img src="assets/setting.png" alt="Filter transactions" class="nav__icon" />Filter
+                        </div>
+                        <div class="nav__item">
+                            <img src="assets/setting.png" alt="Manage accounts" class="nav__icon" />Accounts
+                        </div>
+                        <div class="nav__item">
+                            <img src="assets/setting.png" alt="Manage categories" class="nav__icon" />Categories
+                        </div>
                     </div>
                     <div class="profile-avatar"></div>
                 </div>
             </header>
+
             
             <div class="content-section">
                 <div class="top-content-section">
@@ -60,12 +67,9 @@
                                 <div class="account-card">
                                     <div class="account-title">Accounts Balances</div>
                                     <div class="account-content">
-                                        <div class="account-labels">Liquid\
-        Bank\
-        Savings</div>
-                                        <div class="account-amounts">₹10,000\
-        ₹500,000\
-        ₹100,000</div>
+                                        <div class="account-row"><span class="account-labels">Salary</span><span class="account-amounts">₹40,000</span></div>
+                                        <div class="account-row"><span class="account-labels">Salary</span><span class="account-amounts">₹40,000</span></div>
+                                        <div class="account-row"><span class="account-labels">Salary</span><span class="account-amounts">₹40,000</span></div>
                                     </div>
                                 </div>
 
@@ -73,15 +77,13 @@
                                 <div class="savings-card">
                                     <div class="savings-content">
                                         <div class="savings-title">Savings</div>
-                                        <div class="savings-info">Current savings: ₹5,000\
-        Target: ₹10,000</div>
-                                    </div>
-                                    <div class="savings-progress">
-                                        <div class="progress-container">
-                                            <div class="circular-progress"></div>
-                                            <div class="progress-text">
-                                                <div class="progress-percentage">50%</div>
-                                                <div class="progress-saved">₹5,000 Saved</div>
+                                        <div class="savings-info">
+                                            <div>Current savings: ₹5,000</div>
+                                            <div>Target: ₹10,000</div>
+                                        </div>
+                                        <div class="savings-progress">
+                                            <div class="progress-container">
+                                                <div class="circular-progress"></div>
                                             </div>
                                         </div>
                                     </div>

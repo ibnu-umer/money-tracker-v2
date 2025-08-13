@@ -285,13 +285,6 @@ body {
     width: 100%;
 }
 
-@media (min-width: 640px) {
-    .status-cards {
-        flex-direction: row;
-        gap: 10px;
-    }
-}
-
 .status-card {
     display: flex;
     justify-content: space-between;
