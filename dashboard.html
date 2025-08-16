@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdudesapp3565back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
 </head>
 <body>
     <div class="main-container">
@@ -131,53 +132,88 @@
                             </div>
                         </div>
 
-                        <!-- Transactions Card -->
-                        <div class="transactions-card">
-                            <div class="transactions-title">Transactions</div>
-                            <div class="transactions-scroller">
-                                <div class="date-section">
-                                    <div class="date-header">02 Aug, Monday</div>
-                                    <div class="date-divider"></div>
-                                </div>
-                                <div class="transaction-item">
-                                    <div class="transaction-icon">🥗</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
+                        <div class="transaction-section">
+                            <!-- Transactions Card -->
+                            <div class="transactions-card">
+                                <div class="transactions-title">Transactions</div>
+                                <div class="transactions-scroller">
+                                    <div class="date-section">
+                                        <div class="date-header">02 Aug, Monday</div>
+                                        <div class="date-divider"></div>
                                     </div>
-                                    <div class="transaction-amount">₹400</div>
-                                </div>
-                                <div class="transaction-item">
-                                    <div class="transaction-icon">🥗</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon">🥗</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
                                     </div>
-                                    <div class="transaction-amount">₹400</div>
-                                </div>
-                                <div class="transaction-item">
-                                    <div class="transaction-icon">💻</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon">🥗</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
                                     </div>
-                                    <div class="transaction-amount">₹400</div>
-                                </div>
-                                <div class="transaction-item">
-                                    <div class="transaction-icon">🚗</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon">💻</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
                                     </div>
-                                    <div class="transaction-amount">₹400</div>
-                                </div>
-                                <div class="transaction-item">
-                                    <div class="transaction-icon">🏡</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon">🚗</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
                                     </div>
-                                    <div class="transaction-amount">₹400</div>
+                                    <div class="transaction-item">
+                                        <div class="transaction-icon">🏡</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Add Transaction -->
+                            <div class="add-transaction-card">
+                                <div class="add-transaction-form">
+                                    <div class="add-transaction-title">Add new transaction</div>
+                                    <div class="add-transaction-tabs">
+                                        <div class="tab-income">Income</div>
+                                        <div class="tab-expense">Expense</div>
+                                    </div>
+                                    
+                                    <div class="input-section">
+                                        <div class="input-title">Category</div>
+                                        <select class="transaction-input">
+                                            <option value="">Select category</option>
+                                            <option value="income">Income</option>
+                                            <option value="expense">Expense</option>
+                                            <option value="savings">Savings</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-section">
+                                        <div class="input-title">Amount</div>
+                                        <input id="amount-input" type="text" placeholder="₹Amount" class="transaction-input">
+                                    </div>
+                                    <div class="input-section">
+                                        <div class="input-title">Note</div>
+                                        <input id="note-input" type="text" placeholder="Note" class="transaction-input">
+                                    </div>
+                                </div>
+                                <div class="save-buttons">
+                                    <button class="save-btn">Select Date&Save</button>
+                                    <button class="save-btn">Save for Today</button>
                                 </div>
                             </div>
                         </div>
@@ -188,7 +224,7 @@
                 <!-- Middle Section -->
                 <div class="middle-section">
                     <div class="middle-left">
-                            <!-- Add Transaction -->
+                        <!-- Add Transaction -->
                         <div class="transaction-card">
                             <div class="transaction-header">
                                 <div class="transaction-title-row">
@@ -492,8 +528,23 @@ By September 13</div>
             </div>
     </div>
     
-    <script>
-        // Income vs Expense Chart
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- // Income vs Expense Chart
         const ctx = document.getElementById('incomeExpenseChart')?.getContext('2d');
         if (!ctx || typeof Chart === 'undefined') {
             console.warn('Chart.js not available, showing placeholder');
@@ -593,7 +644,6 @@ By September 13</div>
                     console.log('Navigation clicked:', this.textContent);
                 });
             });
-        });
-    </script>
+        }); -->
 </body>
 </html>
