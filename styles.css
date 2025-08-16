@@ -1,6 +1,3 @@
-/* ------------------ */
-/* Root variables */
-/* ------------------ */
 :root {
     --font-family: 'Inter', sans-serif;
     --color-text: #fff;
@@ -23,11 +20,10 @@
     --gap-item: 5px;
     --spacing-sm: 8px;
     --spacing-md: 12px;
-    --text-gap: clamp(18px, 1.5vw, 22px)
+    --text-gap: clamp(18px, 1.5vw, 22px);
 
     /* Font families */
     --font-main: 'Inter', sans-serif;
-    --font-alt: 'Poppins', sans-serif;
 
     /* Colors */
     --color-bg-card: #02004e;
@@ -65,11 +61,6 @@
 
 
 
-
-
-/* ------------------ */
-/* Base reset */
-/* ------------------ */
 * {
     margin: 0;
     padding: 0;
@@ -84,9 +75,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ------------------ */
-/* Layout */
-/* ------------------ */
 .main-container {
     max-width: 1440px;
     margin: 0 auto;
@@ -97,9 +85,11 @@ body {
     align-items: center;
 }
 
-/* ------------------ */
-/* Header */
-/* ------------------ */
+
+
+/* Header  */
+/* ---------------------------------------------- */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -120,9 +110,6 @@ body {
     padding: 4px 16px;
 }
 
-/* ------------------ */
-/* Navigation */
-/* ------------------ */
 .nav-bar {
     display: flex;
     align-items: center;
@@ -176,15 +163,21 @@ body {
     width: 100%;
 } 
 
-/* ------------------ */
-/* Info Section Layout */
-/* ------------------ */
+
+
+/* Info Section */
+/* ------------------------------------------- */
+
 .info-section {
     display: flex;
     gap: var(--gap-large);
     width: 100%;
     align-items: stretch;
 }
+
+
+/* Status Section */
+/* ------------------------------------------- */
 
 .status-section {
     display: flex;
@@ -239,9 +232,11 @@ body {
     color: var(--color-success);
 }
 
-/* ------------------ */
+
+
 /* Account Info Cards */
-/* ------------------ */
+/* ------------------------------------------- */
+
 .account-info-cards {
     display: flex;
     gap: var(--gap-small);
@@ -293,9 +288,10 @@ body {
     white-space: pre-line;
 }
 
-/* ------------------ */
+
 /* Savings Card */
-/* ------------------ */
+/* ------------------------------------------------ */
+
 .savings-card {
     display: flex;
     background-color: var(--color-bg-card);
@@ -314,7 +310,7 @@ body {
 }
 
 .savings-title {
-    font-family: var(--font-alt);
+    font-family: var(--font-main);
     font-weight: 500;
     font-style: italic;
     font-size: var(--fs-card-title);
@@ -328,9 +324,10 @@ body {
     color: var(--color-text-primary);
 }
 
-/* ------------------ */
-/* AI Advice */
-/* ------------------ */
+
+/* Advice Card */
+/* ------------------------------------------------- */
+
 .advice-section {
     display: flex;
     flex-direction: column;
@@ -367,12 +364,9 @@ body {
 
 
 
+/* Tables section */
+/* -------------------------------------------- */
 
-
-
-
-
-/* --------------Table Section Layout------------- */
 .table-section {
     display: flex;
     gap: var(--gap-medium);
@@ -380,6 +374,10 @@ body {
     align-items: stretch;
     flex-wrap: wrap;
 }
+
+
+/* Cashflow table */
+/* --------------------------------------------- */
 
 .cashflow-tables {
     display: flex;
@@ -390,7 +388,6 @@ body {
     overflow-y: hidden;
 }
 
-/* ===== Card Styles ===== */
 .cashflow-card {
     flex: 1;
     display: flex;
@@ -406,8 +403,6 @@ body {
     box-shadow: var(--shadow-card);
 }
     
-
-/* --------------Card Header------------- */
 .card-header {
     display: flex;
     flex-direction: column;
@@ -425,7 +420,6 @@ body {
     background-color: var(--color-text-secondary);
 }
 
-/* ===== Table Scroller ===== */
 .table-scroller {
     flex: 1;
     overflow-y: auto;
@@ -436,7 +430,6 @@ body {
     padding: 0 10px 10px 10px;
 }
 
-/* ===== Cashflow Rows ===== */
 .table-row {
     display: flex;
     justify-content: space-between;
@@ -451,7 +444,10 @@ body {
     font-weight: 600;
 }
 
-/* ===== Transactions Card ===== */
+
+
+/* Transactions */
+/* ----------------------------------------------- */
 
 .transaction-section {
     display: flex;
@@ -482,7 +478,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Transactions Title */
 .transactions-title {
     font-family: var(--font-main);
     font-size: var(--fs-card-title);
@@ -492,7 +487,6 @@ body {
     margin: 0 0 6px 6px;
 }
 
-/* Date Section */
 .date-section {
     display: flex;
     flex-direction: column;
@@ -511,7 +505,6 @@ body {
     background-color: var(--color-text-muted);
 }
 
-/* Transaction Items */
 .transaction-item {
     display: flex;
     align-items: center;
@@ -556,25 +549,20 @@ body {
     padding-right: 15px;
 }
 
-/* ------------------------------------------------ */
 
-
-
-
-
-
+/* ---------------- Add Transaction Card ---------------- */
 .add-transaction-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 6px;
+    gap: var(--gap-small);
     width: 100%;
     max-width: 250px;
-    background-color: #02004e;
-    border: 1px solid #1200da;
-    border-radius: 12px;
-    padding: 10px 15px;
-    box-shadow: 0px 0px 10px #0714a7;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-shadow: var(--shadow-card);
 }
 
 .add-transaction-form {
@@ -588,47 +576,44 @@ body {
     font-style: italic;
     font-weight: 500;
     color: var(--color-text-muted);
-    margin: 0 0 6px 6px;
+    margin: 0 0 var(--gap-small) var(--gap-small);
 }
 
 .add-transaction-tabs {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: var(--gap-large);
     height: 35px;
-    margin-bottom: 6px;
+    margin-bottom: var(--gap-small);
 }
 
-.tab-income {
-    font-size: 16px;
-    font-family: var(--font-main);
-    font-weight: 700;
-    line-height: 16px;
-    color: #686767;
-    cursor: pointer;
-}
-
+.tab-income,
 .tab-expense {
     font-size: 16px;
     font-family: var(--font-main);
     font-weight: 700;
-    line-height: 16px;
-    color: #ae0306;
+    line-height: 1;
     cursor: pointer;
-    margin-left: 8px;
+}
+
+.tab-income {
+    color: var(--color-text-secondary);
+}
+
+.tab-expense {
+    color: #ae0306;
+    margin-left: var(--gap-small);
 }
 
 .category-section {
     display: flex;
-    justify-content: left;
     align-items: center;
-    gap: 5px;
+    gap: var(--gap-xsmall);
 }
 
-
 .input-title {
-    font-size: 10px;
+    font-size: var(--fs-status-label);
     font-family: var(--font-main);
     margin-bottom: 3px;
 }
@@ -637,30 +622,31 @@ body {
     height: var(--size-input);
     width: var(--size-input);
     padding: 0 0.2rem;
-    font-size: 16px;
-    border: 1px solid #ccc;
+    font-size: var(--fs-card-text);
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     outline: none;
-    margin-bottom: 8px;
+    margin-bottom: var(--gap-small);
 }
+
 .icon-input:focus {
     border-color: #007bff;
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
 }
 
-
 .transaction-input {
     width: 100%;
     height: var(--size-input);
-    padding: 8px 12px;
+    padding: var(--spacing-sm) var(--spacing-md);
     font-size: var(--fs-card-text);
-    color: #fff;
-    border: 1px solid #2d00cf;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
     background-color: #0b1c64;
     border-radius: 6px;
     outline: none;
-    margin-bottom: 8px;
+    margin-bottom: var(--gap-small);
 }
+
 .transaction-input:focus {
     border-color: #007bff;
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
@@ -669,7 +655,7 @@ body {
 .save-buttons {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: var(--gap-small);
     height: 80px;
 }
 
@@ -677,22 +663,23 @@ body {
     font-size: var(--fs-card-text);
     font-family: var(--font-main);
     font-weight: 600;
-    line-height: 18px;
-    color: #000000;
-    background-color: #00bd20;
+    line-height: 1.2;
+    color: #000;
+    background-color: var(--color-success);
     border-radius: 8px;
-    padding: 0 24px;
+    padding: 0 var(--gap-large);
     border: none;
     cursor: pointer;
     height: 100%;
 }
 
 
+
+
+
+
+/* Responsive Design */
 /* -------------------------------------------------- */
-
-
-
-
 
 @media (min-width: 0px) {
     .nav__options {
