@@ -412,22 +412,22 @@
 
             <div class="charts-grid">
                 <div class="left-section">
-                    <div class="chart-container">
+                    <div class="left-container">
                         <canvas id="monthly-cashflow-chart" class="mc-chart"></canvas>
                     </div>
 
-                    <div class="line-chart-container">
+                    <div class="left-container">
                         <canvas id="line-chart"></canvas>
                     </div>
                 </div>
 
                 <div class="right-section">
-                    <div class="pie-chart-container">
+                    <div class="right-container">
                         <canvas class="canvas-pie" id="expense-chart"></canvas>
                         <ul id="pie-legend" class="pie-legend"></ul>
                     </div>
                     
-                    <div class="pie-chart-container">
+                    <div class="right-container">
                         <canvas class="canvas-pie" id="savingsChart"></canvas>
                     </div>
                 </div>
@@ -491,7 +491,7 @@
                             boxWidth: 15,
                             font: {
                                 family: 'Inter',
-                                size: 14,
+                                size: 11,
                                 weight: 'bold'
                             },
                             color: '#ffffff'
@@ -528,7 +528,7 @@
                         ticks: {
                             font: {
                                 family: 'Inter',
-                                size: 13
+                                size: 11
                             },
                             color: '#ddd'
                         },
@@ -545,7 +545,7 @@
                         ticks: {
                             font: {
                                 family: 'Inter',
-                                size: 13
+                                size: 11
                             },
                             color: '#ddd'
                         },
@@ -649,80 +649,107 @@
         ],
         datasets: [
             {
-            label: "Income",
-            data: [200, 400, 500, 700, 300, 600, 800, 900, 1200, 1000, 950, 1100, 1300, 1250, 1400, 1600, 1500, 1700, 1650, 1800, 1900, 2100, 2200, 2000, 2300, 2400, 2500, 2600, 2700, 2800],
-            borderColor: "#4caf50",
-            backgroundColor: "rgba(76, 175, 80, 0.2)",
-            tension: 0.3,
-            fill: true,
-            pointRadius: 5,
-            pointHoverRadius: 8,
+                label: "Income",
+                data: [200, 400, 500, 700, 300, 600, 800, 900, 1200, 1000, 950, 1100, 1300, 1250, 1400, 1600, 1500, 1700, 1650, 1800, 1900, 2100, 2200, 2000, 2300, 2400, 2500, 2600, 2700, 2800],
+                borderColor: "#4caf50",
+                backgroundColor: "rgba(76, 175, 80, 0.2)",
+                tension: 0.3,
+                fill: true,
+                pointRadius: 5,
+                pointHoverRadius: 8,
             },
             {
-            label: "Expense",
-            data: [150, 200, 300, 400, 250, 500, 600, 700, 900, 850, 800, 950, 1000, 1050, 1100, 1200, 1250, 1300, 1400, 1450, 1500, 1600, 1650, 1700, 1750, 1800, 1850, 1900, 1950, 2000],
-            borderColor: "#f44336",
-            backgroundColor: "rgba(244, 67, 54, 0.2)",
-            tension: 0.3,
-            fill: true,
-            pointRadius: 5,
-            pointHoverRadius: 8,
+                label: "Expense",
+                data: [150, 200, 300, 400, 250, 500, 600, 700, 900, 850, 800, 950, 1000, 1050, 1100, 1200, 1250, 1300, 1400, 1450, 1500, 1600, 1650, 1700, 1750, 1800, 1850, 1900, 1950, 2000],
+                borderColor: "#f44336",
+                backgroundColor: "rgba(244, 67, 54, 0.2)",
+                tension: 0.3,
+                fill: true,
+                pointRadius: 5,
+                pointHoverRadius: 8,
             }
         ]
         };
 
         const lineChart = new Chart(lnc, {
-        
-
-
-        type: "line",
-        data: data,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-            tooltip: {
-                callbacks: {
-                label: function(context) {
-                    const value = context.raw;
-                    const category = context.dataset.label;
-                    return `${category}: $${value}`;
+            type: "line",
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                        label: function(context) {
+                            const value = context.raw;
+                            const category = context.dataset.label;
+                            return `${category}: $${value}`;
+                        },
+                        title: function(context) {
+                            return `Day ${context[0].label}`;
+                        }
+                        }
+                    },
+                    legend: {
+                        position: "top",
+                        labels: {
+                            boxWidth: 15,
+                            font: { 
+                                family: 'Inter',
+                                size: 12,
+                                weight: 'bold'
+                            },
+                            color: '#ffffff'
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: "Income vs Expense - Monthly Trend",
+                        font: {
+                            family: 'Inter',
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        color: '#ffffff'
+                    }
                 },
-                title: function(context) {
-                    return `Day ${context[0].label}`;
-                }
-                }
-            },
-            legend: {
-                position: "top",
-                labels: {
-                font: { size: 14 }
-                }
-            },
-            title: {
-                display: true,
-                text: "Income vs Expense - Monthly Trend",
-                font: { size: 18 }
+
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                family: 'Inter',
+                                size: 11
+                            },
+                            color: '#ddd'
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.1)', //  grid line color
+                            borderColor: '#666',            //  axis line color
+                            lineWidth: 1,
+                            drawBorder: true,
+                            drawTicks: true
+                        }
+                    },
+
+                    y: {
+                        ticks: {
+                            font: {
+                                family: 'Inter',
+                                size: 11
+                            },
+                            color: '#ddd'
+                        },
+                        grid: {
+                            color: 'rgba(255,255,255,0.1)',
+                            borderColor: '#666',
+                            lineWidth: 1,
+                            drawBorder: true,
+                            drawTicks: true
+                        }
+                    }
+                }     
             }
-            },
-            scales: {
-            x: {
-                title: {
-                display: true,
-                text: "Day of Month",
-                font: { size: 14 }
-                }
-            },
-            y: {
-                beginAtZero: true,
-                title: {
-                display: true,
-                text: "Amount ($)",
-                font: { size: 14 }
-                }
-            }
-            }
-        }
         });
 
 
