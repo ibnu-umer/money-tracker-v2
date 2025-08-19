@@ -1111,7 +1111,6 @@ body {
     }
 }
 
-
 /* Small tablets & above (≥ 768px) */
 @media (min-width: 768px) {
     .main-container {
@@ -1159,6 +1158,7 @@ body {
         margin-top: 0;
     } */
 }
+
 
 @media (min-width: 1024px) {
     .main-container {
