@@ -8,7 +8,7 @@
     /* Fluid typography */
     --fs-logo: clamp(14px, 1.5vw, 20px);
     --fs-calendar: clamp(14px, 1.5vw, 20px);
-    --fs-nav-item: clamp(14px, 1.4vw, 18px);
+    --fs-nav-item: clamp(12px, 1.4vw, 14px);
 
     /* Sizes */
     --size-icon: clamp(15px, 1.2vw, 18px);
@@ -24,7 +24,6 @@
     --spacing-md: 12px;
     --spacing-lg: 20px;  
     --spacing-xl: 32px;  
-    --text-gap: clamp(18px, 1.5vw, 22px);
 
     /* Font families */
     --font-main: 'Inter', sans-serif;
