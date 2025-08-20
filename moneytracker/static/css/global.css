@@ -1,0 +1,120 @@
+:root {
+    --font-family: 'Inter', sans-serif;
+    --color-text: #fff;
+    --color-bg: linear-gradient(180deg, #03006b 0%, #050341 100%);
+    --color-calendar-bg: #001977;
+    --color-avatar-bg: #d9d9d9;
+
+    /* Fluid typography */
+    --fs-logo: clamp(14px, 1.5vw, 20px);
+    --fs-calendar: clamp(14px, 1.5vw, 20px);
+    --fs-nav-item: clamp(12px, 1.4vw, 14px);
+
+    /* Sizes */
+    --size-icon: clamp(15px, 1.2vw, 18px);
+    --size-avatar: clamp(26px, 2.5vw, 32px);
+    --size-input: 32px;
+
+    /* Spacing */
+    --main-border: clamp(10px,2vw, 30px);
+    --gap-nav: clamp(12px, 1.5vw, 20px);
+    --gap-item: 5px;
+    --spacing-xs: 4px;   
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 20px;  
+    --spacing-xl: 32px;  
+
+    /* Font families */
+    --font-main: 'Inter', sans-serif;
+
+    /* Colors */
+    --color-bg-card: #02004e;
+    --color-bg-status: #001059;
+    --color-border: #1200da;
+    --color-border-status: #0f00e6;
+    --color-text-primary: #fff;
+    --color-text-secondary: #6d6d6d;
+    --color-text-muted: #797979;
+    --color-success: #00bd1f;
+    --color-danger: #ff4d4f;       
+    --color-warning: #ffcc00;      
+    --color-info: #0a067d;         
+    --color-shadow-status: #1200da;
+    --color-shadow-card: #0714a7;
+    --color-statistics-card: #05016a;
+    --color-sg-progress: #107509;
+
+    /* Typography (fluid) */
+    --fs-status-label: clamp(8px, 1vw, 12px);
+    --fs-status-amount: clamp(12px, 1.5vw, 18px);
+    --fs-status-change: clamp(8px, 1.2vw, 16px);
+    --fs-card-title: clamp(12px, 1.5vw, 16px);
+    --fs-card-text: clamp(12px, 1.2vw, 14px);
+    --fs-card-note: clamp(10px, 1.1vw, 14px);
+    --fs-card-details: clamp(10px, 1.1vw, 12px);
+    --fs-advice-title: clamp(12px, 1vw, 14px);
+    --fs-advice-text: clamp(12px, 1.2vw, 14px);
+    --donut-percentage: clamp(16px, 1.6vw, 18px);
+    --donut-note: clamp(10px, 1.2vw, 12px);
+
+    /* Spacing & Radius */
+    --radius-card: 12px;
+    --radius-circle: 50%;     
+    --radius-pill: 999px;     
+    --gap-xsmall: 4px;
+    --gap-small: 8px;
+    --gap-medium: 12px;
+    --gap-large: 16px;
+
+    /* Shadows */
+    --shadow-status: 0 0 10px var(--color-shadow-status);
+    --shadow-card: 0 0 10px var(--color-shadow-card);
+    --shadow-black: 0 0 10px #000000;
+    --shadow-hover: 0 4px 12px rgba(0,0,0,0.2); 
+
+    /* Widget sizes */
+    --budget-item-width: clamp(230px, 2.5vw, 280px);
+
+    /* Donut Progress */
+    --donut-size: 70px;       
+    --donut-inner-size: 45px;
+    --sg-donut-size: 130px;
+    --sg-donut-inner-size: 115px;
+
+    /* Breakpoints */
+    --bp-mobile: 512px;       
+    --bp-tablet: 768px;       
+    --bp-laptop: 1024px;      
+    --bp-desktop: 1280px;     
+}
+
+
+
+/* Global scrollbar styles */
+/* ------------------------------------------------ */
+/* Firefox */
+* {
+  scrollbar-width: thin;             
+  scrollbar-color: #450181 #2b2b2b;  
+}
+
+/* For Webkit browsers (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  height: 8px;  
+  width: 8px;   
+}
+
+*::-webkit-scrollbar-track {
+  background: #002b80;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #4cafef;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #2196f3; 
+}
