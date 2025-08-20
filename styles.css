@@ -70,6 +70,7 @@
     /* Shadows */
     --shadow-status: 0 0 10px var(--color-shadow-status);
     --shadow-card: 0 0 10px var(--color-shadow-card);
+    --shadow-black: 0 0 10px #000000;
     --shadow-hover: 0 4px 12px rgba(0,0,0,0.2); 
 
     /* Widget sizes */
@@ -164,9 +165,12 @@ body {
 .header__calendar {
     font-weight: 700;
     font-size: var(--fs-calendar);
+    color: var(--color-text-primary);
     background-color: var(--color-calendar-bg);
     border-radius: 12px;
-    padding: 4px 16px;
+    padding: 6px 16px;
+    border: none;
+    cursor: pointer;
 }
 
 .nav-bar {
