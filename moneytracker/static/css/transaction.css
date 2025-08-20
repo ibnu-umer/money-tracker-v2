@@ -1,18 +1,18 @@
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.6);
+    background: var(--modal-overlay-bg);
     display:flex;
     align-items:center;
     justify-content:center
 }
 
 .modal-content {
-    background: #050550;  
-    border-radius: 12px;
-    padding: 20px;
-    width: 300px;
-    color: #fff;
+    background: var(--color-bg-card);  
+    border-radius: var(--radius-card);
+    padding: var(--gap-large);
+    width: var(--tr-modal-width);
+    color: var(--color-text-primary);
     position: relative;
     text-align: center;
 }
@@ -23,29 +23,29 @@
     top: 10px;
     font-size: 20px;
     cursor: pointer;
-    color: #ccc;
+    color: var(--color-text-primary);
 }
 
 .form-title {
-    font-size: 14px;
+    font-size: var(--fs-modal-title);
     font-style: italic;
     margin-bottom: 20px;
-    color: #aaa;
+    color: var(--color-text-secondary);
     text-align: left;
 }
 
 .transaction-type {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-bottom: 15px;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
 }
 
 .type-btn {
     background: transparent;
     border: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: var(--fs-modal-type);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -62,57 +62,47 @@
     color: red;
 }
 
-
-
 .form-group {
     justify-items: left;
-    margin-bottom: 12px;
+    margin-bottom: var(--spacing-md);
 }
 
 .input-header {
-    font-size: 10px;
-    margin-left: 8px;
+    font-size: var(--fs-input-header);
+    margin-left: var(--spacing-sm);
 }
 
 input, select {
     width: 100%;
-    padding: 8px;
-    border-radius: 6px;
+    padding: var(--spacing-sm);
+    border-radius: var(--input-border-radius);
     border: none;
-    background: #121272;
-    color: white;
+    font-size: var(--fs-card-text);
+    background: var(--input-bg);
+    color: var(--color-text-primary);
     outline: none;
 }
 input::placeholder {
-    color: #ccc;
+    color: var(--color-text-secondary);
 }
 
-.form-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 .save-btn {
-    background: #00d000;
+    width: 100%;
+    background: var(--color-success);
     border: none;
-    padding: 10px;
-    border-radius: 6px;
+    padding: var(--spacing-sm);
+    border-radius: var(--input-border-radius);
     font-weight: bold;
     cursor: pointer;
-    color: black;
-    margin-top: 20px;
+    color: var(--color-text-primary);
+    margin-top: var(--spacing-lg);
 }
 .save-btn:hover {
     background: #00b000;
 }
 
-.open-btn {
-    background: #0077ff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 6px;
-    cursor: pointer;
-}
+.hidden{
+    display:none
+} 
 
-.hidden{display:none} 
+
