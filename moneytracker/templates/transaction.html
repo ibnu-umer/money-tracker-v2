@@ -1,0 +1,39 @@
+<!-- Modal -->
+<div id="transactionModal" class="modal">
+    <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="form-title">Add new transaction</h3>
+
+        <div class="transaction-type">
+            <button id="incomeBtn" class="type-btn">Income</button>
+            <button id="expenseBtn" class="type-btn expense">Expense</button>
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select name="category" id="category">
+                <option value="">Select category</option>
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="salary">Salary</option>
+                <option value="shopping">Shopping</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="number" name="amount" placeholder="₹Amount" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="note" placeholder="Note">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" name="date" class="save-btn">Select Date & Save</button>
+                <button type="submit" name="today" class="save-btn">Save for Today</button>
+            </div>
+        </form>
+    </div>
+</div>

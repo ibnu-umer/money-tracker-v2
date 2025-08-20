@@ -541,6 +541,20 @@ body {
     box-sizing: border-box;
 }
 
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-transaction-button {
+    background: var(--color-bg-card);
+    border: none;
+    font-size: 20px;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    margin-right: var(--spacing-lg);
+}
+
 .transactions-title {
     font-family: var(--font-main);
     font-size: var(--fs-card-title);

@@ -2,7 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- ----------------STYLES----------------- -->
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/transaction.css' %}">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money Tracker Dashboard</title>
@@ -17,7 +21,7 @@
         <!-- Header -->
         <header class="header">
             <div class="header__logo">Money Tracker</div>
-            <button class="header__calendar">2025 August</button>
+            <button id="openCalendarButton" class="header__calendar">2025 August</button>
             <div class="nav-bar">
                 <div class="nav__options">
                     <div class="nav__item">
@@ -33,7 +37,6 @@
                 <div class="profile-avatar"></div>
             </div>
         </header>
-
         
         <div class="content-section">
             <div class="top-content-section">
@@ -136,7 +139,10 @@
                     <div class="transaction-section">
                         <!-- Transactions Card -->
                         <div class="transactions-card">
-                            <div class="transactions-title">Transactions</div>
+                            <div class="transaction-header">
+                                <div class="transactions-title">Transactions</div>
+                                <button id="openTransactionPopup" class="add-transaction-button">+</button>
+                            </div>
                             <div class="transactions-scroller">
                                 <div class="date-section">
                                     <div class="date-header">02 Aug, Monday</div>
@@ -413,6 +419,16 @@
         </div>
     </div>
 
+
+    <!-- ---------------MODALS------------------ -->
+
+    <!-- Transaction Modal -->
+    <div id="transactionModal" class="hidden">
+        {% include "transaction.html" %}
+    </div>
+
+    <!-- ---------------SCRIPTS------------------ -->
     <script src="{% static 'js/dashboard.js' %}"></script>
+    <script src="{% static 'js/transaction.js' %}"></script>
 </body>
 </html>
