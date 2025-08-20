@@ -1,7 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'dashboard/dashboard.css' %}">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money Tracker Dashboard</title>
@@ -20,13 +21,13 @@
             <div class="nav-bar">
                 <div class="nav__options">
                     <div class="nav__item">
-                        <img src="assets/setting.png" alt="Filter transactions" class="nav__icon" />Filter
+                        <img src="{%static 'dashboard/icons/setting.png' %}" alt="Filter transactions" class="nav__icon" />Filter
                     </div>
                     <div class="nav__item">
-                        <img src="assets/setting.png" alt="Manage accounts" class="nav__icon" />Accounts
+                        <img src="{%static 'dashboard/icons/setting.png' %}" alt="Manage accounts" class="nav__icon" />Accounts
                     </div>
                     <div class="nav__item">
-                        <img src="assets/setting.png" alt="Manage categories" class="nav__icon" />Categories
+                        <img src="{%static 'dashboard/icons/setting.png' %}" alt="Manage categories" class="nav__icon" />Categories
                     </div>
                 </div>
                 <div class="profile-avatar"></div>
