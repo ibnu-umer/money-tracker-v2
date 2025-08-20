@@ -82,15 +82,6 @@
     --sg-donut-size: 130px;
     --sg-donut-inner-size: 115px;
 
-    /* Modal */
-    --modal-overlay-bg: rgba(0, 0, 0, .6);
-    --tr-modal-width: clamp(300px, 2vw, 400px);
-    --fs-advice-title: clamp(12px, 1vw, 14px);
-    --fs-modal-type: clamp(14px, 1.5vw, 18px);
-    --fs-input-header: clamp(10px, 1vw, 12px);
-    --input-border-radius: 6px;
-    --input-bg: #121272;
-
     /* Breakpoints */
     --bp-mobile: 512px;       
     --bp-tablet: 768px;       
