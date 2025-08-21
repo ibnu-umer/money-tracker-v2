@@ -1,26 +1,3 @@
-.ms-modal{
-    position:fixed;
-    inset:0;
-    background: var(--modal-overlay-bg);
-    display:flex;
-    align-items:center;
-    justify-content:center
-}
-
-.month-year-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Popup Content */
 .month-year-content {
     background: white;
     border-radius: 10px;
@@ -31,39 +8,6 @@
     text-align: center;
 }
 
-/* Header */
-.popup-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.popup-header h3 {
-    margin: 0;
-    color: #333;
-    font-size: 18px;
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #999;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.close-btn:hover {
-    color: #333;
-}
-
-/* Selector Container */
 .selector-container {
     display: flex;
     flex-direction: column;
@@ -71,7 +15,6 @@
     margin-bottom: 25px;
 }
 
-/* Selector Groups */
 .selector-group {
     display: flex;
     flex-direction: column;

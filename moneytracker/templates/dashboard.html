@@ -6,6 +6,7 @@
     <!-- ----------------STYLES----------------- -->
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
     <link rel="stylesheet" href="{% static 'css/transaction.css' %}">
     <link rel="stylesheet" href="{% static 'css/month_selector.css' %}">
 
@@ -23,7 +24,7 @@
         <!-- Header -->
         <header class="header">
             <div class="header__logo">Money Tracker</div>
-            <button class="header__calendar" onclick=openMonthYearPopup()>2025 August</button>
+            <button id="openMonthYear" data-modal-open="monthSelectorModal" class="header__calendar">2025 August</button>
             <div class="nav-bar">
                 <div class="nav__options">
                     <div class="nav__item">
@@ -143,7 +144,7 @@
                         <div class="transactions-card">
                             <div class="transaction-header">
                                 <div class="transactions-title">Transactions</div>
-                                <button id="openTransactionPopup" class="add-transaction-button">+</button>
+                                <button id="openTransaction" class="add-transaction-button" data-modal-open="transactionModal">+</button>
                             </div>
                             <div class="transactions-scroller">
                                 <div class="date-section">
@@ -425,19 +426,20 @@
     <!-- ---------------MODALS------------------ -->
 
     <!-- Transaction Modal -->
-    <div id="transactionModal" class="hidden">
+    <div id="transactionModal" class="modal-container hidden" role="dialog" aria-modal="true">
         {% include "transaction.html" %}
     </div>
     
     
     <!-- Month Selector Modal -->
-    <div id="monthSelectorModal" class="hidden">
+    <div id="monthSelectorModal" class="modal-container hidden" role="dialog" aria-modal="true">
         {% include "month_selector.html" %}
     </div>
 
     <!-- ---------------SCRIPTS------------------ -->
     <script src="{% static 'js/dashboard.js' %}"></script>
-    <script src="{% static 'js/transaction.js' %}"></script>
+    <script src="{% static 'js/modal.js' %}" defer></script>
+    <script src="{% static 'js/transaction.js' %}"></script> 
     <script src="{% static 'js/month_selector.js' %}"></script>
 </body>
 </html>
