@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'css/transaction.css' %}">
+    <link rel="stylesheet" href="{% static 'css/month_selector.css' %}">
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +23,7 @@
         <!-- Header -->
         <header class="header">
             <div class="header__logo">Money Tracker</div>
-            <button id="openCalendarButton" class="header__calendar">2025 August</button>
+            <button class="header__calendar" onclick=openMonthYearPopup()>2025 August</button>
             <div class="nav-bar">
                 <div class="nav__options">
                     <div class="nav__item">
@@ -427,9 +428,16 @@
     <div id="transactionModal" class="hidden">
         {% include "transaction.html" %}
     </div>
+    
+    
+    <!-- Month Selector Modal -->
+    <div id="monthSelectorModal" class="hidden">
+        {% include "month_selector.html" %}
+    </div>
 
     <!-- ---------------SCRIPTS------------------ -->
     <script src="{% static 'js/dashboard.js' %}"></script>
     <script src="{% static 'js/transaction.js' %}"></script>
+    <script src="{% static 'js/month_selector.js' %}"></script>
 </body>
 </html>

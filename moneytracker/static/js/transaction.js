@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//Handle Type Button the toggle functionality
+//Handle Type Button toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
     const incomeBtn = document.getElementById('incomeBtn');
     const expenseBtn = document.getElementById('expenseBtn');
