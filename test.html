@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal Demo</title>
+  <style>
+    .hidden { display: none; }
+
+/* ---------- Centered Modal ---------- */
+.modal-container {
+  position: fixed;
+  inset: 0;
+  place-items: center;
+  z-index: 1000;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+}
+
+/* ---------- Dropdown Modals ---------- */
+.dropdown-modal {
+  position: absolute;
+  z-index: 2000;
+}
+
+.dropdown-content {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  min-width: 180px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+.data-modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Trigger buttons */
+.trigger-btn {
+  padding: 10px 16px;
+  margin: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.trigger-btn:hover { background: #0056b3; }
+
+    </style>
+</head>
+<body>
+
+  <!-- Trigger Buttons -->
+  <button class="trigger-btn" data-modal-open="monthModal">Select Month</button>
+  <button class="trigger-btn" data-modal-open="settingsModal">Settings</button>
+  <button class="trigger-btn" data-modal-open="navigatorModal">Navigator</button>
+  <button class="trigger-btn" data-modal-open="transactionModal">Open Transaction</button>
+
+  <!-- 1. Month Selector Popup -->
+  <div id="monthModal" class="dropdown-modal hidden" data-modal-type="dropdown">
+    <div class="dropdown-content">
+      <button class="data-modal-close">&times;</button>
+      <h3>Select Month</h3>
+      <select>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- 2. Settings Popup -->
+  <div id="settingsModal" class="dropdown-modal hidden" data-modal-type="dropdown">
+    <div class="dropdown-content">
+      <button class="data-modal-close">&times;</button>
+      <h3>Settings</h3>
+      <p>Profile, theme, logout…</p>
+    </div>
+  </div>
+
+  <!-- 3. Navigator Popup -->
+  <div id="navigatorModal" class="dropdown-modal hidden" data-modal-type="dropdown">
+    <div class="dropdown-content">
+      <button class="data-modal-close">&times;</button>
+      <h3>Navigator</h3>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. Transaction Modal (centered) -->
+  <div id="transactionModal" class="modal-container hidden" data-modal-type="center">
+    <div class="modal-overlay" data-modal-overlay>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Transaction</h3>
+          <button class="data-modal-close">&times;</button>
+        </div>
+        <p>Transaction details here…</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-modal-open]").forEach((btn) => {
+    const targetId = btn.getAttribute("data-modal-open");
+    const container = document.getElementById(targetId);
+    if (!container) return;
+
+    const modalType = container.dataset.modalType || "center";
+    const closeBtn = container.querySelector(".data-modal-close");
+
+    // ---- Open logic ----
+    const open = () => {
+      container.classList.remove("hidden");
+      if (modalType === "dropdown") {
+        positionDropdown(container, btn);
+        document.addEventListener("click", outsideClick);
+      }
+    };
+
+    // ---- Close logic ----
+    const close = () => {
+      container.classList.add("hidden");
+      if (modalType === "dropdown") {
+        document.removeEventListener("click", outsideClick);
+      }
+    };
+
+    const outsideClick = (e) => {
+      if (!container.contains(e.target) && !btn.contains(e.target)) {
+        close();
+      }
+    };
+
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (container.classList.contains("hidden")) open();
+      else close();
+    });
+
+    closeBtn?.addEventListener("click", close);
+
+    // Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+  });
+});
+
+// --- Helper to place dropdown under button ---
+function positionDropdown(container, trigger) {
+  const rect = trigger.getBoundingClientRect();
+  container.style.top = `${rect.bottom + window.scrollY + 6}px`;
+  container.style.left = `${rect.left + window.scrollX}px`;
+}
+
+  </script>
+</body>
+</html>

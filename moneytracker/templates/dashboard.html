@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'css/modal.css' %}">
-    <link rel="stylesheet" href="{% static 'css/transaction.css' %}">
-    <link rel="stylesheet" href="{% static 'css/month_selector.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/transaction.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/month_selector.css' %}"> -->
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -418,7 +418,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -426,20 +425,101 @@
     <!-- ---------------MODALS------------------ -->
 
     <!-- Transaction Modal -->
-    <div id="transactionModal" class="modal-container hidden" role="dialog" aria-modal="true">
-        {% include "transaction.html" %}
+    <div id="transactionModal" class="modal-container hidden" data-modal-type="center">
+        <div class="modal-overlay" data-modal-overlay>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="form-title">Add new transaction</div>
+                    <button class="data-modal-close">&times;</button>
+                </div>
+                
+                <div class="transaction-type">
+                    <button id="incomeBtn" class="type-btn">Income</button>
+                    <button id="expenseBtn" class="type-btn expense">Expense</button>
+                </div>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="input-header">Date</div>
+                        <input type="date" id="transactionDate" name="transactionDate">
+                    </div>
+                    <div class="form-group">
+                        <div class="input-header">Category</div>
+                        <select name="category" id="category">
+                        <option value="">Select category</option>
+                        <option value="food">Food</option>
+                        <option value="travel">Travel</option>
+                        <option value="salary">Salary</option>
+                        <option value="shopping">Shopping</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-header">Amount</div>
+                        <input type="number" name="amount" placeholder="₹Amount" required>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-header">Note</div>
+                        <input type="text" name="note" placeholder="Note">
+                    </div>
+
+
+                    <div class="form-actions">
+                        <button type="submit" name="save" class="save-btn">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     
     
     <!-- Month Selector Modal -->
-    <div id="monthSelectorModal" class="modal-container hidden" role="dialog" aria-modal="true">
-        {% include "month_selector.html" %}
+    <div id="monthSelectorModal" class="dropdown-modal hidden" data-modal-type="dropdown">
+        <div class="dropdown-content">
+            <div class="modal-header">
+                <button class="data-modal-close">&times;</button>
+            </div>
+            
+            <div class="selector-container">
+                <!-- Month Selector -->
+                <div class="selector-group">
+                    <div class="selector-label">Month</div>
+                    <select id="monthSelect" class="selector-dropdown">
+                        <option value="0">January</option>
+                        <option value="1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
+                    </select>
+                </div>
+                
+                <!-- Year Selector -->
+                <div class="selector-group">
+                    <div class="selector-label">Year</div>
+                    <select id="yearSelect" class="selector-dropdown">
+                        <!-- Years will be populated by JavaScript -->
+                    </select>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="action-btn cancel-btn" onclick="closeMonthYearPopup()">Cancel</button>
+                <button class="action-btn apply-btn" onclick="applyDateSelection()">Apply</button>
+            </div>
+        </div>
     </div>
 
     <!-- ---------------SCRIPTS------------------ -->
     <script src="{% static 'js/dashboard.js' %}"></script>
     <script src="{% static 'js/modal.js' %}" defer></script>
-    <script src="{% static 'js/transaction.js' %}"></script> 
-    <script src="{% static 'js/month_selector.js' %}"></script>
 </body>
 </html>

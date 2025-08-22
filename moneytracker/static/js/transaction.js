@@ -17,22 +17,3 @@
 // });
 
 
-//Handle Type Button toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const incomeBtn = document.getElementById('incomeBtn');
-    const expenseBtn = document.getElementById('expenseBtn');
-    
-    // Set initial state - income is default
-    incomeBtn.classList.add('active', 'income');
-    expenseBtn.classList.remove('active');
-    
-    incomeBtn.addEventListener('click', function() {
-        this.classList.add('active', 'income');
-        expenseBtn.classList.remove('active');
-    });
-    
-    expenseBtn.addEventListener('click', function() {
-        this.classList.add('active', 'expense');
-        incomeBtn.classList.remove('active');
-    });
-});
