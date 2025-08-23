@@ -60,8 +60,8 @@
                         </div>
                 
                         <div class="buttons">
-                            <button class="selector-button cancel" onclick=closeModal()>Cancel</button>
-                            <button class="selector-button" onclick="applyDateSelection()">Apply</button>
+                            <button class="selector-button cancel" data-modal-close>Cancel</button>
+                            <button class="selector-button" onclick=applyMonthSelection()>Apply</button>
                         </div>
                     </div>
                 </div>
@@ -479,7 +479,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <div class="form-title">Add new transaction</div>
-                    <button class="data-modal-close">&times;</button>
+                    <button class="data-modal-close" data-modal-close>&times;</button>
                 </div>
                 
                 <div class="transaction-type">

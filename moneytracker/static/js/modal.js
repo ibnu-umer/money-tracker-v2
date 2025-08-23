@@ -1,119 +1,99 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Initialize all modals
     document.querySelectorAll("[data-modal-open]").forEach((btn) => {
         const targetId = btn.getAttribute("data-modal-open");
-        const container = document.getElementById(targetId);
-        if (!container) return;
+        const modal = document.getElementById(targetId);
+        if (!modal) return;
 
-        const modalType = container.dataset.modalType || "center";
-        const closeBtn = container.querySelector(".data-modal-close");
+        const modalType = modal.dataset.modalType || "center";
+        const closeBtn = modal.querySelector("[data-modal-close]");
 
         const open = () => {
-        container.classList.remove("hidden");
-            if (modalType === "dropdown" || modalType === "center") {
-                document.addEventListener("click", outsideClick);
-            }
-            // if (modalType === "dropdown" && container.dataset.align === "center") {
-            //     positionDropdown(container, btn);
-            // }
+            modal.classList.remove("hidden");
+            document.addEventListener("keydown", escClose);
+            document.addEventListener("click", outsideClick);
 
-            // Populate year select 
             if (targetId === "monthSelectorModal") {
                 populateYears();
             }
         };
 
         const close = () => {
-            container.classList.add("hidden");
-            if (modalType === "dropdown") {
-                document.removeEventListener("click", outsideClick);
-            }
+            modal.classList.add("hidden");
+            document.removeEventListener("keydown", escClose);
+            document.removeEventListener("click", outsideClick);
         };
 
-        // For center modals: close when clicking overlay
+        // Centered modal → close on overlay click
         if (modalType === "center") {
-            const overlay = container.querySelector("[data-modal-overlay]");
+            const overlay = modal.querySelector("[data-modal-overlay]");
             overlay?.addEventListener("click", (e) => {
-                if (e.target === overlay) {
-                    close();
-                }
+                if (e.target === overlay) close();
             });
-        };
+        }
 
         const outsideClick = (e) => {
-            if (!container.contains(e.target) && !btn.contains(e.target)) {
+            if (!modal.contains(e.target) && !btn.contains(e.target)) {
                 close();
             }
         };
 
-        // Toggle on button click
+        const escClose = (e) => {
+            if (e.key === "Escape") close();
+        };
+
+        // Toggle modal on button click
         btn.addEventListener("click", (e) => {
             e.stopPropagation();
-            if (container.classList.contains("hidden")) open();
-            else close();
+            modal.classList.contains("hidden") ? open() : close();
         });
 
-        // Close button (×)
+        // Close button
         closeBtn?.addEventListener("click", close);
-
-        // Escape key
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") close();
-        });
     });
 });
 
+document.addEventListener("click", (e) => {
+    if (e.target.matches("[data-modal-close]")) {
+        const modal = e.target.closest(".monthselecor-modal");
+        if (modal) {
+            modal.classList.add("hidden"); 
+        }
+    }
+});
 
-// --- Helper to place dropdown under button ---
-function positionDropdown(container, trigger) {
-    
-    const rect = trigger.getBoundingClientRect();
-    const align = container.dataset.align || "left"; // default: left
 
-    const top = rect.bottom + window.scrollY + 6;
-    let left = rect.left + window.scrollX + (rect.width / 2) - (container.offsetWidth / 2);
 
-    container.style.position = "absolute";
-    container.style.top = `${top}px`;
-    container.style.left = `${left}px`;
+// -------------Transaction Modal-----------------------
+const incomeBtn = document.getElementById("incomeBtn");
+const expenseBtn = document.getElementById("expenseBtn");
+
+if (incomeBtn && expenseBtn) {
+    incomeBtn.classList.add("active", "income");
+    incomeBtn.addEventListener("click", () => {
+        incomeBtn.classList.add("active", "income");
+        expenseBtn.classList.remove("active", "expense");
+    });
+    expenseBtn.addEventListener("click", () => {
+        expenseBtn.classList.add("active", "expense");
+        incomeBtn.classList.remove("active", "income");
+    });
 }
 
 
-// -----------------Transaction-----------------------
 
-//Handle Type Button toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const incomeBtn = document.getElementById('incomeBtn');
-    const expenseBtn = document.getElementById('expenseBtn');
-    
-    // Set initial state - income is default
-    incomeBtn.classList.add('active', 'income');
-    expenseBtn.classList.remove('active');
-    
-    incomeBtn.addEventListener('click', function() {
-        this.classList.add('active', 'income');
-        expenseBtn.classList.remove('active');
-    });
-    
-    expenseBtn.addEventListener('click', function() {
-        this.classList.add('active', 'expense');
-        incomeBtn.classList.remove('active');
-    });
-});
-
-
-// --------------------Month Selector----------------------------
+/* -------------------- Month Selector -------------------- */
 
 // Populate years dropdown (current year ± 10 years)
 function populateYears() {
-    const yearSelect = document.getElementById('yearSelect');
+    const yearSelect = document.getElementById("yearSelect");
+    if (!yearSelect) return;
+
     const currentYear = new Date().getFullYear();
-    const startYear = currentYear - 10;
-    const endYear = currentYear + 10;
-    
-    yearSelect.innerHTML = ''; // Clear existing options
-    
-    for (let year = startYear; year <= endYear; year++) {
-        const option = document.createElement('option');
+    yearSelect.innerHTML = "";
+
+    for (let year = currentYear - 10; year <= currentYear + 10; year++) {
+        const option = document.createElement("option");
         option.value = year;
         option.textContent = year;
         yearSelect.appendChild(option);
@@ -122,45 +102,24 @@ function populateYears() {
 
 // Apply selected date
 function applyMonthSelection() {
-    const monthSelect = document.getElementById('monthSelect');
-    const yearSelect = document.getElementById('yearSelect');
-    
+    const monthSelect = document.getElementById("monthSelect");
+    const yearSelect = document.getElementById("yearSelect");
+    if (!monthSelect || !yearSelect) return;
+
     const selectedMonth = parseInt(monthSelect.value);
     const selectedYear = parseInt(yearSelect.value);
-    
-    // Get month name
+
     const monthNames = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
+        "January","February","March","April","May","June",
+        "July","August","September","October","November","December"
     ];
-    
-    const selectedMonthName = monthNames[selectedMonth];
-    const selectedDate = ` ${selectedYear}  ${selectedMonthName}`;
-    
-    document.getElementById('openMonthYear').textContent = `${selectedDate}`;
-    document.getElementById("monthSelectorModal").classList.add("hidden");
+
+    const selectedDate = `${selectedYear} ${monthNames[selectedMonth]}`;
+    document.getElementById("openMonthYear").textContent = selectedDate;
+    closeModal("monthSelectorModal");
 }
 
-
-function closeModal() {
-    document.getElementById("monthSelectorModal").classList.add("hidden");
+function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.classList.add("hidden");
 }
-
-
-
-
-
-
-// const btn = document.getElementById("profileButton");
-// const popup = document.getElementById("profileModal");
-
-// btn.addEventListener("click", () => {
-//     popup.style.display = popup.style.display === "block" ? "none" : "block";
-// });
-
-// // Close popup if clicked outside
-// window.addEventListener("click", (e) => {
-//     if (!btn.contains(e.target) && !popup.contains(e.target)) {
-//     popup.style.display = "none";
-//     }
-// });
