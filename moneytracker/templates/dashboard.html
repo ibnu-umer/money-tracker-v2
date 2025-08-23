@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'css/modal.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'css/transaction.css' %}"> -->
-    <!-- <link rel="stylesheet" href="{% static 'css/month_selector.css' %}"> -->
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -477,13 +475,19 @@
     
     <!-- Month Selector Modal -->
     <div id="monthSelectorModal" class="dropdown-modal hidden" data-modal-type="dropdown">
-        <div class="dropdown-content">
+        <div class="modal-content">
             <div class="modal-header">
-                <button class="data-modal-close">&times;</button>
+                <div class="form-title">Select Month&Year</div>
             </div>
             
-            <div class="selector-container">
-                <!-- Month Selector -->
+            <div class="selector-content">
+                <div class="selector-group">
+                    <div class="selector-label">Year</div>
+                    <select id="yearSelect" class="selector-dropdown">
+                        <!-- Years will be populated by JavaScript -->
+                    </select>
+                </div>
+
                 <div class="selector-group">
                     <div class="selector-label">Month</div>
                     <select id="monthSelect" class="selector-dropdown">
@@ -501,19 +505,11 @@
                         <option value="11">December</option>
                     </select>
                 </div>
-                
-                <!-- Year Selector -->
-                <div class="selector-group">
-                    <div class="selector-label">Year</div>
-                    <select id="yearSelect" class="selector-dropdown">
-                        <!-- Years will be populated by JavaScript -->
-                    </select>
-                </div>
             </div>
-            
-            <div class="action-buttons">
-                <button class="action-btn cancel-btn" onclick="closeMonthYearPopup()">Cancel</button>
-                <button class="action-btn apply-btn" onclick="applyDateSelection()">Apply</button>
+    
+            <div class="buttons">
+                <button class="selector-button cancel" onclick=closeModal()>Cancel</button>
+                <button class="selector-button" onclick="applyDateSelection()">Apply</button>
             </div>
         </div>
     </div>

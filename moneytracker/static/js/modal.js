@@ -138,3 +138,9 @@ function applyDateSelection() {
     document.getElementById('openMonthYear').textContent = `${selectedDate}`;
     document.getElementById("monthSelectorModal").classList.add("hidden");
 }
+
+
+
+function closeModal() {
+    document.getElementById("monthSelectorModal").classList.add("hidden");
+}

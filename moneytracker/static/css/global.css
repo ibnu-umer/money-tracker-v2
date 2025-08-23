@@ -40,10 +40,12 @@
     --color-danger: #ff4d4f;       
     --color-warning: #ffcc00;      
     --color-info: #0a067d;         
-    --color-shadow-status: #1200da;
+    --color-shadow-status:  #1200da;
     --color-shadow-card: #0714a7;
     --color-statistics-card: #05016a;
     --color-sg-progress: #107509;
+    --color-modal-bg: #00007f;
+    --color-input-bg: #0e0e5f;
 
     /* Typography (fluid) */
     --fs-status-label: clamp(8px, 1vw, 12px);
@@ -55,13 +57,16 @@
     --fs-card-details: clamp(10px, 1.1vw, 12px);
     --fs-advice-title: clamp(12px, 1vw, 14px);
     --fs-advice-text: clamp(12px, 1.2vw, 14px);
+    --fs-modal-label: clamp(10px, 1vw, 12px);
+    --fs-transaction-type: clamp(12, 1.2vw, 14px);
     --donut-percentage: clamp(16px, 1.6vw, 18px);
     --donut-note: clamp(10px, 1.2vw, 12px);
 
     /* Spacing & Radius */
     --radius-card: 12px;
+    --radius-btn: 6px;
     --radius-circle: 50%;     
-    --radius-pill: 999px;     
+    --radius-pill: 999px;  
     --gap-xsmall: 4px;
     --gap-small: 8px;
     --gap-medium: 12px;
@@ -81,6 +86,7 @@
     --donut-inner-size: 45px;
     --sg-donut-size: 130px;
     --sg-donut-inner-size: 115px;
+
 
     /* Breakpoints */
     --bp-mobile: 512px;       

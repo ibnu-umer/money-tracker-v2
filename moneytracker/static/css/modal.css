@@ -1,12 +1,13 @@
 .hidden {
-  display: none;
+    display: none;
 }
 
+/* ---------------Center Modal----------------- */
 .modal-container {
-  position: fixed;
-  inset: 0;
-  place-items: center;
-  z-index: 1000;
+    position: fixed;
+    inset: 0;
+    place-items: center;
+    z-index: 1000;
 }
 
 .modal-overlay {
@@ -18,24 +19,14 @@
     justify-content:center
 }
 
-/* -------------------------------- */
-
+/* ---------------Dropdown Modal----------------- */
 .dropdown-modal {
-  position: absolute;
-  z-index: 2000;
+    position: absolute;
+    z-index: 2000;
 }
 
-.dropdown-content {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 12px;
-  min-width: 180px;
-  box-shadow: 0 5px 15px rgba(0,0,0,.2);
-}
 
-/* -------------------------------------------- */
-
+/* -----------------Base Classes--------------- */
 .data-modal-close {
     background: none;
     border: none;
@@ -55,11 +46,12 @@
 }
 
 .modal-content {
-    background: #050550;  
-    border-radius: 12px;
-    padding: 20px;
+    background: var(--modal-bg);  
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-black);
+    padding: var(--spacing-lg);
     width: 300px;
-    color: #fff;
+    color: var(--color-text-primary);
     position: relative;
     text-align: center;
 }
@@ -68,32 +60,95 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-lg);
 }
-
-
-
-/* Transaction Modal */
 
 .form-title {
-    font-size: 14px;
-    font-style: italic;
-    color: #aaa;
+    font-size: var(--fs-card-title);
+    color: var(--color-text-secondary);
+    font-weight: bold;
     text-align: left;
+    font-style: italic;
 }
 
+input, select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-btn);
+    border: none;
+    background: var(--input-bg);
+    color: var(--color-text-primary);
+    outline: none;
+    font-size: var(--fs-card-text);
+    font-weight: bold;
+}
+input::placeholder {
+    color: var(--color-text-secondary);
+}
+
+
+
+/* ----------Month Selector Modal------------ */
+.selector-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.selector-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.selector-label {
+    text-align: left;
+    font-size: var(--fs-modal-label);
+    color: var(--color-text-secondary);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.selector-button {
+    width: 100%;
+    padding: var(--spacing-xs);
+    background: #0077ff;
+    border-radius: var(--radius-btn);
+    border: none;
+    font-size: var(--fs-card-text);
+}
+.selector-button:hover {
+    background: #025abe;
+}
+
+.cancel {
+    background: #9f9f9f;
+}
+.cancel:hover {
+    background: #767575;
+}
+
+
+
+
+
+/* ----------Transaction Modal------------ */
 .transaction-type {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-bottom: 15px;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--gap-medium);
 }
 
 .type-btn {
     background: transparent;
     border: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: var(--fs-transaction-type);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -101,64 +156,53 @@
 .type-btn:not(.active) {
     color: #888;
 }
-
 .type-btn.income.active {
     color: rgb(0, 218, 0);
 }
-
 .type-btn.expense.active {
     color: red;
 }
 
-
-
 .form-group {
     justify-items: left;
-    margin-bottom: 12px;
+    margin-bottom: var(--spacing-sm);
 }
 
 .input-header {
-    font-size: 10px;
-    margin-left: 8px;
+    font-size: var(--fs-modal-label);
+    margin-left: var(--spacing-sm);
 }
 
 input, select {
     width: 100%;
-    padding: 8px;
-    border-radius: 6px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-btn);
     border: none;
-    background: #121272;
-    color: white;
+    background: var(--input-bg);
+    color: var(--color-text-primary);
     outline: none;
+    font-size: var(--fs-card-text);
 }
 input::placeholder {
-    color: #ccc;
+    color: var(--color-text-secondary);
 }
 
 .form-actions {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-.save-btn {
-    background: #00d000;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    color: black;
-    margin-top: 20px;
-}
-.save-btn:hover {
-    background: #00b000;
+    gap: var(--gap-small);
 }
 
-.open-btn {
-    background: #0077ff;
-    color: white;
+.save-btn {
+    background: var(--color-success);
     border: none;
-    padding: 10px 15px;
-    border-radius: 6px;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-btn);
+    font-weight: bold;
     cursor: pointer;
+    color: var(--color-text-primary);
+    margin-top: var(--spacing-lg);
+}
+.save-btn:hover {
+    background: #049b04;
 }
