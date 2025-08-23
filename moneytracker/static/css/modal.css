@@ -26,7 +26,22 @@
 }
 
 
-/* -----------------Base Classes--------------- */
+/* -----------------Profile Modal------------------ */
+.profile-modal {
+    display: none;
+    position: absolute;
+    top: 30px; 
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    width: 250px;
+    z-index: 1000;
+}
+
+
+/* -----------------Base Classes--------------------- */
 .data-modal-close {
     background: none;
     border: none;

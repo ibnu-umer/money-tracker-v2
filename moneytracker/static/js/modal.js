@@ -139,3 +139,22 @@ function applyMonthSelection() {
 function closeModal() {
     document.getElementById("monthSelectorModal").classList.add("hidden");
 }
+
+
+
+
+
+
+const btn = document.getElementById("profileButton");
+const popup = document.getElementById("profileModal");
+
+btn.addEventListener("click", () => {
+    popup.style.display = popup.style.display === "block" ? "none" : "block";
+});
+
+// Close popup if clicked outside
+window.addEventListener("click", (e) => {
+    if (!btn.contains(e.target) && !popup.contains(e.target)) {
+    popup.style.display = "none";
+    }
+});

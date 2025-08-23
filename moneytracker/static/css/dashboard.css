@@ -82,12 +82,20 @@ body {
     object-fit: contain;
 }
 
+.profile-settings {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
 .profile-avatar {
     width: var(--size-avatar);
     height: var(--size-avatar);
     background-color: var(--color-avatar-bg);
     border-radius: 50%;
 }
+
+
 
 .content-section {
     display: flex;
