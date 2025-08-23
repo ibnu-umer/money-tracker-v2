@@ -46,7 +46,7 @@
 }
 
 .modal-content {
-    background: var(--modal-bg);  
+    background: var(--color-modal-bg);  
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-black);
     padding: var(--spacing-lg);
@@ -76,7 +76,7 @@ input, select {
     padding: var(--spacing-sm);
     border-radius: var(--radius-btn);
     border: none;
-    background: var(--input-bg);
+    background: var(--color-input-bg);
     color: var(--color-text-primary);
     outline: none;
     font-size: var(--fs-card-text);
@@ -178,7 +178,7 @@ input, select {
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-btn);
     border: none;
-    background: var(--input-bg);
+    background: var(--color-input-bg);
     color: var(--color-text-primary);
     outline: none;
     font-size: var(--fs-card-text);
