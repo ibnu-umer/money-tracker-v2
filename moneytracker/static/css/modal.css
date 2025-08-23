@@ -44,13 +44,29 @@
 .profile-modal {
     position: absolute;
     top: 40px;
-    background: #fff;
-    border: 1px solid #ccc;
+    background: var(--color-modal-bg);
     border-radius: 6px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     padding: 15px;
     width: var(--width-ps-modal);
     z-index: 1000;
+}
+
+.profile-navigation {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.profile-button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    color: var(--color-text-primary);
+}
+.profile-button:hover {
+    background-color: #130067;
 }
 
 
