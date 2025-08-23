@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (modalType === "dropdown" || modalType === "center") {
                 document.addEventListener("click", outsideClick);
             }
-            if (modalType === "dropdown") {
-                positionDropdown(container, btn);
-            }
+            // if (modalType === "dropdown" && container.dataset.align === "center") {
+            //     positionDropdown(container, btn);
+            // }
 
             // Populate year select 
             if (targetId === "monthSelectorModal") {
@@ -65,11 +65,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- Helper to place dropdown under button ---
 function positionDropdown(container, trigger) {
+    
     const rect = trigger.getBoundingClientRect();
-    container.style.top = `${rect.bottom + window.scrollY + 6}px`;
-    container.style.left = `${rect.left + window.scrollX}px`;
-}
+    const align = container.dataset.align || "left"; // default: left
 
+    const top = rect.bottom + window.scrollY + 6;
+    let left = rect.left + window.scrollX + (rect.width / 2) - (container.offsetWidth / 2);
+
+    container.style.position = "absolute";
+    container.style.top = `${top}px`;
+    container.style.left = `${left}px`;
+}
 
 
 // -----------------Transaction-----------------------
@@ -145,16 +151,16 @@ function closeModal() {
 
 
 
-const btn = document.getElementById("profileButton");
-const popup = document.getElementById("profileModal");
+// const btn = document.getElementById("profileButton");
+// const popup = document.getElementById("profileModal");
 
-btn.addEventListener("click", () => {
-    popup.style.display = popup.style.display === "block" ? "none" : "block";
-});
+// btn.addEventListener("click", () => {
+//     popup.style.display = popup.style.display === "block" ? "none" : "block";
+// });
 
-// Close popup if clicked outside
-window.addEventListener("click", (e) => {
-    if (!btn.contains(e.target) && !popup.contains(e.target)) {
-    popup.style.display = "none";
-    }
-});
+// // Close popup if clicked outside
+// window.addEventListener("click", (e) => {
+//     if (!btn.contains(e.target) && !popup.contains(e.target)) {
+//     popup.style.display = "none";
+//     }
+// });

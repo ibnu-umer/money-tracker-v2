@@ -87,6 +87,9 @@
     --sg-donut-size: 130px;
     --sg-donut-inner-size: 115px;
 
+    /* Modal */
+    --width-ms-modal: clamp(220px, 40vw, 300px);
+    --width-ps-modal: clamp(180px, 25vw, 250px);
 
     /* Breakpoints */
     --bp-mobile: 512px;       

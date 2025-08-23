@@ -20,23 +20,36 @@
 }
 
 /* ---------------Dropdown Modal----------------- */
-.dropdown-modal {
+.month-selector {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.monthselector-modal {
     position: absolute;
-    z-index: 2000;
+    z-index: 1000;
+    top: 40px;
+    width: var(--width-ms-modal);
 }
 
 
 /* -----------------Profile Modal------------------ */
+.profile-settings {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
 .profile-modal {
-    display: none;
     position: absolute;
-    top: 30px; 
+    top: 40px;
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 6px;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     padding: 15px;
-    width: 250px;
+    width: var(--width-ps-modal);
     z-index: 1000;
 }
 
@@ -65,7 +78,6 @@
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-black);
     padding: var(--spacing-lg);
-    width: 300px;
     color: var(--color-text-primary);
     position: relative;
     text-align: center;
