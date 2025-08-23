@@ -476,49 +476,51 @@
     <!-- Transaction Modal -->
     <div id="transactionModal" class="modal-container hidden" data-modal-type="center">
         <div class="modal-overlay" data-modal-overlay>
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="form-title">Add new transaction</div>
-                    <button class="data-modal-close" data-modal-close>&times;</button>
+            <div class="transaction-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="form-title">Add new transaction</div>
+                        <button class="data-modal-close" data-modal-close>&times;</button>
+                    </div>
+                    
+                    <div class="transaction-type">
+                        <button id="incomeBtn" class="type-btn">Income</button>
+                        <button id="expenseBtn" class="type-btn expense">Expense</button>
+                    </div>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="input-header">Date</div>
+                            <input type="date" id="transactionDate" name="transactionDate">
+                        </div>
+                        <div class="form-group">
+                            <div class="input-header">Category</div>
+                            <select name="category" id="category">
+                            <option value="">Select category</option>
+                            <option value="food">Food</option>
+                            <option value="travel">Travel</option>
+                            <option value="salary">Salary</option>
+                            <option value="shopping">Shopping</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-header">Amount</div>
+                            <input type="number" name="amount" placeholder="₹Amount" required>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-header">Note</div>
+                            <input type="text" name="note" placeholder="Note">
+                        </div>
+
+
+                        <div class="form-actions">
+                            <button type="submit" name="save" class="save-btn">Save</button>
+                        </div>
+                    </form>
                 </div>
-                
-                <div class="transaction-type">
-                    <button id="incomeBtn" class="type-btn">Income</button>
-                    <button id="expenseBtn" class="type-btn expense">Expense</button>
-                </div>
-
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <div class="input-header">Date</div>
-                        <input type="date" id="transactionDate" name="transactionDate">
-                    </div>
-                    <div class="form-group">
-                        <div class="input-header">Category</div>
-                        <select name="category" id="category">
-                        <option value="">Select category</option>
-                        <option value="food">Food</option>
-                        <option value="travel">Travel</option>
-                        <option value="salary">Salary</option>
-                        <option value="shopping">Shopping</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="input-header">Amount</div>
-                        <input type="number" name="amount" placeholder="₹Amount" required>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="input-header">Note</div>
-                        <input type="text" name="note" placeholder="Note">
-                    </div>
-
-
-                    <div class="form-actions">
-                        <button type="submit" name="save" class="save-btn">Save</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

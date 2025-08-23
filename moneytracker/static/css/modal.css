@@ -54,6 +54,12 @@
 }
 
 
+/* --------------Transaction Modal---------------- */
+.transaction-modal {
+    width: var(--width-tr-modal);
+}
+
+
 /* -----------------Base Classes--------------------- */
 .data-modal-close {
     background: none;

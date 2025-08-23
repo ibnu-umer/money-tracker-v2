@@ -90,6 +90,7 @@
     /* Modal */
     --width-ms-modal: clamp(220px, 40vw, 300px);
     --width-ps-modal: clamp(180px, 25vw, 250px);
+    --width-tr-modal: clamp(250px, 25vw, 350px);
 
     /* Breakpoints */
     --bp-mobile: 512px;       
