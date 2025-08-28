@@ -1,0 +1,75 @@
+{% load static %}
+<header class="header">
+    <div class="header__logo">Money Tracker</div>
+
+    {% if request.path == "/" %}
+        <div class="month-selector">
+            <button id="openMonthYear" data-modal-open="monthSelectorModal" class="header__calendar">2025 August</button>
+            <!-- Month Selector Modal -->  
+            <div id="monthSelectorModal" class="monthselector-modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="form-title">Select Month&Year</div>
+                    </div>
+                        
+                    <div class="selector-content">
+                        <div class="selector-group">
+                            <div class="selector-label">Year</div>
+                            <select id="yearSelect" class="selector-dropdown">
+                                <!-- Years will be populated by JavaScript -->
+                            </select>
+                        </div>
+
+                        <div class="selector-group">
+                            <div class="selector-label">Month</div>
+                            <select id="monthSelect" class="selector-dropdown">
+                                <option value="0">January</option>
+                                <option value="1">February</option>
+                                <option value="2">March</option>
+                                <option value="3">April</option>
+                                <option value="4">May</option>
+                                <option value="5">June</option>
+                                <option value="6">July</option>
+                                <option value="7">August</option>
+                                <option value="8">September</option>
+                                <option value="9">October</option>
+                                <option value="10">November</option>
+                                <option value="11">December</option>
+                            </select>
+                        </div>
+                    </div>
+            
+                    <div class="buttons">
+                        <button class="selector-button cancel" data-modal-close>Cancel</button>
+                        <button class="selector-button" onclick=applyMonthSelection()>Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="nav-bar">
+        <div class="nav__options">
+            <a href="{% url 'transactions' %}" class="nav__item">
+                <img src="{%static 'icons/setting.png' %}" alt="Filter transactions" class="nav__icon" />Filter
+            </a>
+            <a href="{% url 'dashboard' %}" class="nav__item">
+                <img src="{%static 'icons/setting.png' %}" alt="Manage accounts" class="nav__icon" />Accounts
+            </a>
+            <div class="nav__item">
+                <img src="{%static 'icons/setting.png' %}" alt="Manage categories" class="nav__icon" />Categories
+            </div>
+        </div>
+        <div class="profile-settings">
+            <button class="profile-avatar" id="profileButton" data-modal-open="profileModal"></button>
+
+            <div class="profile-modal hidden" id="profileModal" data-modal-type="dropdown" data-align="right">
+                <div class="profile-navigation">
+                    <button type="button" class="profile-button">Edit Profile</button>
+                    <button type="button" class="profile-button">Account Settings</button>
+                    <button type="button" class="profile-button">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

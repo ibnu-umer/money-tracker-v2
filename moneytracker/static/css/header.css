@@ -1,0 +1,82 @@
+/* Header  */
+/* ---------------------------------------------- */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header__logo {
+    font-weight: 800;
+    font-size: var(--fs-logo);
+}
+
+.header__calendar {
+    font-weight: 700;
+    font-size: var(--fs-calendar);
+    color: var(--color-text-primary);
+    background-color: var(--color-calendar-bg);
+    border-radius: 12px;
+    padding: 6px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-nav);
+}
+
+.nav__options {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav__item {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-item);
+    font-size: var(--fs-nav-item);
+    font-weight: 400;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.nav__item:hover {
+    opacity: 0.8;
+}
+
+.nav__icon {
+    width: var(--size-icon);
+    height: var(--size-icon);
+    object-fit: contain;
+}
+
+.profile-avatar {
+    width: var(--size-avatar);
+    height: var(--size-avatar);
+    background-color: var(--color-avatar-bg);
+    border-radius: 50%;
+}
+
+
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.top-content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+} 
+
+
