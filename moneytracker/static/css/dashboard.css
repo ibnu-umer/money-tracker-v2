@@ -213,6 +213,11 @@ body {
     overflow-y: auto;
 }
 
+.account-row {
+    display: flex;
+    justify-content: space-between;
+}
+
 .account-labels,
 .account-amounts {
     font-family: var(--font-main);
