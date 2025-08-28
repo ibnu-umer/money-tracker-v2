@@ -825,10 +825,6 @@
 /* -------------------------------------------------- */
 
 @media (min-width: 0px) {
-    .main-container {
-        padding: var(--main-border);
-    }
-
     .nav__options {
         display: none;
     }
@@ -890,10 +886,6 @@
 
 
 @media (min-width: 548px) {
-    .main-container {
-        padding: var(--main-border);
-    }
-
     .transaction-details {
         flex-direction: row;
     }
@@ -905,10 +897,6 @@
 
 /* Small tablets & above (≥ 768px) */
 @media (min-width: 768px) {
-    .main-container {
-        padding: var(--main-border);
-    }
-    
     .nav__options {
         display: flex;
     }
@@ -953,10 +941,6 @@
 
 
 @media (min-width: 1024px) {
-    .main-container {
-        padding: var(--main-border);
-    }
-
     .transaction-item {
         height: 50px;
     }

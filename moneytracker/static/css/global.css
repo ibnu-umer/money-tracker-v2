@@ -101,6 +101,35 @@
 
 
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.main-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+
 /* Global scrollbar styles */
 /* ------------------------------------------------ */
 /* Firefox */
@@ -127,4 +156,30 @@
 
 *::-webkit-scrollbar-thumb:hover {
   background-color: #2196f3; 
+}
+
+
+
+@media (min-width: 0px) {
+    .main-container {
+        padding: var(--main-border);
+    }
+}
+
+@media (min-width: 548px) {
+    .main-container {
+        padding: var(--main-border);
+    }
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        padding: var(--main-border);
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-container {
+        padding: var(--main-border);
+    }
 }
