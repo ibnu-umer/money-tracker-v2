@@ -61,11 +61,15 @@
     --fs-transaction-type: clamp(12, 1.2vw, 14px);
     --donut-percentage: clamp(16px, 1.6vw, 18px);
     --donut-note: clamp(10px, 1.2vw, 12px);
+    --fs-filtered-item: clamp(9px, 1.1vw, 11px);
+    --fs-sidebar-title: clamp(14px, 1.8vw, 18px);
+    --fs-table-content: clamp(10px, 1.7vw, 14px);
 
     /* Spacing & Radius */
     --radius-card: 12px;
     --radius-btn: 6px;
-    --radius-circle: 50%;     
+    --radius-circle: 50%;   
+    --radius-filtered-item: 16px;  
     --radius-pill: 999px;  
     --gap-xsmall: 4px;
     --gap-small: 8px;
@@ -80,6 +84,7 @@
 
     /* Widget sizes */
     --budget-item-width: clamp(230px, 2.5vw, 280px);
+    --sidebar-width: clamp(200px, 30vw, 300px);
 
     /* Donut Progress */
     --donut-size: 70px;       

@@ -2,43 +2,44 @@
     width: 100%;
 }
 
+/* Filter bar */
+/* ------------------------------------------ */
+
 .toggle-btn {
-    top: 15px;
-    left: 15px;
     background: transparent;
-    color: #fff;
+    color: var(--color-text-primary);
     border: none;
     cursor: pointer;
-    border-radius: 4px;
+    font-size: var(--fs-card-text);
 }
 
 .filter-bar {
     display: flex;
     flex-direction: row;
-    gap: 15px;
-    padding: 5px 10px;
+    gap: var(--gap-large);
+    padding: var(--spacing-xs) var(--spacing-sm);
     width: 100%;
-    margin-top: 5px;
+    margin-top: var(--gap-item);
 }
 
 .filtered-section {
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: var(--gap-item);
 }
 
 .filtered-items {
     display: flex;
     flex-direction: row;
-    gap: 5px;
-    border-radius: 16px;
+    gap: var(--gap-item);
+    border-radius: var(--radius-filtered-item);
     border: 0.7px solid #0000ff;
-    padding: 3px 12px;
+    padding: var(--spacing-xs) var(--spacing-md);
     width: fit-content;
 }
 
 .filtered-item {
-    font-size: 11px;
+    font-size: var(--fs-filtered-item);
 }
 
 .filtered-close {
@@ -50,15 +51,19 @@
     line-height: 10px;
 }
 
+
+/* Sidebar */
+/* ----------------------------------- */
+
 .sidebar {
-    width: 250px;
+    width: var(--sidebar-width);
     background: #0e18a1;
     color: #fff;
     height: 100vh;
-    padding: 20px;
+    padding: var(--spacing-lg);
     position: fixed;
     top: 0;
-    left: -250px; /* Hidden by default */
+    left: calc(-1 * var(--sidebar-width)); /* Hide based on actual width */
     transition: left 0.3s ease;
     z-index: 1000; /* ensures it appears above content */
 }
@@ -74,22 +79,23 @@
 }
 
 .sidebar-title {
-    font: 14px;
+    font-size: var(--fs-sidebar-title);
+    font-weight: bold;
 }
 
 .close-button {
-    width: 15px;
-    height: 15px;
+    background: transparent;
+    color: var(--color-text-primary);
+    border: none;
     cursor: pointer;
 }
 
 .sidebar a {
     display: block;
-    color: #fff;
+    color: var(--color-text-primary);
     text-decoration: none;
-    margin: 10px 0;
-    padding: 8px;
-    border-radius: 4px;
+    margin: var(--gap-medium) 0;
+    padding: var(--spacing-sm);
 }
 
 .sidebar a:hover {
@@ -97,24 +103,25 @@
 }
 
 
-
+/* Transaction Table */
+/* -------------------------------------- */
 table {
     width: 100%;
     border-collapse: collapse;
-    border-radius: 10px;
+    border-radius: var(--radius-card);
     overflow: hidden;
-    margin: 0 20px;
+    margin: 0 var(--spacing-lg);
 }
 
 thead {
     background: #007bff;
-    color: #fff;
+    color: var(--color-text-primary);
 }
 
 th, td {
     padding: 10px;
     text-align: left;
-    font-size: 12px;
+    font-size: var(--fs-table-content);
 }
 
 th {
@@ -125,8 +132,8 @@ th button {
     background: none;
     border: none;
     color: white;
-    font-size: 11px;
-    margin-left: 5px;
+    font-size: var(--fs-filtered-item);
+    margin-left: var(--fs-table-content);
     cursor: pointer;
 }
 
@@ -137,33 +144,3 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background: #1d2d59;
 }
-
-
-
-
-
-
-
-/* Sidebar */
-
-
-
-
-/* Content */
-
-
-/* Toggle button */
-
-
-/* Large screens → sidebar beside content
-@media (min-width: 768px) {
-    .sidebar {
-    left: 0; /* always visible 
-    }
-    .content {
-    margin-left: 250px; /* push content aside 
-    }
-    .toggle-btn {
-    display: none; /* hide toggle button 
-    }
-} */
