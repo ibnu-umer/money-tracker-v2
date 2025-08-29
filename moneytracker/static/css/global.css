@@ -63,6 +63,7 @@
     --donut-note: clamp(10px, 1.2vw, 12px);
     --fs-filtered-item: clamp(9px, 1.1vw, 11px);
     --fs-sidebar-title: clamp(14px, 1.8vw, 18px);
+    --fs-sidebar-text: clamp(11px, 1.3vw, 13px);
     --fs-table-content: clamp(10px, 1.7vw, 14px);
 
     /* Spacing & Radius */
@@ -84,7 +85,7 @@
 
     /* Widget sizes */
     --budget-item-width: clamp(230px, 2.5vw, 280px);
-    --sidebar-width: clamp(200px, 30vw, 300px);
+    --sidebar-width: clamp(300px, 30vw, 350px);
 
     /* Donut Progress */
     --donut-size: 70px;       

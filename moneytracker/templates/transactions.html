@@ -3,8 +3,8 @@
 <html lang="en">
     <head>
         <!-- ----------------STYLES----------------- -->
-        <link rel="stylesheet" href="{% static 'css/global.css' %}">
         <link rel="stylesheet" href="{% static 'css/transactions.css' %}">
+        <link rel="stylesheet" href="{% static 'css/global.css' %}">
         <link rel="stylesheet" href="{% static 'css/header.css' %}">
         <link rel="stylesheet" href="{% static 'css/modal.css' %}">
 
@@ -21,87 +21,145 @@
                 {% include "header.html" %}
 
                 <div class="filter-bar">
-                    <button class="toggle-btn" id="toggleBtn">☰ Filter</button>
+                    <button class="filter-toggle" id="toggleBtn">☰ Filter</button>
 
                     <div class="filtered-section">
-                        <div class="filtered-items">
-                            <div class="filtered-item">Income</div>
-                            <button class="filtered-close">x</button>
+                        <div class="filtered-tag">
+                            <span>Income</span>
+                            <button>&times;</button>
                         </div>
-
-                        <div class="filtered-items">
-                            <div class="filtered-item">Income</div>
-                            <button class="filtered-close">x</button>
+                        <div class="filtered-tag">
+                            <span>Expense</span>
+                            <button>&times;</button>
                         </div>
-
-                        <div class="filtered-items">
-                            <div class="filtered-item">Income</div>
-                            <button class="filtered-close">x</button>
+                        <div class="filtered-tag">
+                            <span>Archived</span>
+                            <button>&times;</button>
                         </div>
                     </div>  
-                </div>  
+                </div>
 
                 <!-- Sidebar -->
                 <div class="sidebar" id="sidebar">
                     <div class="sidebar-header">
-                        <div class="sidebar-title">Filter</div>
+                        <div class="sidebar-title">Filter Transactions</div>
                         <button class="close-button" id="close-button">X</button>
                     </div>
-                    <a href="#">Dashboard</a>
-                    <a href="#">Transactions</a>
-                    <a href="#">Settings</a>
+
+                    <form id="filter-form">
+                        <!-- Date Range -->
+                        <div class="row-group">
+                        <div class="filter-group">
+                            <label for="start-date">Start Date</label>
+                            <input type="date" id="start-date" name="start-date">
+                        </div>
+                        <div class="filter-group">
+                            <label for="end-date">End Date</label>
+                            <input type="date" id="end-date" name="end-date">
+                        </div>
+                        </div>
+
+                        <!-- Category -->
+                        <div class="filter-group">
+                        <label for="category">Category</label>
+                        <select id="category" name="category">
+                            <option value="">All</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        </div>
+
+                        <!-- Note -->
+                        <div class="filter-group">
+                        <label for="note">Note</label>
+                        <input type="text" id="note" name="note" placeholder="Search notes...">
+                        </div>
+
+                        <!-- Type -->
+                        <div class="filter-group">
+                        <label for="type">Type</label>
+                        <select id="type" name="type">
+                            <option value="">All</option>
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
+                        </select>
+                        </div>
+
+                        <!-- Amount -->
+                        <div class="row-group">
+                        <div class="filter-group">
+                            <label for="min-amount">Min Amount</label>
+                            <input type="number" id="min-amount" name="min-amount" placeholder="0">
+                        </div>
+                        <div class="filter-group">
+                            <label for="max-amount">Max Amount</label>
+                            <input type="number" id="max-amount" name="max-amount" placeholder="10000">
+                        </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="filter-actions">
+                        <button type="reset" class="reset-btn">Reset</button>
+                        <button type="submit" class="apply-btn">Apply Filters</button>
+                        </div>
+                    </form>
                 </div>
             </div> 
-            <!-- Transactions table -->
-                <table id="transactionsTable">
-                <thead>
-                    <tr>
-                    <th>Date <button onclick="sortTable(0)">⇅</button></th>
-                    <th>Category <button onclick="sortTable(1)">⇅</button></th>
-                    <th>Note <button onclick="sortTable(2)">⇅</button></th>
-                    <th>Type <button onclick="sortTable(3)">⇅</button></th>
-                    <th>Amount <button onclick="sortTable(4)">⇅</button></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <colgroup>
-                        <col style="width: 15%;">
-                        <col style="width: 22%;">
-                        <col style="width: 33%;">
-                        <col style="width: 18%;">
-                        <col style="width: 12%;">
-                    </colgroup>
 
-                    <tr>
-                        <td>2025-08-01</td>
-                        <td>Food</td>
-                        <td>Mandhi</td>
-                        <td>Expense</td>
-                        <td>$25</td>
-                    </tr>
-                    <tr>
-                        <td>2025-08-01</td>
-                        <td>Transport</td>
-                        <td>🚂 Aluva-Pattambi</td>
-                        <td>Expense</td>
-                        <td>$70</td>
-                    </tr>
-                    <tr>
-                        <td>2025-08-01</td>
-                        <td>Food</td>
-                        <td>Mandhi</td>
-                        <td>Expense</td>
-                        <td>$25</td>
-                    </tr>
-                    <tr>
-                        <td>2025-08-01</td>
-                        <td>Food</td>
-                        <td>Mandhi</td>
-                        <td>Expense</td>
-                        <td>$25</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Transactions table -->
+            <div class="table-container">
+                <table id="transactionsTable">
+                    <colgroup>
+                        <col style="width: 15%">
+                        <col style="width: 22%">
+                        <col style="width: 33%">
+                        <col style="width: 16%">
+                        <col style="width: 14%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                        <th>Date <button onclick="sortTable(0)">⇅</button></th>
+                        <th>Category <button onclick="sortTable(1)">⇅</button></th>
+                        <th>Note <button onclick="sortTable(2)">⇅</button></th>
+                        <th>Type <button onclick="sortTable(3)">⇅</button></th>
+                        <th>Amount <button onclick="sortTable(4)">⇅</button></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-08-01</td>
+                            <td>Food</td>
+                            <td>Mandhi</td>
+                            <td data-value="Expense">Expense</td>
+                            <td>$25</td>
+                        </tr>
+                        <tr>
+                            <td>2025-08-01</td>
+                            <td>Transport</td>
+                            <td>🚂 Aluva-Pattambi</td>
+                            <td data-value="Income">Income</td>
+                            <td>$70</td>
+                        </tr>
+                        <tr>
+                            <td>2025-08-01</td>
+                            <td>Food</td>
+                            <td>Mandhi</td>
+                            <td>Expense</td>
+                            <td>$25</td>
+                        </tr>
+                        <tr>
+                            <td>2025-08-01</td>
+                            <td>Food</td>
+                            <td>Mandhi</td>
+                            <td>Expense</td>
+                            <td>$25</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
 
