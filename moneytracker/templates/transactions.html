@@ -16,11 +16,60 @@
 
     <body>
         <div class="main-container">
-            <!-- Header -->
-            {% include "header.html" %}
+            <div class="header-section">
+                <!-- Header -->
+                {% include "header.html" %}
 
+                <div class="filter-bar">
+                    <button class="toggle-btn" id="toggleBtn">☰ Filter</button>
+
+                    <div class="filtered-section">
+                        <div class="filtered-items">
+                            <div class="filtered-item">Income</div>
+                            <button class="filtered-close">x</button>
+                        </div>
+
+                        <div class="filtered-items">
+                            <div class="filtered-item">Income</div>
+                            <button class="filtered-close">x</button>
+                        </div>
+
+                        <div class="filtered-items">
+                            <div class="filtered-item">Income</div>
+                            <button class="filtered-close">x</button>
+                        </div>
+                    </div>  
+                </div>  
+
+                <!-- Sidebar -->
+                <div class="sidebar" id="sidebar">
+                    <div class="sidebar-header">
+                        <div class="sidebar-title">Filter</div>
+                        <button class="close-button" id="close-button">X</button>
+                    </div>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Transactions</a>
+                    <a href="#">Settings</a>
+                </div>
+            </div> 
         </div>
 
+
         <script src="{% static 'js/modal.js' %}"></script>
+        <!-- JS -->
+        <script>
+            const toggleBtn = document.getElementById("toggleBtn");
+            const sidebar = document.getElementById("sidebar");
+            const closeBtn = document.getElementById("close-button")
+
+            toggleBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("active");
+            });
+
+            // Close with close button
+            closeBtn.addEventListener("click", () => {
+                sidebar.classList.remove("active");
+            });
+        </script>
     </body>
 </html>
