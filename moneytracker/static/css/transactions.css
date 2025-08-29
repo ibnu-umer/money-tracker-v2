@@ -33,20 +33,21 @@
     gap: 5px;
     border-radius: 16px;
     border: 0.7px solid #0000ff;
-    padding: 5px 12px;
+    padding: 3px 12px;
     width: fit-content;
 }
 
 .filtered-item {
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .filtered-close {
     cursor: pointer;
-    width: 10px;
+    width: 8px;
     background: transparent;
     border: none;
     color: #828282;
+    line-height: 10px;
 }
 
 .sidebar {
@@ -94,11 +95,6 @@
 .sidebar a:hover {
     background: #34495e;
 }
-
-/* .content {
-    padding: 20px;
-    transition: margin-left 0.3s ease;
-} */
 
 
 
