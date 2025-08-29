@@ -98,7 +98,45 @@
 
 
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 20px;
+}
 
+thead {
+    background: #007bff;
+    color: #fff;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+}
+
+th {
+    position: relative;
+}
+
+th button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 11px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+    background: #12376b;
+}
+
+tbody tr:hover {
+    background: #1d2d59;
+}
 
 
 
