@@ -33,22 +33,28 @@
 
 .nav__options {
     display: none;
-    gap: 20px;
+    gap: var(--spacing-nav-options);
     align-items: center;
+}
+
+a {
+    text-decoration: none;
 }
 
 .nav__item {
     display: flex;
     align-items: center;
+    color: var(--color-text-primary);
     gap: var(--gap-item);
     font-size: var(--fs-nav-item);
-    font-weight: 400;
+    font-weight: 500;
     cursor: pointer;
     transition: opacity 0.2s ease;
 }
 
 .nav__item:hover {
     opacity: 0.8;
+    color: #c6c6c6;
 }
 
 .nav__icon {
