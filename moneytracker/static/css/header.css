@@ -32,7 +32,7 @@
 }
 
 .nav__options {
-    display: flex;
+    display: none;
     gap: 20px;
     align-items: center;
 }
@@ -81,3 +81,8 @@
 } 
 
 
+@media (min-width: 567px) {
+    .nav__options {
+        display: flex;
+    }
+}
