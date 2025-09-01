@@ -51,14 +51,14 @@
     <div class="nav-bar">
         <div class="nav__options">
             <a href="{% url 'transactions' %}" class="nav__item">
-                <img src="{%static 'icons/setting.png' %}" alt="Filter transactions" class="nav__icon" />Filter
+                <img src="{%static 'icons/filter-icon.png' %}" alt="Filter transactions" class="nav__icon"/>Filter
+            </a>
+            <a href="{% url 'finance-hub' %}" class="nav__item">
+                <img src="{%static 'icons/hub-icon.png' %}" alt="Budget & Savings" class="nav__icon"/>Hub
             </a>
             <a href="{% url 'dashboard' %}" class="nav__item">
-                <img src="{%static 'icons/setting.png' %}" alt="Manage accounts" class="nav__icon" />Accounts
+                <img src="{%static 'icons/home-icon.png' %}" alt="Home Page" class="nav__icon"/>Home
             </a>
-            <div class="nav__item">
-                <img src="{%static 'icons/setting.png' %}" alt="Manage categories" class="nav__icon" />Categories
-            </div>
         </div>
         <div class="profile-settings">
             <button class="profile-avatar" id="profileButton" data-modal-open="profileModal"></button>
