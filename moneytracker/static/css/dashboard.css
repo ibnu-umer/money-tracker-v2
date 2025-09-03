@@ -552,10 +552,16 @@
 }
 .card-head .right{ 
     display:flex;
-    gap:10px;
+    gap: var(--gap-large);
     align-items:center; 
     color: var(--color-text-muted); 
-    font-size:13px; 
+    font-size:var(--fs-card-text); 
+}
+
+.budget-card-title {
+    font-size: var(--fs-card-title);
+    color: var(--color-text-primary);
+    font-weight: bold;
 }
 
 .categories-grid{
@@ -582,12 +588,16 @@
 }
 
 .name{ 
-    font-weight: 700; 
-    font-size: 16px; 
+    font-weight: bold; 
+    font-size: var(--fs-card-budget); 
 }
 .meta{ 
     color: var(--color-text-muted); 
-    font-size: 12px; 
+    font-size: var(--fs-card-text); 
+}
+.amount {
+    font-weight: bold;
+    font-size: var(--fs-card-text);
 }
 
 .stat{
@@ -604,6 +614,7 @@
     border-radius:999px;
     border:1px solid #0f2746;
     overflow:hidden;
+    margin-bottom: var(--gap-small);
 }
 .bar{
     height:100%; 
@@ -623,12 +634,9 @@
     display:flex; 
     align-items:center; 
     justify-content:space-between; 
-    font-size:12px; 
+    font-size:var(--fs-budget-note); 
     color:var(--color-text-muted) 
 }
-
-
-
 
 
 

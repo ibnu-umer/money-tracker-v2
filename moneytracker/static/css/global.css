@@ -71,6 +71,8 @@
     --fs-sidebar-title: clamp(12px, 1.8vw, 16px);
     --fs-sidebar-text: clamp(11px, 1.3vw, 13px);
     --fs-table-content: clamp(10px, 1.7vw, 14px);
+    --fs-card-budget: clamp(16px, 1.5vw, 18px);
+    --fs-budget-note: clamp(10px, 1.2vw, 12px);
 
     /* Spacing & Radius */
     --radius-card: 12px;
