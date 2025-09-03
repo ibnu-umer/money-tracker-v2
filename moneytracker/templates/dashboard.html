@@ -214,131 +214,91 @@
             <!-- Statistics Section -->
             <div class="statistics-section">
                 <!-- Budgeted Items -->
-                <div class="budget-card">
-                <div class="budget-card__title">Budgeted Items</div>
-                    <div class="budget-list">
-
-                        <div class="budget-item">
-                            <div class="budget-item__details">
-                                <div class="budget-item__header">
-                                    <div class="budget-item__icon">🚗</div>
-                                    <div class="budget-item__category">Transport</div>
-                                </div>
-                                <div class="budget-item__info">
-                                    <div>Budget: ₹2,000</div>
-                                    <div>Spend: ₹1,000</div>
-                                    <div>Remaining: ₹1,000</div>
-                                </div>
-                            </div>
-                            <div class="donut">
-                                <div class="donut__inner">65%</div>
-                            </div>
+                <section class="categories-card">
+                    <div class="card-head">
+                        <div><strong>Budget Overview</strong></div>
+                        <div class="right">
+                        <span>Total Budget: <strong>₹2,40,000</strong></span>
+                        <span>|</span>
+                        <span>Spent: <strong>₹1,52,000</strong></span>
+                        <span>|</span>
+                        <span>Remaining: <strong>₹88,000</strong></span>
                         </div>
-
-                        <div class="budget-item">
-                        <div class="budget-item__details">
-                            <div class="budget-item__header">
-                            <div class="budget-item__icon">🚗</div>
-                            <div class="budget-item__category">Transport</div>
-                            </div>
-                            <div class="budget-item__info">
-                            <div>Budget: ₹2,000</div>
-                            <div>Spend: ₹1,000</div>
-                            <div>Remaining: ₹1,000</div>
-                            </div>
-                        </div>
-                        <div class="donut" style="--progress: 65">
-                            <div class="donut__inner">65%</div>
-                        </div>
-                        </div>
-
-                        <div class="budget-item">
-                        <div class="budget-item__details">
-                            <div class="budget-item__header">
-                            <div class="budget-item__icon">🚗</div>
-                            <div class="budget-item__category">Transport</div>
-                            </div>
-                            <div class="budget-item__info">
-                            <div>Budget: ₹2,000</div>
-                            <div>Spend: ₹1,000</div>
-                            <div>Remaining: ₹1,000</div>
-                            </div>
-                        </div>
-                        <div class="donut" style="--progress: 65">
-                            <div class="donut__inner">65%</div>
-                        </div>
-                        </div>
-
-                        <div class="budget-item">
-                        <div class="budget-item__details">
-                            <div class="budget-item__header">
-                            <div class="budget-item__icon">🚗</div>
-                            <div class="budget-item__category">Transport</div>
-                            </div>
-                            <div class="budget-item__info">
-                            <div>Budget: ₹2,000</div>
-                            <div>Spend: ₹1,000</div>
-                            <div>Remaining: ₹1,000</div>
-                            </div>
-                        </div>
-                        <div class="donut" style="--progress: 65">
-                            <div class="donut__inner">65%</div>
-                        </div>
-                        </div>
-
-                        <div class="budget-item">
-                        <div class="budget-item__details">
-                            <div class="budget-item__header">
-                            <div class="budget-item__icon">🚗</div>
-                            <div class="budget-item__category">Transport</div>
-                            </div>
-                            <div class="budget-item__info">
-                            <div>Budget: ₹2,000</div>
-                            <div>Spend: ₹1,000</div>
-                            <div>Remaining: ₹1,000</div>
-                            </div>
-                        </div>
-                        <div class="donut" style="--progress: 65">
-                            <div class="donut__inner">65%</div>
-                        </div>
-                        </div>
-
-                        <div class="budget-item">
-                        <div class="budget-item__details">
-                            <div class="budget-item__header">
-                            <div class="budget-item__icon">🚗</div>
-                            <div class="budget-item__category">Transport</div>
-                            </div>
-                            <div class="budget-item__info">
-                            <div>Budget: ₹2,000</div>
-                            <div>Spend: ₹1,000</div>
-                            <div>Remaining: ₹1,000</div>
-                            </div>
-                        </div>
-                        <div class="donut" style="--progress: 65">
-                            <div class="donut__inner">65%</div>
-                        </div>
-                        </div>
-
-                        <div class="budget-item">
-                        <div class="budget-item__details">
-                            <div class="budget-item__header">
-                            <div class="budget-item__icon">🚗</div>
-                            <div class="budget-item__category">Transport</div>
-                            </div>
-                            <div class="budget-item__info">
-                            <div>Budget: ₹2,000</div>
-                            <div>Spend: ₹1,000</div>
-                            <div>Remaining: ₹1,000</div>
-                            </div>
-                        </div>
-                        <div class="donut" style="--progress: 65">
-                            <div class="donut__inner">65%</div>
-                        </div>
-                        </div>
-
                     </div>
-                </div>
+
+                    <div class="categories-grid" id="grid">
+                        <article class="cat-card" data-name="Food" data-spent="40000" data-budget="50000" data-trend="up">
+                            <div class="name">Food</div>
+                            <div class="stat">
+                                <div class="meta">Budget: ₹50,000</div>
+                                <div><strong>₹40,000</strong> spent</div>
+                            </div>
+                            <div>
+                                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Food progress">
+                                <div class="bar" style="width:0%"></div>
+                                </div>
+                                <div class="grid-footer">
+                                <span class="meta remaining">₹10,000 left</span>
+                                <span class="pct">0%</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="cat-card" data-name="Food" data-spent="40000" data-budget="50000" data-trend="up">
+    
+                            <div class="name">Food</div>
+                            <div class="stat">
+                                <div class="meta">Budget: ₹50,000</div>
+                                <div><strong>₹40,000</strong> spent</div>
+                            </div>
+                            <div>
+                                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Food progress">
+                                <div class="bar" style="width:0%"></div>
+                                </div>
+                                <div class="grid-footer">
+                                <span class="meta remaining">₹10,000 left</span>
+                                <span class="pct">0%</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="cat-card" data-name="Food" data-spent="40000" data-budget="50000" data-trend="up">
+    
+                            <div class="name">Food</div>
+                            <div class="stat">
+                                <div class="meta">Budget: ₹50,000</div>
+                                <div><strong>₹40,000</strong> spent</div>
+                            </div>
+                            <div>
+                                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Food progress">
+                                <div class="bar" style="width:0%"></div>
+                                </div>
+                                <div class="grid-footer">
+                                <span class="meta remaining">₹10,000 left</span>
+                                <span class="pct">0%</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <article class="cat-card" data-name="Food" data-spent="40000" data-budget="50000" data-trend="up">
+    
+                            <div class="name">Food</div>
+                            <div class="stat">
+                                <div class="meta">Budget: ₹50,000</div>
+                                <div><strong>₹40,000</strong> spent</div>
+                            </div>
+                            <div>
+                                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Food progress">
+                                <div class="bar" style="width:0%"></div>
+                                </div>
+                                <div class="grid-footer">
+                                <span class="meta remaining">₹10,000 left</span>
+                                <span class="pct">0%</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
 
                 <!-- Saving Goals -->
                 <div class="goals-section">

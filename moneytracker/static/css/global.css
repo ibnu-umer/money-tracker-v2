@@ -47,6 +47,11 @@
     --color-sg-progress: #107509;
     --color-modal-bg: #00007f;
     --color-input-bg: #0e0e5f;
+    --color-budget-border: #1f2937;
+    --color-accent: #3b82f6;
+    --color-good: #10b981;
+    --color-warn: #f59e0b;
+    --color-bad: #ef4444;
 
     /* Typography (fluid) */
     --fs-status-label: clamp(8px, 1vw, 12px);

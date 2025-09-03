@@ -538,81 +538,99 @@
 
 /* Budgetted Items */
 /* ---------------------------------------------- */
-.budget-card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    width: 100%;
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
+.categories-card{
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-status);
     border-radius: var(--radius-card);
-    padding: var(--spacing-md) var(--spacing-lg);
-    box-shadow: var(--shadow-card);
+    box-shadow: var(--color-shadow-card);
+    overflow: hidden;
+}
+.categories-card .card-head{
+    display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding: 16px 18px; border-bottom:1px solid var(--color-budget-border);
+    background: linear-gradient(180deg, rgba(59,130,246,.08), transparent 90%);
+}
+.card-head .right{ 
+    display:flex;
+    gap:10px;
+    align-items:center; 
+    color: var(--color-text-muted); 
+    font-size:13px; 
 }
 
-.budget-card__title {
-    font-family: var(--font-main);
-    font-size: var(--fs-card-title);
-    font-style: italic;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    margin: 0 0 var(--gap-small) var(--gap-small);
-}
-
-.budget-list {
+.categories-grid{
     display: grid;
-    grid-auto-flow: column;   
-    justify-content: start;
-    grid-template-rows: repeat(2, auto); 
-    overflow-x: auto;              
-    max-height: 250px;    
-    gap: var(--spacing-sm);         
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 14px;
+    padding: 16px;
+    max-height: 70vh;          
+    overflow-y: auto;        
+    overscroll-behavior: contain;
 }
 
-.budget-item {
-    display: flex;
-    flex-direction: row;
-    gap: var(--spacing-md);
-    justify-content: space-between;
-    align-items: center;
-    width: var(--budget-item-width);
-    height: 100%;
-    background-color: var(--color-statistics-card);
-    border-radius: var(--radius-card);
-    padding: var(--spacing-md);
+.cat-card{
+    background: var(--color-bg-status);
+    border: 1px solid var(--color-budget-border);
+    border-radius: 14px;
+    padding: 14px;
+    display: grid; grid-template-rows: auto auto auto 1fr;
+    gap: 10px;
+}
+.cat-card:hover{ 
+    border-color: #334155; 
+    box-shadow: 0 6px 18px rgba(0,0,0,.25); 
 }
 
-.budget-item__details {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    line-height: var(--spacing-md);
+.name{ 
+    font-weight: 700; 
+    font-size: 16px; 
+}
+.meta{ 
+    color: var(--color-text-muted); 
+    font-size: 12px; 
 }
 
-.budget-item__header {
-    display: flex;
-    gap: var(--spacing-sm);
-    align-items: center;
+.stat{
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between;
+    font-variant-numeric: tabular-nums;
 }
 
-.budget-item__icon {
-    font-size: 20px;
+.progress{ 
+    position:relative; 
+    height: 10px; 
+    background:#0d1b2a;
+    border-radius:999px;
+    border:1px solid #0f2746;
+    overflow:hidden;
+}
+.bar{
+    height:100%; 
+    width:0%; 
+    border-radius:inherit; 
+    transition: width .5s ease;
+    background: linear-gradient(90deg, var(--color-good), var(--color-accent));
+}
+.bar.warn{ 
+    background: linear-gradient(90deg, var(--color-warn), #f97316); 
+}
+.bar.bad{  
+    background: linear-gradient(90deg, var(--color-bad), #b91c1c); 
 }
 
-.budget-item__category {
-    font-size: var(--fs-card-title);
-    font-family: var(--font-main);
-    font-weight: 500;
-    color: var(--color-text-primary);
+.grid-footer{ 
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between; 
+    font-size:12px; 
+    color:var(--color-text-muted) 
 }
 
-.budget-item__info {
-    font-size: var(--fs-card-details);
-    font-family: var(--font-main);
-    font-weight: 500;
-    line-height: var(--spacing-md);
-    color: var(--color-text-secondary);
-}
+
+
+
+
 
 /* -------- Donut Progress -------- */
 .donut {
@@ -882,6 +900,11 @@
     .right-container {
         margin-top: 10px;
     }
+
+    .categories-grid{ 
+        grid-template-columns: 1fr; 
+        max-height: none; 
+    }
 }
 
 
@@ -932,11 +955,9 @@
         grid-template-columns: 59% 40%;
     }
     
-    /* .chart-box,
-    .left-container,
-    .right-container {
-        margin-top: 0;
-    } */
+    .categories-grid{ 
+        grid-template-columns: repeat(3, minmax(220px, 1fr)); 
+    }
 }
 
 
