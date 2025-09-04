@@ -701,6 +701,37 @@
 /* Goals Card */
 /* ------------------------------------------ */
 
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(2,6,12,0.6);display:flex;flex-direction:column;gap:10px}
+.card-head{display:flex;align-items:center;justify-content:space-between}
+.goal-title{font-weight:600;color:#dff5ff}
+.meta{font-size:13px;color:var(--muted)}
+.progress-row{display:flex;gap:12px;align-items:center}
+.progress-main{flex:1}
+.progress-num{font-weight:700}
+.small{font-size:12px;color:var(--muted)}
+
+/* progress ring */
+.ring{width:68px;height:68px;flex-shrink:0}
+svg.sparkline{width:100%;height:48px}
+
+.card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.actions{display:flex;gap:8px}
+.pill{padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);font-size:13px;color:var(--muted)}
+.btn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;color:var(--accent);cursor:pointer}
+.btn.ghost{color:var(--muted);background:transparent;border:1px dashed rgba(255,255,255,0.03)}
+
+
+.savings-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(260px, 1fr));
+    gap: 14px;
+    padding: 16px;
+    max-height: 70vh;          
+    overflow-y: auto;        
+    overscroll-behavior: contain;
+}
+
+
 .goals-section {
     display: flex;
     flex-direction: column;
@@ -720,101 +751,6 @@
     font-size: var(--fs-card-title);
     line-height: 1.4;
     color: var(--color-text-muted);
-}
-
-.goals-grid {
-    display: flex;
-    flex-direction: row;
-    gap: var(--gap-small);
-    width: 100%;
-    overflow-x: auto;
-    background-color: var(--color-bg-card);
-}
-
-
-.goal-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--gap-medium);
-    min-width: 180px;
-    background-color: var(--color-statistics-card);
-    border-radius: var(--radius-card);
-    padding: var(--spacing-lg) var(--spacing-sm);
-}
-
-.goal-title {
-    font-family: var(--font-main);
-    font-weight: 500;
-    font-size: var(--fs-card-title);
-    line-height: 1.4;
-    color: var(--color-text-primary);
-    text-align: center;
-    margin-top: var(--spacing-sm);
-}
-
-.goal-details {
-    font-family: var(--font-main);
-    font-weight: 400;
-    font-size: var(--fs-card-details);
-    line-height: 1.5;
-    color: #c28787; 
-}
-
-.goal-progress-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-}
-
-.goal-progress-wrapper {
-    position: relative;
-    width: 100%;
-    height: 80px;
-    background-color: #05026b; 
-    padding: 6px 30px;
-}
-
-.goal-progress-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 var(--spacing-sm);
-}
-
-.goal-percentage {
-    font-family: var(--font-main);
-    font-weight: 700;
-    font-size: var(--donut-percentage);
-    line-height: 1.2;
-    color: var(--color-text-primary);
-    text-align: center;
-    margin-right: var(--gap-large);
-}
-
-.goal-saved {
-    font-family: var(--font-main);
-    font-weight: 400;
-    font-size: var(--donut-note);
-    line-height: 1.3;
-    color: var(--color-text-secondary);
-    text-align: center;
-}
-
-.goal-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: var(--donut-size);
-    height: var(--donut-size);
-    border-radius: var(--radius-circle);
-    background: conic-gradient(var(--color-success) 0deg 212deg, #333 212deg 360deg);
 }
 
 
@@ -966,6 +902,11 @@
     .categories-grid{ 
         grid-template-columns: repeat(3, minmax(220px, 1fr)); 
     }
+
+    .savings-grid {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+        min-height: none;
+    }
 }
 
 
@@ -988,5 +929,10 @@
 
     .transaction-note {
         margin-left: 10px;
+    }
+
+    .savings-grid {
+        grid-template-columns: repeat(3, minmax(260px, 1fr));
+        min-height: none;
     }
 }

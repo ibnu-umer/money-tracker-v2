@@ -98,8 +98,8 @@
     /* Donut Progress */
     --donut-size: 70px;       
     --donut-inner-size: 45px;
-    --sg-donut-size: 130px;
-    --sg-donut-inner-size: 115px;
+    --sg-donut-size: 80px;
+    --sg-donut-inner-size: 70px;
 
     /* Modal */
     --width-ms-modal: clamp(220px, 40vw, 300px);
