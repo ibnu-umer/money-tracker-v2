@@ -73,6 +73,7 @@
     --fs-table-content: clamp(10px, 1.7vw, 14px);
     --fs-card-budget: clamp(16px, 1.5vw, 18px);
     --fs-budget-note: clamp(10px, 1.2vw, 12px);
+    --fs-sg-title: clamp(14px, 1.4vw, 18px);
 
     /* Spacing & Radius */
     --radius-card: 12px;
@@ -98,8 +99,8 @@
     /* Donut Progress */
     --donut-size: 70px;       
     --donut-inner-size: 45px;
-    --sg-donut-size: 80px;
-    --sg-donut-inner-size: 70px;
+    --sg-donut-size: clamp(70px, 3.5vw, 90px);
+    --sg-donut-inner-size: clamp(55px, 3vw, 80px);
 
     /* Modal */
     --width-ms-modal: clamp(220px, 40vw, 300px);

@@ -703,21 +703,16 @@
 
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(2,6,12,0.6);display:flex;flex-direction:column;gap:10px}
 .card-head{display:flex;align-items:center;justify-content:space-between}
-.goal-title{font-weight:600;color:#dff5ff}
-.meta{font-size:13px;color:var(--muted)}
+.goal-title{font-size: var(--fs-sg-title); font-weight: 600;color:#dff5ff;margin-bottom: 10px;}
+.meta{font-size:var(--fs-budget-note);color:var(--muted)}
 .progress-row{display:flex;gap:12px;align-items:center}
 .progress-main{flex:1}
 .progress-num{font-weight:700}
 .small{font-size:12px;color:var(--muted)}
-
-/* progress ring */
-.ring{width:68px;height:68px;flex-shrink:0}
-svg.sparkline{width:100%;height:48px}
-
 .card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .actions{display:flex;gap:8px}
 .pill{padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);font-size:13px;color:var(--muted)}
-.btn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;color:var(--accent);cursor:pointer}
+.btn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;color:var(--accent);cursor:pointer;font-size:var(--fs-card-text);}
 .btn.ghost{color:var(--muted);background:transparent;border:1px dashed rgba(255,255,255,0.03)}
 
 
