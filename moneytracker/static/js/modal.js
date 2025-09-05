@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     modal.querySelector('#form-title').innerText = "Edit Goal";
                 }
+            } else if (targetId === "budgetModal") {
+                if (btn.dataset.id === "new") {
+                    modal.querySelector("#form-title").innerText = "Add Budget";
+                } else {
+                    modal.querySelector("#form-title").innerText = "Edit Budget";
+                }
             }
             modal.classList.remove("hidden");
             document.addEventListener("keydown", escClose);
