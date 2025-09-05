@@ -291,7 +291,6 @@
                                 </div>
                             </div>
                         </article>
-
                     </div>
                 </section>
 
@@ -315,8 +314,41 @@
                                 <div class="meta"><span class="pill">Essential</span></div>
                                 <div class="actions">
                                     <button class="btn" data-action="open">Open</button>
-                                    <button class="btn ghost" data-action="edit">Edit</button>
-                                    <button class="btn ghost" data-action="delete">Delete</button>
+                                    <button class="btn ghost" data-modal-open="SGEditorModal">Edit</button>
+                                    <button id="openSGEditor" class="btn ghost" data-action="delete">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div id="SGEditorModal" class="modal-container hidden" data-modal-type="center">
+                        <div class="modal-overlay" data-modal-overlay>
+                            <div class="sg-editor-modal">
+                                <div class="form-title">New Goal</div>
+                                <div class="form-content">
+                                    <div>
+                                        <label for="g-title">Goal name</label>
+                                        <input id="g-title" />
+                                    </div>
+                                    <div class="form-row">
+                                        <div style="flex:1">
+                                        <label for="g-target">Target amount</label>
+                                        <input id="g-target" type="number" />
+                                        </div>
+                                        <div style="flex:1">
+                                        <label for="g-start">Starting amount</label>
+                                        <input id="g-start" type="number" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="g-tags">Tags (comma separated)</label>
+                                        <input id="g-tags" placeholder="e.g. travel, emergency" />
+                                    </div>
+                                    <div class="editor-action-buttons">
+                                        <button class="btn ghost" data-modal-close>Cancel</button>
+                                        <button id="save" class="btn">Save Goal</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

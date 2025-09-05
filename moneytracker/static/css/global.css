@@ -52,6 +52,7 @@
     --color-good: #10b981;
     --color-warn: #f59e0b;
     --color-bad: #ef4444;
+    --glass: #ffffff08;
 
     /* Typography (fluid) */
     --fs-status-label: clamp(8px, 1vw, 12px);
@@ -95,6 +96,7 @@
     /* Widget sizes */
     --budget-item-width: clamp(230px, 2.5vw, 280px);
     --sidebar-width: clamp(300px, 30vw, 350px);
+    --sg-editor-width: clamp(300px, 30vw, 400px);
 
     /* Donut Progress */
     --donut-size: 70px;       

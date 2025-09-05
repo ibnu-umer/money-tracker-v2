@@ -255,3 +255,49 @@ input::placeholder {
 .save-btn:hover {
     background: #049b04;
 }
+
+
+
+/* Saving goals editor */
+/* ---------------------------------------- */
+
+.sg-editor-modal {
+    background: var(--color-modal-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-card);
+    width: var(--sg-editor-width);
+}
+
+.form-row{
+    display:flex;
+    gap:8px
+}
+
+input,select,textarea{
+    background:transparent;
+    border:1px solid #1a1818;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-card);
+    color: var(--color-text-primary);
+    width:100%
+}
+
+label{
+    font-size: var(--fs-card-text);
+    color:var(--muted);
+    display:block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.editor-action-buttons {
+    display:flex;
+    gap: var(--spacing-md);
+    justify-content:flex-end;
+}
+
+.form-content {
+    display:flex;
+    flex-direction:column;
+    gap: var(--gap-medium);
+    margin-top: var(--spacing-md);
+}
