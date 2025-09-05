@@ -296,7 +296,10 @@
 
                 <!-- Saving Goals -->
                 <div class="goals-section">
-                    <div class="goals-title">Saving Goals Dashboard</div>
+                    <div class="form-header">
+                        <div class="goals-title">Saving Goals Dashboard</div>
+                        <button class="add-button" data-modal-open="SGAddModal">+</button>
+                    </div>
                     <div class="savings-grid">
                         <div class="card">
                             <div class="card-head">
@@ -314,7 +317,7 @@
                                 <div class="meta"><span class="pill">Essential</span></div>
                                 <div class="actions">
                                     <button class="btn" data-action="open">Open</button>
-                                    <button class="btn ghost" data-modal-open="SGEditorModal">Edit</button>
+                                    <button class="btn ghost">Edit</button>
                                     <button id="openSGEditor" class="btn ghost" data-action="delete">Delete</button>
                                 </div>
                             </div>
@@ -322,9 +325,9 @@
                     </div>
 
                     <!-- Modal -->
-                    <div id="SGEditorModal" class="modal-container hidden" data-modal-type="center">
+                    <div id="SGAddModal" class="modal-container hidden" data-modal-type="center">
                         <div class="modal-overlay" data-modal-overlay>
-                            <div class="sg-editor-modal">
+                            <div class="sg-add-modal">
                                 <div class="form-title">New Goal</div>
                                 <div class="form-content">
                                     <div>

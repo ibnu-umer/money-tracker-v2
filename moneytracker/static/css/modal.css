@@ -261,7 +261,7 @@ input::placeholder {
 /* Saving goals editor */
 /* ---------------------------------------- */
 
-.sg-editor-modal {
+.sg-add-modal {
     background: var(--color-modal-bg);
     padding: var(--spacing-lg);
     border-radius: var(--radius-card);
@@ -295,9 +295,22 @@ label{
     justify-content:flex-end;
 }
 
+.form-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .form-content {
     display:flex;
     flex-direction:column;
     gap: var(--gap-medium);
     margin-top: var(--spacing-md);
+}
+
+.add-button {
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    cursor: pointer;
 }
