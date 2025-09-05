@@ -298,7 +298,7 @@
                 <div class="goals-section">
                     <div class="form-header">
                         <div class="goals-title">Saving Goals Dashboard</div>
-                        <button class="add-button" data-modal-open="SGAddModal">+</button>
+                        <button class="add-button" data-modal-open="SGAddModal" data-id="new">+</button>
                     </div>
                     <div class="savings-grid">
                         <div class="card">
@@ -316,8 +316,8 @@
                             <div class="card-footer">
                                 <div class="meta"><span class="pill">Essential</span></div>
                                 <div class="actions">
-                                    <button class="btn" data-action="open">Open</button>
-                                    <button class="btn ghost">Edit</button>
+                                    <button id="openDrawer" class="btn">Open</button>
+                                    <button class="btn ghost" data-modal-open="SGAddModal" data-id="100">Edit</button>
                                     <button id="openSGEditor" class="btn ghost" data-action="delete">Delete</button>
                                 </div>
                             </div>
@@ -328,7 +328,7 @@
                     <div id="SGAddModal" class="modal-container hidden" data-modal-type="center">
                         <div class="modal-overlay" data-modal-overlay>
                             <div class="sg-add-modal">
-                                <div class="form-title">New Goal</div>
+                                <div id="form-title" class="form-title">New Goal</div>
                                 <div class="form-content">
                                     <div>
                                         <label for="g-title">Goal name</label>
@@ -354,6 +354,29 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Drawer -->
+                    <div id="SGDrawer" class="drawer">
+                        <div class="drawer-content">
+                            <div>
+                                <h2 id="drawer-title">Goal</h2>
+                                <div class="muted" id="d-meta">Target & current</div>
+                            </div>
+                            <button id="closeDrawer" class="btn ghost">Close</button>
+                        </div>
+
+                        <canvas id="bigChart" class="bigchart"></canvas>
+
+                        <div class="contrib">
+                            <input id="contrib" placeholder="Add contribution amount" />
+                            <button id="add-contrib" class="btn">Add</button>
+                        </div>
+
+                        <div>
+                            <div class="muted" style="margin-bottom:8px">Recent contributions</div>
+                            <div id="history" class="history-list"></div>
                         </div>
                     </div>
                 </div>

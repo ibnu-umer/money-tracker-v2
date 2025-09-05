@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Initialize all modals
     document.querySelectorAll("[data-modal-open]").forEach((btn) => {
         const targetId = btn.getAttribute("data-modal-open");
         const modal = document.getElementById(targetId);
@@ -9,10 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const closeBtn = modal.querySelector("[data-modal-close]");
 
         const open = () => {
+            if (targetId === "SGAddModal") {
+                if (btn.dataset.id === "new") {
+                    modal.querySelector('#form-title').innerText = "Add Goal";
+                } else {
+                    modal.querySelector('#form-title').innerText = "Edit Goal";
+                }
+            }
             modal.classList.remove("hidden");
             document.addEventListener("keydown", escClose);
             document.addEventListener("click", outsideClick);
-
             if (targetId === "monthSelectorModal") {
                 populateYears();
             }
@@ -24,14 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.removeEventListener("click", outsideClick);
         };
 
-        // Centered modal → close on overlay click
-        if (modalType === "center") {
-            const overlay = modal.querySelector("[data-modal-overlay]");
-            overlay?.addEventListener("click", (e) => {
-                if (e.target === overlay) close();
-            });
-        }
-
         const outsideClick = (e) => {
             if (!modal.contains(e.target) && !btn.contains(e.target)) {
                 close();
@@ -42,16 +39,22 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.key === "Escape") close();
         };
 
-        // Toggle modal on button click
+        if (modalType === "center") {
+            const overlay = modal.querySelector("[data-modal-overlay]");
+            overlay?.addEventListener("click", (e) => {
+                if (e.target === overlay) close();
+            });
+        }
+
         btn.addEventListener("click", (e) => {
             e.stopPropagation();
             modal.classList.contains("hidden") ? open() : close();
         });
 
-        // Close button
         closeBtn?.addEventListener("click", close);
     });
 });
+
 
 document.addEventListener("click", (e) => {
     if (e.target.matches("[data-modal-close]")) {
@@ -127,4 +130,20 @@ function closeModal(id) {
 
 
 
-// Saving Goal editor modal
+// Saving Goals
+// --------------------------------------------------
+
+// Open drawer
+const drawerOpen = document.getElementById("openDrawer");
+const drawer = document.getElementById("SGDrawer");
+const drawerClose = document.getElementById("closeDrawer")
+
+drawerOpen.addEventListener("click", () => {
+    drawer.classList.toggle("active");
+});
+
+drawerClose.addEventListener("click", () => {
+    drawer.classList.remove("active");
+});
+
+

@@ -314,3 +314,54 @@ label{
     color: var(--color-text-primary);
     cursor: pointer;
 }
+
+
+
+/* .drawer{position:fixed;right:20px;top:20px;bottom:20px;width:420px;background:linear-gradient(180deg,#081218,#08141b);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 20px 60px rgba(2,6,12,0.6);display:flex;flex-direction:column;gap:12px}
+.drawer h2{margin:0}
+canvas.bigchart{width:100%;height:180px;background:transparent;border-radius:8px}
+.history-list{max-height:160px;overflow:auto;padding-right:6px}
+.history-item{display:flex;justify-content:space-between;padding:8px 6px;border-radius:8px}
+.muted{color:var(--muted)} */
+
+
+.drawer {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    bottom: 20px;
+    flex-direction: column;
+    width: var(--sidebar-width); 
+    background: #0e18a1; 
+    box-shadow:0 20px 60px rgba(2,6,12,0.6);
+    border-radius: var(--radius-card);
+    color: #fff; 
+    height: 95%; 
+    padding: var(--spacing-lg); 
+    gap: var(--spacing-lg);
+    right: calc(-1 * var(--sidebar-width));
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.drawer.active {
+    right: 15px;
+}
+
+.drawer-content {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.drawer-top-actions {
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+
+.contrib {
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
