@@ -291,6 +291,7 @@
     display: flex;
     flex-direction: row;
     gap: var(--gap-medium);
+    height: 450px;
 }
 
 .transactions-card {
@@ -403,126 +404,70 @@
 
 
 /* ---------------- Add Transaction Card ---------------- */
-.add-transaction-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: var(--gap-small);
-    width: 100%;
-    max-width: 250px;
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
+.bills-card {
+    width: 300px;
+    background: var(--color-bg-card);
     border-radius: var(--radius-card);
-    padding: var(--spacing-md) var(--spacing-md);
-    box-shadow: var(--shadow-card);
-}
-
-.add-transaction-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.add-transaction-title {
-    font-family: var(--font-main);
-    font-size: var(--fs-card-title);
-    font-style: italic;
-    font-weight: 500;
-    color: var(--color-text-muted);
-    margin: 0 0 var(--gap-small) var(--gap-small);
-}
-
-.add-transaction-tabs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--gap-large);
-    height: 35px;
-    margin-bottom: var(--gap-small);
-}
-
-.tab-income,
-.tab-expense {
-    font-size: 16px;
-    font-family: var(--font-main);
-    font-weight: 700;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.tab-income {
-    color: var(--color-text-secondary);
-}
-
-.tab-expense {
-    color: #ae0306;
-    margin-left: var(--gap-small);
-}
-
-.category-section {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-xsmall);
-}
-
-.input-title {
-    font-size: var(--fs-status-label);
-    font-family: var(--font-main);
-    margin-bottom: 3px;
-}
-
-.icon-input {
-    height: var(--size-input);
-    width: var(--size-input);
-    padding: 0 0.2rem;
-    font-size: var(--fs-card-text);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    outline: none;
-    margin-bottom: var(--gap-small);
-}
-
-.icon-input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
-}
-
-.transaction-input {
-    width: 100%;
-    height: var(--size-input);
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: var(--fs-card-text);
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-border);
-    background-color: #0b1c64;
-    border-radius: 6px;
-    outline: none;
-    margin-bottom: var(--gap-small);
-}
-
-.transaction-input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
-}
-
-.save-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-small);
-    height: 80px;
-}
-
-.save-btn {
-    font-size: var(--fs-card-text);
-    font-family: var(--font-main);
-    font-weight: 600;
-    line-height: 1.2;
-    color: #000;
-    background-color: var(--color-success);
-    border-radius: 8px;
-    padding: 0 var(--gap-large);
-    border: none;
-    cursor: pointer;
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border: 1px solid #0000de;
     height: 100%;
+    overflow-y: auto;
+}
+
+.bill {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.7rem;
+    margin-bottom: 0.7rem;
+    background: #2a2a3d;
+    border-radius: 8px;
+}
+
+.bill-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-info span:first-child {
+    font-weight: bold;
+}
+
+.due {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.amount {
+    font-size: 0.9rem;
+    color: #facc15;
+    margin-top: 0.2rem;
+}
+
+.pay-btn {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.pay-btn:hover {
+    background: #9f1239;
+}
+
+.bill-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bill-action-button { 
+    background: transparent;
+    color: var(--color-text-primary);
+    font-size: 12px;
 }
 
 

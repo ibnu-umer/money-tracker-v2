@@ -175,36 +175,128 @@
                             </div>
                         </div>
                         
-                        <!-- Add Transaction -->
-                        <div class="add-transaction-card">
-                            <div class="add-transaction-form">
-                                <div class="add-transaction-title">Add new transaction</div>
-                                <div class="add-transaction-tabs">
-                                    <div class="tab-income">Income</div>
-                                    <div class="tab-expense">Expense</div>
+                        <div class="bills-card">
+                            <div class="form-header">
+                                <div class="form-title">Bills to Pay</div>
+                                <div class="add-button" data-modal-open="billModal">+</div>
+                            </div>
+                            <div class="bill">
+                                <div class="bill-info">
+                                    <span>Electricity</span>
+                                    <div>
+                                        <span class="due">Due: 10 Sept</span>
+                                        <span class="amount">$120</span>
+                                    </div>
                                 </div>
-                                
-                                <div class="input-section">
-                                    <div class="input-title">Category</div>
-                                    <select class="transaction-input">
-                                        <option value="">Select category</option>
-                                        <option value="income">Income</option>
-                                        <option value="expense">Expense</option>
-                                        <option value="savings">Savings</option>
-                                    </select>
-                                </div>
-                                <div class="input-section">
-                                    <div class="input-title">Amount</div>
-                                    <input id="amount-input" type="text" placeholder="₹Amount" class="transaction-input">
-                                </div>
-                                <div class="input-section">
-                                    <div class="input-title">Note</div>
-                                    <input id="note-input" type="text" placeholder="Note" class="transaction-input">
+                                <div>
+                                    <div class="bill-actions">
+                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                        <button class="bill-action-button">D</button>
+                                    </div>
+                                    <button class="pay-btn">Pay</button>
                                 </div>
                             </div>
-                            <div class="save-buttons">
-                                <button class="save-btn">Select Date&Save</button>
-                                <button class="save-btn">Save for Today</button>
+                            <div class="bill">
+                                <div class="bill-info">
+                                    <span>Electricity</span>
+                                    <div>
+                                        <span class="due">Due: 10 Sept</span>
+                                        <span class="amount">$120</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="bill-actions">
+                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                        <button class="bill-action-button">D</button>
+                                    </div>
+                                    <button class="pay-btn">Pay</button>
+                                </div>
+                            </div>
+                            <div class="bill">
+                                <div class="bill-info">
+                                    <span>Electricity</span>
+                                    <div>
+                                        <span class="due">Due: 10 Sept</span>
+                                        <span class="amount">$120</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="bill-actions">
+                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                        <button class="bill-action-button">D</button>
+                                    </div>
+                                    <button class="pay-btn">Pay</button>
+                                </div>
+                            </div>
+                            <div class="bill">
+                                <div class="bill-info">
+                                    <span>Electricity</span>
+                                    <div>
+                                        <span class="due">Due: 10 Sept</span>
+                                        <span class="amount">$120</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="bill-actions">
+                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                        <button class="bill-action-button">D</button>
+                                    </div>
+                                    <button class="pay-btn">Pay</button>
+                                </div>
+                            </div>
+                            <div class="bill">
+                                <div class="bill-info">
+                                    <span>Electricity</span>
+                                    <div>
+                                        <span class="due">Due: 10 Sept</span>
+                                        <span class="amount">$120</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="bill-actions">
+                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                        <button class="bill-action-button">D</button>
+                                    </div>
+                                    <button class="pay-btn">Pay</button>
+                                </div>
+                            </div>
+                            <div class="bill">
+                                <div class="bill-info">
+                                    <span>Electricity</span>
+                                    <div>
+                                        <span class="due">Due: 10 Sept</span>
+                                        <span class="amount">$120</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="bill-actions">
+                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                        <button class="bill-action-button">D</button>
+                                    </div>
+                                    <button class="pay-btn">Pay</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="billModal" class="modal-container hidden">
+                            <div class="modal-overlay" data-modal-overlay>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="form-title" id="form-title">Add Bill</div>
+                                        <span class="close" data-modal-close>&times;</span>
+                                    </div>
+                                    <form id="budgetForm">
+                                        <div class="form-group">
+                                            <div class="input-header">Bill Name</div>
+                                            <input type="text" id="budget" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="budget">Budget Amount</label>
+                                            <input type="number" id="budget" min="0" required>
+                                        </div>
+                                        <button type="submit" class="btn">Save</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
