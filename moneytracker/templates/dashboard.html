@@ -125,14 +125,14 @@
                         <div class="transactions-card">
                             <div class="transaction-header">
                                 <div class="transactions-title">Transactions</div>
-                                <button id="openTransaction" class="add-transaction-button" data-modal-open="transactionModal">+</button>
+                                <button id="openTransaction" class="add-transaction-button" data-modal-open="transactionModal" data-id="new">+</button>
                             </div>
                             <div class="transactions-scroller">
                                 <div class="date-section">
                                     <div class="date-header">02 Aug, Monday</div>
                                     <div class="date-divider"></div>
                                 </div>
-                                <div class="transaction-item">
+                                <div data-id="101" class="transaction-item">
                                     <div class="transaction-icon">🥗</div>
                                     <div class="transaction-details">
                                         <div class="transaction-name">Food</div>
@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="transaction-amount">₹400</div>
                                 </div>
-                                <div class="transaction-item">
+                                <div data-id="102" class="transaction-item">
                                     <div class="transaction-icon">🥗</div>
                                     <div class="transaction-details">
                                         <div class="transaction-name">Food</div>
@@ -148,7 +148,7 @@
                                     </div>
                                     <div class="transaction-amount">₹400</div>
                                 </div>
-                                <div class="transaction-item">
+                                <div data-id="103" class="transaction-item">
                                     <div class="transaction-icon">💻</div>
                                     <div class="transaction-details">
                                         <div class="transaction-name">Food</div>
@@ -156,7 +156,7 @@
                                     </div>
                                     <div class="transaction-amount">₹400</div>
                                 </div>
-                                <div class="transaction-item">
+                                <div data-id="104" class="transaction-item">
                                     <div class="transaction-icon">🚗</div>
                                     <div class="transaction-details">
                                         <div class="transaction-name">Food</div>
@@ -164,7 +164,7 @@
                                     </div>
                                     <div class="transaction-amount">₹400</div>
                                 </div>
-                                <div class="transaction-item">
+                                <div data-id="105" class="transaction-item">
                                     <div class="transaction-icon">🏡</div>
                                     <div class="transaction-details">
                                         <div class="transaction-name">Food</div>
@@ -178,7 +178,7 @@
                         <div class="bills-card">
                             <div class="form-header">
                                 <div class="form-title">Bills to Pay</div>
-                                <div class="add-button" data-modal-open="billModal">+</div>
+                                <div class="add-button" data-modal-open="billModal" data-id="new">+</div>
                             </div>
                             <div class="bill">
                                 <div class="bill-info">
@@ -288,7 +288,7 @@
                                     <form id="budgetForm">
                                         <div class="form-group">
                                             <div class="input-header">Bill Name</div>
-                                            <input type="text" id="budget" required>
+                                            <input type="text" id="bill-name" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="budget">Budget Amount</label>

@@ -6,21 +6,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const modalType = modal.dataset.modalType || "center";
         const closeBtn = modal.querySelector("[data-modal-close]");
+        const formTitle = modal.querySelector(".form-title")
 
-        const open = () => {
+        const open = (mode = null) => {
             if (targetId === "SGAddModal") {
-                if (btn.dataset.id === "new") {
-                    modal.querySelector('#form-title').innerText = "Add Goal";
-                } else {
-                    modal.querySelector('#form-title').innerText = "Edit Goal";
-                }
+                formTitle.innerText = btn.dataset.id === "new" ?  mode + " Goal" : mode + " Goal";
             } else if (targetId === "budgetModal") {
-                if (btn.dataset.id === "new") {
-                    modal.querySelector("#form-title").innerText = "Add Budget";
-                } else {
-                    modal.querySelector("#form-title").innerText = "Edit Budget";
-                }
+                formTitle.innerText = btn.dataset.id === "new" ? mode + " Budget" : mode + " Budget";
+            } else if (targetId === "transactionModal") {
+                formTitle.innerText = btn.dataset.id === "new" ? mode + " Transaction" : mode + " Transaction";
+            } else if (targetId === "billModal") {
+                formTitle.innerText = btn.dataset.id === "new" ? mode + " Bill" : mode + " Bill";
             }
+
+
             modal.classList.remove("hidden");
             document.addEventListener("keydown", escClose);
             document.addEventListener("click", outsideClick);
@@ -54,21 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         btn.addEventListener("click", (e) => {
             e.stopPropagation();
-            modal.classList.contains("hidden") ? open() : close();
+            let mode = btn.dataset.id === "new" ? "Add" : "Edit";
+            modal.classList.contains("hidden") ? open(mode) : close();
         });
 
         closeBtn?.addEventListener("click", close);
-    });
-});
 
-
-document.addEventListener("click", (e) => {
-    if (e.target.matches("[data-modal-close]")) {
-        const modal = e.target.closest(".monthselecor-modal");
-        if (modal) {
-            modal.classList.add("hidden"); 
+        // Double click event for Transaction Modal
+        if (modal.id === "transactionModal") {
+            document.querySelectorAll(".transaction-item").forEach((item) => {
+                item.addEventListener("dblclick", (e) => {
+                    modal.classList.contains("hidden") ? open("Edit") : close();
+                });
+            });
         }
-    }
+    });
 });
 
 
