@@ -16,65 +16,87 @@
 
     <body>
         <div class="main-container">
-        <!-- Header -->
-        {% include "header.html" %}
+            <!-- Header -->
+            {% include "header.html" %}
 
-        <div class="categories-sections">
-            <!-- Income Categories -->
-            <section class="category-section">
-                <div class="heading-section">
-                    <div class="heading">
-                        <div class="name">Income Categories</div>
-                        <div class="btn">+</div>
+            <div class="categories-sections">
+                <!-- Income Categories -->
+                <section class="category-section">
+                    <div class="heading-section">
+                        <div class="heading">
+                            <div class="name">Income Categories</div>
+                            <div class="btn" data-modal-open="categoryModal" data-id="new">+</div>
+                        </div>
+                        <hr>
                     </div>
-                    <hr>
-                </div>
-                <div class="categories" id="incomeCategories">
-                    <div class="card">
-                        <span>Food</span>
-                        <div class="card-actions">
-                            <button class="btn" onclick="openEditModal('Food', 'Expense')">✏️</button>
-                            <button class="btn" onclick="deleteCategory(this)">🗑️</button>
+                    <div class="categories" id="incomeCategories">
+                        <div class="card">
+                            <span>Food</span>
+                            <div class="card-actions">
+                                <button class="btn" data-modal-open="categoryModal" data-id="100">✏️</button>
+                                <button class="btn">🗑️</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <span>Salary</span>
+                            <div class="card-actions">
+                                <button class="btn" data-modal-open="categoryModal" data-id="101">✏️</button>
+                                <button class="btn">🗑️</button>
+                            </div>
                         </div>
                     </div>
+                </section>
 
-                    <div class="card">
-                        <span>Salary</span>
-                        <div class="card-actions">
-                            <button class="btn" onclick="openEditModal('Salary', 'Income')">✏️</button>
-                            <button class="btn" onclick="deleteCategory(this)">🗑️</button>
+                <!-- Expense Categories -->
+                <section class="category-section">
+                    <div class="heading-section">
+                        <div class="heading">
+                            <div class="name">Income Categories</div>
+                            <div class="btn" data-modal-open="categoryModal" data-id="new">+</div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="categories" id="expenseCategories">
+                        <div class="card">
+                            <span>Food</span>
+                            <div class="card-actions">
+                                <button class="btn" data-modal-open="categoryModal" data-id="102">✏️</button>
+                                <button class="btn">🗑️</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <span>Salary</span>
+                            <div class="card-actions">
+                                <button class="btn" data-modal-open="categoryModal" data-id="103">✏️</button>
+                                <button class="btn">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Modal -->
+                <div class="modal-container hidden" id="categoryModal">
+                    <div class="modal-overlay" data-modal-overlay>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="form-title" id="form-title">Add Category</div>
+                                <span class="close" data-modal-close>&times;</span>
+                            </div>
+                            <input type="text" id="newCategoryName" placeholder="Category name">
+                            <select id="newCategoryType">
+                                <option value="Income">Income</option>
+                                <option value="Expense">Expense</option>
+                            </select>
+                            <button class="save-btn">Save</button>
+                            <button class="cancel-btn">Cancel</button>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- Expense Categories -->
-            <section class="category-section">
-                <div class="heading-section">
-                    <div class="heading">
-                        <div class="name">Income Categories</div>
-                        <div class="btn">+</div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="categories" id="expenseCategories">
-                    <div class="card">
-                        <span>Food</span>
-                        <div class="card-actions">
-                            <button class="btn" onclick="openEditModal('Food', 'Expense')">✏️</button>
-                            <button class="btn" onclick="deleteCategory(this)">🗑️</button>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <span>Salary</span>
-                        <div class="card-actions">
-                            <button class="btn" onclick="openEditModal('Salary', 'Income')">✏️</button>
-                            <button class="btn" onclick="deleteCategory(this)">🗑️</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </div>
         </div>
+
+        <script src="{% static 'js/modal.js' %}" defer></script>
     </body>
 </html>

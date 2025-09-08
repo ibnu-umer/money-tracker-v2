@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 formTitle.innerText = btn.dataset.id === "new" ? mode + " Transaction" : mode + " Transaction";
             } else if (targetId === "billModal") {
                 formTitle.innerText = btn.dataset.id === "new" ? mode + " Bill" : mode + " Bill";
+            } else if (targetId === "categoryModal") { 
+                formTitle.innerText = btn.dataset.id === "new" ? mode + " Category" : mode + " Category";
             }
 
 
@@ -150,5 +152,4 @@ drawerOpen.addEventListener("click", () => {
 drawerClose.addEventListener("click", () => {
     drawer.classList.remove("active");
 });
-
 
