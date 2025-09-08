@@ -6,3 +6,7 @@ def dashboard(request):
 
 def transactions(request):
     return render(request, "transactions.html")
+
+
+def manage_categories(request):
+    return render(request, "categories.html")

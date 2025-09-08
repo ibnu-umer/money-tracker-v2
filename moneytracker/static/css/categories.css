@@ -1,0 +1,89 @@
+.categories-sections {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-lg); 
+}
+
+.category-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-sm); 
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.heading-section {
+    gap: var(--spacing-sm);
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 4px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0 0 0;
+}
+
+.card {
+    background: #1c1c1c;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    padding: 4px 6px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: #333;
+}
+
+
+@media (min-width: 568px) {
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .categories {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .categories {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
