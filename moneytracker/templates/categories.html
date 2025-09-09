@@ -31,7 +31,10 @@
                     </div>
                     <div class="categories" id="incomeCategories">
                         <div class="card">
-                            <span>Food</span>
+                            <div class="info">
+                                <div class="icon">🥗</div>
+                                <div class="cat-name">Food</div>
+                            </div>
                             <div class="card-actions">
                                 <button class="btn" data-modal-open="categoryModal" data-id="100">✏️</button>
                                 <button class="btn">🗑️</button>
@@ -39,7 +42,10 @@
                         </div>
 
                         <div class="card">
-                            <span>Salary</span>
+                            <div class="info">
+                                <div class="icon">🥗</div>
+                                <div class="cat-name">Food</div>
+                            </div>
                             <div class="card-actions">
                                 <button class="btn" data-modal-open="categoryModal" data-id="101">✏️</button>
                                 <button class="btn">🗑️</button>
@@ -52,14 +58,17 @@
                 <section class="category-section">
                     <div class="heading-section">
                         <div class="heading">
-                            <div class="name">Income Categories</div>
+                            <div class="name">Expense Categories</div>
                             <div class="btn" data-modal-open="categoryModal" data-id="new">+</div>
                         </div>
                         <hr>
                     </div>
                     <div class="categories" id="expenseCategories">
                         <div class="card">
-                            <span>Food</span>
+                            <div class="info">
+                                <div class="icon">🌿</div>
+                                <div class="cat-name">Food</div>
+                            </div>
                             <div class="card-actions">
                                 <button class="btn" data-modal-open="categoryModal" data-id="102">✏️</button>
                                 <button class="btn">🗑️</button>
@@ -67,7 +76,10 @@
                         </div>
 
                         <div class="card">
-                            <span>Salary</span>
+                            <div class="info">
+                                <div class="icon">🥗</div>
+                                <div class="cat-name">Food</div>
+                            </div>
                             <div class="card-actions">
                                 <button class="btn" data-modal-open="categoryModal" data-id="103">✏️</button>
                                 <button class="btn">🗑️</button>
@@ -84,11 +96,19 @@
                                 <div class="form-title" id="form-title">Add Category</div>
                                 <span class="close" data-modal-close>&times;</span>
                             </div>
-                            <input type="text" id="newCategoryName" placeholder="Category name">
+
+                            <div class="form-group">
+                                <div class="cat-group">
+                                    <button type="button" id="iconSelector" class="icon-selector">😀</button>
+                                    <input type="text" id="newCategoryName" placeholder="Category name">
+                                </div>
+                            </div>
+
                             <select id="newCategoryType">
                                 <option value="Income">Income</option>
                                 <option value="Expense">Expense</option>
                             </select>
+
                             <button class="save-btn">Save</button>
                             <button class="cancel-btn">Cancel</button>
                         </div>
@@ -98,5 +118,33 @@
         </div>
 
         <script src="{% static 'js/modal.js' %}" defer></script>
+        <script type="module">
+            import 'https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js';
+
+            const iconBtn = document.getElementById('iconSelector');
+            const modal = document.getElementById('categoryModal');
+            const modalContent = modal.querySelector('.modal-content');
+
+            // Create picker
+            const picker = document.createElement('emoji-picker');
+            picker.style.position = 'absolute';
+            picker.style.bottom = '60px';
+            picker.style.right = '20px';
+            picker.style.display = 'none';
+
+            // Append inside modal
+            modalContent.appendChild(picker);
+
+            // Open/close picker
+            iconBtn.addEventListener('click', () => {
+                picker.style.display = picker.style.display === 'none' ? 'block' : 'none';
+            });
+
+            // Select emoji
+            picker.addEventListener('emoji-click', (event) => {
+                iconBtn.textContent = event.detail.unicode;
+                picker.style.display = 'none';
+            });
+        </script>
     </body>
 </html>

@@ -29,6 +29,22 @@
     padding-bottom: 4px;
 }
 
+.info {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.icon {
+    font-size: 18px;
+    align-content: center;
+}
+
+.cat-name {
+    font-size: 16px;
+    align-content: center;
+}
+
 .name {
     font-size: 16px;
     font-weight: bold;
@@ -66,6 +82,29 @@
 
 .btn:hover {
     background: #333;
+}
+
+.icon-selector {
+    font-size: 20px;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.icon-selector:hover {
+    background: #333;
+}
+
+.cat-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.emoji-picker {
+    z-index: 9999 !important;
 }
 
 
