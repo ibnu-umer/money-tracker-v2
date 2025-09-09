@@ -94,7 +94,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <div class="form-title" id="form-title">Add Category</div>
-                                <span class="close" data-modal-close>&times;</span>
+                                <span class="data-modal-close" data-modal-close>&times;</span>
                             </div>
 
                             <div class="form-group">
@@ -110,41 +110,16 @@
                             </select>
 
                             <button class="save-btn">Save</button>
-                            <button class="cancel-btn">Cancel</button>
+                            <button class="cancel-btn" data-modal-close>Cancel</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <script type="module">import "https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js";</script>
         <script src="{% static 'js/modal.js' %}" defer></script>
-        <script type="module">
-            import 'https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js';
-
-            const iconBtn = document.getElementById('iconSelector');
-            const modal = document.getElementById('categoryModal');
-            const modalContent = modal.querySelector('.modal-content');
-
-            // Create picker
-            const picker = document.createElement('emoji-picker');
-            picker.style.position = 'absolute';
-            picker.style.bottom = '60px';
-            picker.style.right = '20px';
-            picker.style.display = 'none';
-
-            // Append inside modal
-            modalContent.appendChild(picker);
-
-            // Open/close picker
-            iconBtn.addEventListener('click', () => {
-                picker.style.display = picker.style.display === 'none' ? 'block' : 'none';
-            });
-
-            // Select emoji
-            picker.addEventListener('emoji-click', (event) => {
-                iconBtn.textContent = event.detail.unicode;
-                picker.style.display = 'none';
-            });
+        <script src="{% static 'js/categories.js' %}"></script>
         </script>
     </body>
 </html>
