@@ -1,626 +1,747 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- ----------------STYLES----------------- -->
-    <link rel="stylesheet" href="{% static 'css/global.css' %}">
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
-    <link rel="stylesheet" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    <head>
+        <!-- ----------------STYLES----------------- -->
+        <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Money Tracker Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdudesapp3565back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
-</head>
-<body>
-    <div class="main-container">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Money Tracker Dashboard</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script
+            type="module"
+            src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fdudesapp3565back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"
+        ></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    </head>
+    <body>
+        <div class="main-container">
+            <!-- Header -->
+            {% include 'header.html' %}
 
-        <!-- Header -->
-        {% include 'header.html' %}
-        
-        <div class="content-section">
-            <div class="top-content-section">
-                <div class="info-section">
-                    <div class="status-section">
-                        <!-- Status Cards -->
-                        <div class="status-cards">
-                            <div class="status-card">
-                                <div class="status-info">
-                                    <div class="status-label">Total Income</div>
-                                    <div class="status-amount">₹100,000</div>
-                                </div>
-                                <div class="status-change">+15</div>
-                            </div>
-                            <div class="status-card">
-                                <div class="status-info">
-                                    <div class="status-label">Total Income</div>
-                                    <div class="status-amount">₹100,000</div>
-                                </div>
-                                <div class="status-change">+15</div>
-                            </div>
-                            <div class="status-card">
-                                <div class="status-info">
-                                    <div class="status-label">Total Income</div>
-                                    <div class="status-amount">₹100,000</div>
-                                </div>
-                                <div class="status-change">+15</div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info-cards">
-                            <!-- Account Balances -->
-                            <div class="account-card">
-                                <div class="account-title">Accounts Balances</div>
-                                <div class="account-content">
-                                    <div class="account-row"><span class="account-labels">Salary</span><span class="account-amounts">₹40,000</span></div>
-                                    <div class="account-row"><span class="account-labels">Salary</span><span class="account-amounts">₹40,000</span></div>
-                                    <div class="account-row"><span class="account-labels">Salary</span><span class="account-amounts">₹40,000</span></div>
-                                </div>
-                            </div>
-
-                            <!-- Savings -->
-                            <div class="savings-card">
-                                <div class="savings-content">
-                                    <div class="savings-title">Savings</div>
-                                    <div class="savings-info">
-                                        <div>Current savings: ₹5,000</div>
-                                        <div>Target: ₹10,000</div>
+            <div class="content-section">
+                <div class="top-content-section">
+                    <div class="info-section">
+                        <div class="status-section">
+                            <!-- Status Cards -->
+                            <div class="status-cards">
+                                <div class="status-card">
+                                    <div class="status-info">
+                                        <div class="status-label">Total Income</div>
+                                        <div class="status-amount">₹100,000</div>
                                     </div>
-                                    <div class="savings-progress">
-                                        <div class="progress-container">
-                                            <div class="circular-progress"></div>
+                                    <div class="status-change">+15</div>
+                                </div>
+                                <div class="status-card">
+                                    <div class="status-info">
+                                        <div class="status-label">Total Income</div>
+                                        <div class="status-amount">₹100,000</div>
+                                    </div>
+                                    <div class="status-change">+15</div>
+                                </div>
+                                <div class="status-card">
+                                    <div class="status-info">
+                                        <div class="status-label">Total Income</div>
+                                        <div class="status-amount">₹100,000</div>
+                                    </div>
+                                    <div class="status-change">+15</div>
+                                </div>
+                            </div>
+
+                            <div class="account-info-cards">
+                                <!-- Account Balances -->
+                                <div class="account-card">
+                                    <div class="account-title">Accounts Balances</div>
+                                    <div class="account-content">
+                                        <div class="account-row">
+                                            <span class="account-labels">Salary</span>
+                                            <span class="account-amounts">₹40,000</span>
+                                        </div>
+                                        <div class="account-row">
+                                            <span class="account-labels">Salary</span>
+                                            <span class="account-amounts">₹40,000</span>
+                                        </div>
+                                        <div class="account-row">
+                                            <span class="account-labels">Salary</span>
+                                            <span class="account-amounts">₹40,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Savings -->
+                                <div class="savings-card">
+                                    <div class="savings-content">
+                                        <div class="savings-title">Savings</div>
+                                        <div class="savings-info">
+                                            <div>Current savings: ₹5,000</div>
+                                            <div>Target: ₹10,000</div>
+                                        </div>
+                                        <div class="savings-progress">
+                                            <div class="progress-container">
+                                                <div class="circular-progress"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- AI Advice Card -->
+                        <div class="advice-section">
+                            <div class="advice-title">AI Advice</div>
+                            <div class="advice-content">
+                                <div class="advice-text">
+                                    Pay Yourself First, Then Spend. Before paying bills or making purchases, set aside
+                                    at least 20% of your income for savings or investments.
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- AI Advice Card -->
-                    <div class="advice-section">
-                        <div class="advice-title">AI Advice</div>
-                        <div class="advice-content">
-                            <div class="advice-text">Pay Yourself First, Then Spend. Before paying bills or making purchases, set aside at least 20% of your income for savings or investments.</div>
+                    <div class="table-section">
+                        <!-- Cashflow Tables -->
+                        <div class="cashflow-tables">
+                            <div class="cashflow-card">
+                                <div class="card-header">
+                                    <div class="card-title">INCOME</div>
+                                    <div class="card-divider"></div>
+                                </div>
+                                <div class="table-scroller">
+                                    <div class="table-row">
+                                        <span class="table-label">Salary</span>
+                                        <span class="table-amount">₹40,000</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="table-label">Freelance</span>
+                                        <span class="table-amount">₹50,000</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="table-label">Gift</span>
+                                        <span class="table-amount">₹10,000</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="table-label">Other</span>
+                                        <span class="table-amount">₹0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cashflow-card">
+                                <div class="card-header">
+                                    <div class="card-title">EXPENSE</div>
+                                    <div class="card-divider"></div>
+                                </div>
+                                <div class="table-scroller">
+                                    <div class="table-row">
+                                        <span class="table-label">Food</span>
+                                        <span class="table-amount">₹4,000</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="table-label">Home</span>
+                                        <span class="table-amount">₹5,000</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="table-label">Transport</span>
+                                        <span class="table-amount">₹1,000</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="table-label">Groceries</span>
+                                        <span class="table-amount">₹3,000</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="table-label">Utilities</span>
+                                        <span class="table-amount">₹100</span>
+                                    </div>
+                                    <div class="table-row">
+                                        <span class="table-label">Entertainment</span>
+                                        <span class="table-amount">₹500</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-section">
+                            <!-- Transactions Card -->
+                            <div class="transactions-card">
+                                <div class="transaction-header">
+                                    <div class="transactions-title">Transactions</div>
+                                    <button
+                                        id="openTransaction"
+                                        class="add-transaction-button"
+                                        data-modal-open="transactionModal"
+                                        data-id="new"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                                <div class="transactions-scroller">
+                                    <div class="date-section">
+                                        <div class="date-header">02 Aug, Monday</div>
+                                        <div class="date-divider"></div>
+                                    </div>
+                                    <div data-id="101" class="transaction-item">
+                                        <div class="transaction-icon">🥗</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
+                                    </div>
+                                    <div data-id="102" class="transaction-item">
+                                        <div class="transaction-icon">🥗</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
+                                    </div>
+                                    <div data-id="103" class="transaction-item">
+                                        <div class="transaction-icon">💻</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
+                                    </div>
+                                    <div data-id="104" class="transaction-item">
+                                        <div class="transaction-icon">🚗</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
+                                    </div>
+                                    <div data-id="105" class="transaction-item">
+                                        <div class="transaction-icon">🏡</div>
+                                        <div class="transaction-details">
+                                            <div class="transaction-name">Food</div>
+                                            <div class="transaction-note">Note</div>
+                                        </div>
+                                        <div class="transaction-amount">₹400</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bills-card">
+                                <div class="form-header">
+                                    <div class="form-title">Bills to Pay</div>
+                                    <div class="add-button" data-modal-open="billModal" data-id="new">+</div>
+                                </div>
+                                <div class="bill">
+                                    <div class="bill-info">
+                                        <span>Electricity</span>
+                                        <div>
+                                            <span class="due">Due: 10 Sept</span>
+                                            <span class="amount">$120</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="bill-actions">
+                                            <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                            <button class="bill-action-button">D</button>
+                                        </div>
+                                        <button class="pay-btn">Pay</button>
+                                    </div>
+                                </div>
+                                <div class="bill">
+                                    <div class="bill-info">
+                                        <span>Electricity</span>
+                                        <div>
+                                            <span class="due">Due: 10 Sept</span>
+                                            <span class="amount">$120</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="bill-actions">
+                                            <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                            <button class="bill-action-button">D</button>
+                                        </div>
+                                        <button class="pay-btn">Pay</button>
+                                    </div>
+                                </div>
+                                <div class="bill">
+                                    <div class="bill-info">
+                                        <span>Electricity</span>
+                                        <div>
+                                            <span class="due">Due: 10 Sept</span>
+                                            <span class="amount">$120</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="bill-actions">
+                                            <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                            <button class="bill-action-button">D</button>
+                                        </div>
+                                        <button class="pay-btn">Pay</button>
+                                    </div>
+                                </div>
+                                <div class="bill">
+                                    <div class="bill-info">
+                                        <span>Electricity</span>
+                                        <div>
+                                            <span class="due">Due: 10 Sept</span>
+                                            <span class="amount">$120</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="bill-actions">
+                                            <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                            <button class="bill-action-button">D</button>
+                                        </div>
+                                        <button class="pay-btn">Pay</button>
+                                    </div>
+                                </div>
+                                <div class="bill">
+                                    <div class="bill-info">
+                                        <span>Electricity</span>
+                                        <div>
+                                            <span class="due">Due: 10 Sept</span>
+                                            <span class="amount">$120</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="bill-actions">
+                                            <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                            <button class="bill-action-button">D</button>
+                                        </div>
+                                        <button class="pay-btn">Pay</button>
+                                    </div>
+                                </div>
+                                <div class="bill">
+                                    <div class="bill-info">
+                                        <span>Electricity</span>
+                                        <div>
+                                            <span class="due">Due: 10 Sept</span>
+                                            <span class="amount">$120</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="bill-actions">
+                                            <button data-modal-open="billModal" class="bill-action-button">E</button>
+                                            <button class="bill-action-button">D</button>
+                                        </div>
+                                        <button class="pay-btn">Pay</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="billModal" class="modal-container hidden">
+                                <div class="modal-overlay" data-modal-overlay>
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <div class="form-title" id="form-title">Add Bill</div>
+                                            <span class="close" data-modal-close>&times;</span>
+                                        </div>
+                                        <form id="budgetForm">
+                                            <div class="form-group">
+                                                <div class="input-header">Bill Name</div>
+                                                <input type="text" id="bill-name" required />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="budget">Budget Amount</label>
+                                                <input type="number" id="budget" min="0" required />
+                                            </div>
+                                            <button type="submit" class="btn">Save</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="table-section">
-                    <!-- Cashflow Tables -->
-                    <div class="cashflow-tables">
-                        <div class="cashflow-card">
-                            <div class="card-header">
-                                <div class="card-title">INCOME</div>
-                                <div class="card-divider"></div>
-                            </div>
-                            <div class="table-scroller">
-                                <div class="table-row"><span class="table-label">Salary</span><span class="table-amount">₹40,000</span></div>
-                                <div class="table-row"><span class="table-label">Freelance</span><span class="table-amount">₹50,000</span></div>
-                                <div class="table-row"><span class="table-label">Gift</span><span class="table-amount">₹10,000</span></div>
-                                <div class="table-row"><span class="table-label">Other</span><span class="table-amount">₹0</span></div>
-                            </div>
-                        </div>
-                        <div class="cashflow-card">
-                            <div class="card-header">
-                                <div class="card-title">EXPENSE</div>
-                                <div class="card-divider"></div>
-                            </div>
-                            <div class="table-scroller">
-                                <div class="table-row"><span class="table-label">Food</span><span class="table-amount">₹4,000</span></div>
-                                <div class="table-row"><span class="table-label">Home</span><span class="table-amount">₹5,000</span></div>
-                                <div class="table-row"><span class="table-label">Transport</span><span class="table-amount">₹1,000</span></div>
-                                <div class="table-row"><span class="table-label">Groceries</span><span class="table-amount">₹3,000</span></div>
-                                <div class="table-row"><span class="table-label">Utilities</span><span class="table-amount">₹100</span></div>
-                                <div class="table-row"><span class="table-label">Entertainment</span><span class="table-amount">₹500</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="transaction-section">
-                        <!-- Transactions Card -->
-                        <div class="transactions-card">
-                            <div class="transaction-header">
-                                <div class="transactions-title">Transactions</div>
-                                <button id="openTransaction" class="add-transaction-button" data-modal-open="transactionModal" data-id="new">+</button>
-                            </div>
-                            <div class="transactions-scroller">
-                                <div class="date-section">
-                                    <div class="date-header">02 Aug, Monday</div>
-                                    <div class="date-divider"></div>
-                                </div>
-                                <div data-id="101" class="transaction-item">
-                                    <div class="transaction-icon">🥗</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
-                                    </div>
-                                    <div class="transaction-amount">₹400</div>
-                                </div>
-                                <div data-id="102" class="transaction-item">
-                                    <div class="transaction-icon">🥗</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
-                                    </div>
-                                    <div class="transaction-amount">₹400</div>
-                                </div>
-                                <div data-id="103" class="transaction-item">
-                                    <div class="transaction-icon">💻</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
-                                    </div>
-                                    <div class="transaction-amount">₹400</div>
-                                </div>
-                                <div data-id="104" class="transaction-item">
-                                    <div class="transaction-icon">🚗</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
-                                    </div>
-                                    <div class="transaction-amount">₹400</div>
-                                </div>
-                                <div data-id="105" class="transaction-item">
-                                    <div class="transaction-icon">🏡</div>
-                                    <div class="transaction-details">
-                                        <div class="transaction-name">Food</div>
-                                        <div class="transaction-note">Note</div>
-                                    </div>
-                                    <div class="transaction-amount">₹400</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bills-card">
-                            <div class="form-header">
-                                <div class="form-title">Bills to Pay</div>
-                                <div class="add-button" data-modal-open="billModal" data-id="new">+</div>
-                            </div>
-                            <div class="bill">
-                                <div class="bill-info">
-                                    <span>Electricity</span>
-                                    <div>
-                                        <span class="due">Due: 10 Sept</span>
-                                        <span class="amount">$120</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="bill-actions">
-                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
-                                        <button class="bill-action-button">D</button>
-                                    </div>
-                                    <button class="pay-btn">Pay</button>
-                                </div>
-                            </div>
-                            <div class="bill">
-                                <div class="bill-info">
-                                    <span>Electricity</span>
-                                    <div>
-                                        <span class="due">Due: 10 Sept</span>
-                                        <span class="amount">$120</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="bill-actions">
-                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
-                                        <button class="bill-action-button">D</button>
-                                    </div>
-                                    <button class="pay-btn">Pay</button>
-                                </div>
-                            </div>
-                            <div class="bill">
-                                <div class="bill-info">
-                                    <span>Electricity</span>
-                                    <div>
-                                        <span class="due">Due: 10 Sept</span>
-                                        <span class="amount">$120</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="bill-actions">
-                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
-                                        <button class="bill-action-button">D</button>
-                                    </div>
-                                    <button class="pay-btn">Pay</button>
-                                </div>
-                            </div>
-                            <div class="bill">
-                                <div class="bill-info">
-                                    <span>Electricity</span>
-                                    <div>
-                                        <span class="due">Due: 10 Sept</span>
-                                        <span class="amount">$120</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="bill-actions">
-                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
-                                        <button class="bill-action-button">D</button>
-                                    </div>
-                                    <button class="pay-btn">Pay</button>
-                                </div>
-                            </div>
-                            <div class="bill">
-                                <div class="bill-info">
-                                    <span>Electricity</span>
-                                    <div>
-                                        <span class="due">Due: 10 Sept</span>
-                                        <span class="amount">$120</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="bill-actions">
-                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
-                                        <button class="bill-action-button">D</button>
-                                    </div>
-                                    <button class="pay-btn">Pay</button>
-                                </div>
-                            </div>
-                            <div class="bill">
-                                <div class="bill-info">
-                                    <span>Electricity</span>
-                                    <div>
-                                        <span class="due">Due: 10 Sept</span>
-                                        <span class="amount">$120</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="bill-actions">
-                                        <button data-modal-open="billModal" class="bill-action-button">E</button>
-                                        <button class="bill-action-button">D</button>
-                                    </div>
-                                    <button class="pay-btn">Pay</button>
-                                </div>
+                <!-- Statistics Section -->
+                <div class="statistics-section">
+                    <!-- Budgeted Items -->
+                    <section class="categories-card">
+                        <div class="card-head">
+                            <div class="budget-card-title">Budget Overview</div>
+                            <div class="right">
+                                <span>
+                                    Total Budget:
+                                    <strong>₹2,40,000</strong>
+                                </span>
+                                <span>|</span>
+                                <span>
+                                    Spent:
+                                    <strong>₹1,52,000</strong>
+                                </span>
+                                <span>|</span>
+                                <span>
+                                    Remaining:
+                                    <strong>₹88,000</strong>
+                                </span>
+                                <button class="add-button" data-modal-open="budgetModal" data-id="new">+</button>
                             </div>
                         </div>
 
-                        <div id="billModal" class="modal-container hidden">
+                        <div class="categories-grid" id="grid">
+                            <article
+                                class="cat-card"
+                                data-name="Food"
+                                data-spent="40000"
+                                data-budget="50000"
+                                data-trend="up"
+                            >
+                                <div class="budget-item-header">
+                                    <div class="name">Food</div>
+                                    <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="meta">Budget: ₹50,000</div>
+                                    <div class="amount">₹40,000 spent</div>
+                                </div>
+                                <div>
+                                    <div
+                                        class="progress"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        aria-label="Food progress"
+                                    >
+                                        <div class="bar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="grid-footer">
+                                        <span class="meta remaining">₹10,000 left</span>
+                                        <span class="pct">0%</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article
+                                class="cat-card"
+                                data-name="Food"
+                                data-spent="40000"
+                                data-budget="50000"
+                                data-trend="up"
+                            >
+                                <div class="budget-item-header">
+                                    <div class="name">Food</div>
+                                    <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="meta">Budget: ₹50,000</div>
+                                    <div class="amount">₹40,000 spent</div>
+                                </div>
+                                <div>
+                                    <div
+                                        class="progress"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        aria-label="Food progress"
+                                    >
+                                        <div class="bar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="grid-footer">
+                                        <span class="meta remaining">₹10,000 left</span>
+                                        <span class="pct">0%</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article
+                                class="cat-card"
+                                data-name="Food"
+                                data-spent="40000"
+                                data-budget="50000"
+                                data-trend="up"
+                            >
+                                <div class="budget-item-header">
+                                    <div class="name">Food</div>
+                                    <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="meta">Budget: ₹50,000</div>
+                                    <div class="amount">₹40,000 spent</div>
+                                </div>
+                                <div>
+                                    <div
+                                        class="progress"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        aria-label="Food progress"
+                                    >
+                                        <div class="bar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="grid-footer">
+                                        <span class="meta remaining">₹10,000 left</span>
+                                        <span class="pct">0%</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article
+                                class="cat-card"
+                                data-name="Food"
+                                data-spent="40000"
+                                data-budget="50000"
+                                data-trend="up"
+                            >
+                                <div class="budget-item-header">
+                                    <div class="name">Food</div>
+                                    <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="meta">Budget: ₹50,000</div>
+                                    <div class="amount">₹40,000 spent</div>
+                                </div>
+                                <div>
+                                    <div
+                                        class="progress"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        aria-label="Food progress"
+                                    >
+                                        <div class="bar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="grid-footer">
+                                        <span class="meta remaining">₹10,000 left</span>
+                                        <span class="pct">0%</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article
+                                class="cat-card"
+                                data-name="Food"
+                                data-spent="40000"
+                                data-budget="50000"
+                                data-trend="up"
+                            >
+                                <div class="budget-item-header">
+                                    <div class="name">Food</div>
+                                    <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="meta">Budget: ₹50,000</div>
+                                    <div class="amount">₹40,000 spent</div>
+                                </div>
+                                <div>
+                                    <div
+                                        class="progress"
+                                        role="progressbar"
+                                        aria-valuemin="0"
+                                        aria-valuemax="100"
+                                        aria-label="Food progress"
+                                    >
+                                        <div class="bar" style="width: 0%"></div>
+                                    </div>
+                                    <div class="grid-footer">
+                                        <span class="meta remaining">₹10,000 left</span>
+                                        <span class="pct">0%</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Add budget item modal -->
+                        <div id="budgetModal" class="modal-container hidden">
                             <div class="modal-overlay" data-modal-overlay>
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <div class="form-title" id="form-title">Add Bill</div>
+                                        <div class="form-title" id="form-title">Add Budget</div>
                                         <span class="close" data-modal-close>&times;</span>
                                     </div>
                                     <form id="budgetForm">
                                         <div class="form-group">
-                                            <div class="input-header">Bill Name</div>
-                                            <input type="text" id="bill-name" required>
+                                            <div class="input-header">Category</div>
+                                            <select id="category" required>
+                                                <option value="">-- Select Category --</option>
+                                                <option value="Food">Food</option>
+                                                <option value="Transport">Transport</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="Health">Health</option>
+                                                <option value="Shopping">Shopping</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="budget">Budget Amount</label>
-                                            <input type="number" id="budget" min="0" required>
+                                            <input type="number" id="budget" min="0" required />
                                         </div>
                                         <button type="submit" class="btn">Save</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </section>
 
-            <!-- Statistics Section -->
-            <div class="statistics-section">
-                <!-- Budgeted Items -->
-                <section class="categories-card">
-                    <div class="card-head">
-                        <div class="budget-card-title">Budget Overview</div>
-                        <div class="right">
-                        <span>Total Budget: <strong>₹2,40,000</strong></span>
-                        <span>|</span>
-                        <span>Spent: <strong>₹1,52,000</strong></span>
-                        <span>|</span>
-                        <span>Remaining: <strong>₹88,000</strong></span>
-                        <button class="add-button" data-modal-open="budgetModal" data-id="new">+</button>
+                    <!-- Saving Goals -->
+                    <div class="goals-section">
+                        <div class="form-header">
+                            <div class="goals-title">Saving Goals Dashboard</div>
+                            <button class="add-button" data-modal-open="SGAddModal" data-id="new">+</button>
                         </div>
-                    </div>
-
-                    <div class="categories-grid" id="grid">
-                        <article class="cat-card" data-name="Food" data-spent="40000" data-budget="50000" data-trend="up">
-                            <div class="budget-item-header">
-                                <div class="name">Food</div>
-                                <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
-                            </div>
-                            <div class="stat">
-                                <div class="meta">Budget: ₹50,000</div>
-                                <div class="amount">₹40,000 spent</div>
-                            </div>
-                            <div>
-                                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Food progress">
-                                <div class="bar" style="width:0%"></div>
-                                </div>
-                                <div class="grid-footer">
-                                <span class="meta remaining">₹10,000 left</span>
-                                <span class="pct">0%</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="cat-card" data-name="Food" data-spent="40000" data-budget="50000" data-trend="up">
-                            <div class="budget-item-header">
-                                <div class="name">Food</div>
-                                <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
-                            </div>
-                            <div class="stat">
-                                <div class="meta">Budget: ₹50,000</div>
-                                <div class="amount">₹40,000 spent</div>
-                            </div>
-                            <div>
-                                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Food progress">
-                                <div class="bar" style="width:0%"></div>
-                                </div>
-                                <div class="grid-footer">
-                                <span class="meta remaining">₹10,000 left</span>
-                                <span class="pct">0%</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="cat-card" data-name="Food" data-spent="40000" data-budget="50000" data-trend="up">
-                            <div class="budget-item-header">
-                                <div class="name">Food</div>
-                                <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
-                            </div>
-                            <div class="stat">
-                                <div class="meta">Budget: ₹50,000</div>
-                                <div class="amount">₹40,000 spent</div>
-                            </div>
-                            <div>
-                                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Food progress">
-                                <div class="bar" style="width:0%"></div>
-                                </div>
-                                <div class="grid-footer">
-                                <span class="meta remaining">₹10,000 left</span>
-                                <span class="pct">0%</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="cat-card" data-name="Food" data-spent="40000" data-budget="50000" data-trend="up">
-                            <div class="budget-item-header">
-                                <div class="name">Food</div>
-                                <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
-                            </div>
-                            <div class="stat">
-                                <div class="meta">Budget: ₹50,000</div>
-                                <div class="amount">₹40,000 spent</div>
-                            </div>
-                            <div>
-                                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Food progress">
-                                <div class="bar" style="width:0%"></div>
-                                </div>
-                                <div class="grid-footer">
-                                <span class="meta remaining">₹10,000 left</span>
-                                <span class="pct">0%</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="cat-card" data-name="Food" data-spent="40000" data-budget="50000" data-trend="up">
-                            <div class="budget-item-header">
-                                <div class="name">Food</div>
-                                <div class="btn" data-modal-open="budgetModal" data-id="100">Edit</div>
-                            </div>
-                            <div class="stat">
-                                <div class="meta">Budget: ₹50,000</div>
-                                <div class="amount">₹40,000 spent</div>
-                            </div>
-                            <div>
-                                <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Food progress">
-                                <div class="bar" style="width:0%"></div>
-                                </div>
-                                <div class="grid-footer">
-                                <span class="meta remaining">₹10,000 left</span>
-                                <span class="pct">0%</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Add budget item modal -->
-                    <div id="budgetModal" class="modal-container hidden">
-                        <div class="modal-overlay" data-modal-overlay>
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="form-title" id="form-title">Add Budget</div>
-                                    <span class="close" data-modal-close>&times;</span>
-                                </div>
-                                <form id="budgetForm">
-                                    <div class="form-group">
-                                        <div class="input-header">Category</div>
-                                        <select id="category" required>
-                                            <option value="">-- Select Category --</option>
-                                            <option value="Food">Food</option>
-                                            <option value="Transport">Transport</option>
-                                            <option value="Entertainment">Entertainment</option>
-                                            <option value="Health">Health</option>
-                                            <option value="Shopping">Shopping</option>
-                                        </select>
+                        <div class="savings-grid">
+                            <div class="card">
+                                <div class="card-head">
+                                    <div>
+                                        <div class="goal-title">New laptop</div>
+                                        <div class="meta">Target ₹80,000 • Saved ₹5,000</div>
                                     </div>
-                                    <div class="form-group">
-                                    <label for="budget">Budget Amount</label>
-                                    <input type="number" id="budget" min="0" required>
+                                    <div class="donut donut--sg" style="--progress: 40">
+                                        <div class="donut__inner donut__inner--sg">
+                                            <div class="donut-percentage">10%</div>
+                                        </div>
                                     </div>
-                                    <button type="submit" class="btn">Save</button>
-                                </form>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="meta"><span class="pill">Essential</span></div>
+                                    <div class="actions">
+                                        <button id="openDrawer" class="btn">Open</button>
+                                        <button class="btn ghost" data-modal-open="SGAddModal" data-id="100">
+                                            Edit
+                                        </button>
+                                        <button id="openSGEditor" class="btn ghost" data-action="delete">Delete</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                
-                <!-- Saving Goals -->
-                <div class="goals-section">
-                    <div class="form-header">
-                        <div class="goals-title">Saving Goals Dashboard</div>
-                        <button class="add-button" data-modal-open="SGAddModal" data-id="new">+</button>
-                    </div>
-                    <div class="savings-grid">
-                        <div class="card">
-                            <div class="card-head">
+                        <!-- Modal -->
+                        <div id="SGAddModal" class="modal-container hidden" data-modal-type="center">
+                            <div class="modal-overlay" data-modal-overlay>
+                                <div class="sg-add-modal">
+                                    <div id="form-title" class="form-title">New Goal</div>
+                                    <div class="form-content">
+                                        <div>
+                                            <label for="g-title">Goal name</label>
+                                            <input id="g-title" />
+                                        </div>
+                                        <div class="form-row">
+                                            <div style="flex: 1">
+                                                <label for="g-target">Target amount</label>
+                                                <input id="g-target" type="number" />
+                                            </div>
+                                            <div style="flex: 1">
+                                                <label for="g-start">Starting amount</label>
+                                                <input id="g-start" type="number" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="g-tags">Tags (comma separated)</label>
+                                            <input id="g-tags" placeholder="e.g. travel, emergency" />
+                                        </div>
+                                        <div class="editor-action-buttons">
+                                            <button class="btn ghost" data-modal-close>Cancel</button>
+                                            <button id="save" class="btn">Save Goal</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Drawer -->
+                        <div id="SGDrawer" class="drawer">
+                            <div class="drawer-content">
                                 <div>
-                                <div class="goal-title">New laptop</div>
-                                <div class="meta">Target ₹80,000 • Saved ₹5,000</div>
+                                    <h2 id="drawer-title">Goal</h2>
+                                    <div class="muted" id="d-meta">Target & current</div>
                                 </div>
-                                <div class="donut donut--sg" style="--progress:40">
-                                    <div class="donut__inner donut__inner--sg">
-                                        <div class="donut-percentage">10%</div>
-                                    </div>
-                                </div>
+                                <button id="closeDrawer" class="btn ghost">Close</button>
                             </div>
-                            <div class="card-footer">
-                                <div class="meta"><span class="pill">Essential</span></div>
-                                <div class="actions">
-                                    <button id="openDrawer" class="btn">Open</button>
-                                    <button class="btn ghost" data-modal-open="SGAddModal" data-id="100">Edit</button>
-                                    <button id="openSGEditor" class="btn ghost" data-action="delete">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Modal -->
-                    <div id="SGAddModal" class="modal-container hidden" data-modal-type="center">
-                        <div class="modal-overlay" data-modal-overlay>
-                            <div class="sg-add-modal">
-                                <div id="form-title" class="form-title">New Goal</div>
-                                <div class="form-content">
-                                    <div>
-                                        <label for="g-title">Goal name</label>
-                                        <input id="g-title" />
-                                    </div>
-                                    <div class="form-row">
-                                        <div style="flex:1">
-                                        <label for="g-target">Target amount</label>
-                                        <input id="g-target" type="number" />
-                                        </div>
-                                        <div style="flex:1">
-                                        <label for="g-start">Starting amount</label>
-                                        <input id="g-start" type="number" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label for="g-tags">Tags (comma separated)</label>
-                                        <input id="g-tags" placeholder="e.g. travel, emergency" />
-                                    </div>
-                                    <div class="editor-action-buttons">
-                                        <button class="btn ghost" data-modal-close>Cancel</button>
-                                        <button id="save" class="btn">Save Goal</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <canvas id="bigChart" class="bigchart"></canvas>
 
-                    <!-- Drawer -->
-                    <div id="SGDrawer" class="drawer">
-                        <div class="drawer-content">
+                            <div class="contrib">
+                                <input id="contrib" placeholder="Add contribution amount" />
+                                <button id="add-contrib" class="btn">Add</button>
+                            </div>
+
                             <div>
-                                <h2 id="drawer-title">Goal</h2>
-                                <div class="muted" id="d-meta">Target & current</div>
+                                <div class="muted" style="margin-bottom: 8px">Recent contributions</div>
+                                <div id="history" class="history-list"></div>
                             </div>
-                            <button id="closeDrawer" class="btn ghost">Close</button>
-                        </div>
-
-                        <canvas id="bigChart" class="bigchart"></canvas>
-
-                        <div class="contrib">
-                            <input id="contrib" placeholder="Add contribution amount" />
-                            <button id="add-contrib" class="btn">Add</button>
-                        </div>
-
-                        <div>
-                            <div class="muted" style="margin-bottom:8px">Recent contributions</div>
-                            <div id="history" class="history-list"></div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Charts section -->
-            <div class="charts-grid">
-                <div class="left-section">
-                    <div class="left-container">
-                        <canvas id="monthly-cashflow-chart" class="mc-chart"></canvas>
+                <!-- Charts section -->
+                <div class="charts-grid">
+                    <div class="left-section">
+                        <div class="left-container">
+                            <canvas id="monthly-cashflow-chart" class="mc-chart"></canvas>
+                        </div>
+
+                        <div class="left-container">
+                            <canvas id="line-chart"></canvas>
+                        </div>
                     </div>
 
-                    <div class="left-container">
-                        <canvas id="line-chart"></canvas>
-                    </div>
-                </div>
+                    <div class="right-section">
+                        <div class="right-container">
+                            <canvas class="canvas-pie" id="expense-chart"></canvas>
+                            <ul id="pie-legend" class="pie-legend"></ul>
+                        </div>
 
-                <div class="right-section">
-                    <div class="right-container">
-                        <canvas class="canvas-pie" id="expense-chart"></canvas>
-                        <ul id="pie-legend" class="pie-legend"></ul>
-                    </div>
-                    
-                    <div class="right-container">
-                        <canvas class="canvas-pie" id="savingsChart"></canvas>
+                        <div class="right-container">
+                            <canvas class="canvas-pie" id="savingsChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- ---------------MODALS------------------ -->
 
-    <!-- ---------------MODALS------------------ -->
+        <!-- Transaction Modal -->
+        <div id="transactionModal" class="modal-container hidden" data-modal-type="center">
+            <div class="modal-overlay" data-modal-overlay>
+                <div class="transaction-modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="form-title">Add new transaction</div>
+                            <button class="data-modal-close" data-modal-close>&times;</button>
+                        </div>
 
-    <!-- Transaction Modal -->
-    <div id="transactionModal" class="modal-container hidden" data-modal-type="center">
-        <div class="modal-overlay" data-modal-overlay>
-            <div class="transaction-modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="form-title">Add new transaction</div>
-                        <button class="data-modal-close" data-modal-close>&times;</button>
+                        <div class="transaction-type">
+                            <button id="incomeBtn" class="type-btn">Income</button>
+                            <button id="expenseBtn" class="type-btn expense">Expense</button>
+                        </div>
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="input-header">Date</div>
+                                <input type="date" id="transactionDate" name="transactionDate" />
+                            </div>
+                            <div class="form-group">
+                                <div class="input-header">Category</div>
+                                <select name="category" id="category">
+                                    <option value="">Select category</option>
+                                    <option value="food">Food</option>
+                                    <option value="travel">Travel</option>
+                                    <option value="salary">Salary</option>
+                                    <option value="shopping">Shopping</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-header">Amount</div>
+                                <input type="number" name="amount" placeholder="₹Amount" required />
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-header">Note</div>
+                                <input type="text" name="note" placeholder="Note" />
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" name="save" class="save-btn">Save</button>
+                            </div>
+                        </form>
                     </div>
-                    
-                    <div class="transaction-type">
-                        <button id="incomeBtn" class="type-btn">Income</button>
-                        <button id="expenseBtn" class="type-btn expense">Expense</button>
-                    </div>
-
-                    <form method="POST">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <div class="input-header">Date</div>
-                            <input type="date" id="transactionDate" name="transactionDate">
-                        </div>
-                        <div class="form-group">
-                            <div class="input-header">Category</div>
-                            <select name="category" id="category">
-                            <option value="">Select category</option>
-                            <option value="food">Food</option>
-                            <option value="travel">Travel</option>
-                            <option value="salary">Salary</option>
-                            <option value="shopping">Shopping</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-header">Amount</div>
-                            <input type="number" name="amount" placeholder="₹Amount" required>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="input-header">Note</div>
-                            <input type="text" name="note" placeholder="Note">
-                        </div>
-
-
-                        <div class="form-actions">
-                            <button type="submit" name="save" class="save-btn">Save</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
-    
 
-    <!-- ---------------SCRIPTS------------------ -->
-    <script src="{% static 'js/dashboard.js' %}"></script>
-    <script src="{% static 'js/modal.js' %}" defer></script>
-</body>
+        <!-- ---------------SCRIPTS------------------ -->
+        <script src="{% static 'js/dashboard.js' %}"></script>
+        <script src="{% static 'js/modal.js' %}" defer></script>
+    </body>
 </html>

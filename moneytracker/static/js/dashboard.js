@@ -1,8 +1,8 @@
  // Update Donuts
 function getColor(progress) {
-    if (progress < 40) return "#ef4444"; 
-    if (progress < 70) return "#f59e0b"; 
-    return "#22c55e";                    
+    if (progress < 40) return "#ef4444";
+    if (progress < 70) return "#f59e0b";
+    return "#22c55e";
 }
 
 function updateDonut(donut) {
@@ -49,7 +49,7 @@ const incomeExpenseChart = new Chart(mcc, {
     },
     options: {
         responsive: true,
-        maintainAspectRatio: false, 
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 labels: {
@@ -112,18 +112,18 @@ const incomeExpenseChart = new Chart(mcc, {
         },
 
         onResize: (chart, size) => {
-            if (size.width < left_section_breakpoint) { 
+            if (size.width < left_section_breakpoint) {
                 chart.options.plugins.title.font.size = 14;
-                chart.options.plugins.legend.labels.font.size = 10;  
-                chart.options.plugins.legend.labels.boxWidth = 10;   
+                chart.options.plugins.legend.labels.font.size = 10;
+                chart.options.plugins.legend.labels.boxWidth = 10;
                 chart.options.scales.x.ticks.font.size = 10;
                 chart.options.scales.y.ticks.font.size = 10;
             } else {
                 chart.options.plugins.title.font.size = 16;
-                chart.options.plugins.legend.labels.font.size = 12; 
-                chart.options.plugins.legend.labels.boxWidth = 16; 
+                chart.options.plugins.legend.labels.font.size = 12;
+                chart.options.plugins.legend.labels.boxWidth = 16;
                 chart.options.scales.x.ticks.font.size = 12;
-                chart.options.scales.y.ticks.font.size = 12; 
+                chart.options.scales.y.ticks.font.size = 12;
             }
             chart.update();
         },
@@ -178,27 +178,27 @@ const expenseOverview = new Chart(exp, {
 
             legend: {
                 labels: {
-                    boxWidth: 12,   
-                    boxHeight: 12, 
+                    boxWidth: 12,
+                    boxHeight: 12,
                     color: '#ffffff',
                     font: {
-                        size: 12,   
+                        size: 12,
                         family: "Inter",
                     }
-                }, 
-                position: "top"  
-            } 
+                },
+                position: "top"
+            }
         },
 
         onResize: (chart, size) => {
-            if (size.width < right_section_breakpoint) { 
+            if (size.width < right_section_breakpoint) {
                 chart.options.plugins.title.font.size = 14;
-                chart.options.plugins.legend.labels.font.size = 10;  
-                chart.options.plugins.legend.labels.boxWidth = 10;   
+                chart.options.plugins.legend.labels.font.size = 10;
+                chart.options.plugins.legend.labels.boxWidth = 10;
             } else {
                 chart.options.plugins.title.font.size = 16;
-                chart.options.plugins.legend.labels.font.size = 12; 
-                chart.options.plugins.legend.labels.boxWidth = 16; 
+                chart.options.plugins.legend.labels.font.size = 12;
+                chart.options.plugins.legend.labels.boxWidth = 16;
             }
             // Update Legend Position
             if (size.width < 350) {
@@ -269,7 +269,7 @@ const lineChart = new Chart(lnc, {
                 position: "top",
                 labels: {
                     boxWidth: 15,
-                    font: { 
+                    font: {
                         family: 'Inter',
                         size: 12,
                         weight: 'bold'
@@ -324,20 +324,20 @@ const lineChart = new Chart(lnc, {
                 }
             }
         },
-        
+
         onResize: (chart, size) => {
-            if (size.width < left_section_breakpoint) { 
+            if (size.width < left_section_breakpoint) {
                 chart.options.plugins.title.font.size = 14;
-                chart.options.plugins.legend.labels.font.size = 10;  
-                chart.options.plugins.legend.labels.boxWidth = 10;   
+                chart.options.plugins.legend.labels.font.size = 10;
+                chart.options.plugins.legend.labels.boxWidth = 10;
                 chart.options.scales.x.ticks.font.size = 10;
                 chart.options.scales.y.ticks.font.size = 10;
             } else {
                 chart.options.plugins.title.font.size = 16;
-                chart.options.plugins.legend.labels.font.size = 12; 
-                chart.options.plugins.legend.labels.boxWidth = 16; 
+                chart.options.plugins.legend.labels.font.size = 12;
+                chart.options.plugins.legend.labels.boxWidth = 16;
                 chart.options.scales.x.ticks.font.size = 12;
-                chart.options.scales.y.ticks.font.size = 12; 
+                chart.options.scales.y.ticks.font.size = 12;
             }
             chart.update();
         },
@@ -382,15 +382,15 @@ const savingsChart = new Chart(scc, {
         plugins: {
             legend: {
                 labels: {
-                    boxWidth: 12,   
-                    boxHeight: 12, 
+                    boxWidth: 12,
+                    boxHeight: 12,
                     color: '#ffffff',
                     font: {
-                        size: 12,   
+                        size: 12,
                         family: "Inter",
                     }
-                }, 
-                position: "top"  
+                },
+                position: "top"
             },
             tooltip: {
                 mode: 'index',
@@ -454,18 +454,18 @@ const savingsChart = new Chart(scc, {
         },
 
         onResize: (chart, size) => {
-            if (size.width < right_section_breakpoint) { 
+            if (size.width < right_section_breakpoint) {
                 chart.options.plugins.title.font.size = 14;
-                chart.options.plugins.legend.labels.font.size = 10;  
-                chart.options.plugins.legend.labels.boxWidth = 10;   
+                chart.options.plugins.legend.labels.font.size = 10;
+                chart.options.plugins.legend.labels.boxWidth = 10;
                 chart.options.scales.x.ticks.font.size = 10;
                 chart.options.scales.y.ticks.font.size = 10;
             } else {
                 chart.options.plugins.title.font.size = 16;
-                chart.options.plugins.legend.labels.font.size = 12; 
-                chart.options.plugins.legend.labels.boxWidth = 16; 
+                chart.options.plugins.legend.labels.font.size = 12;
+                chart.options.plugins.legend.labels.boxWidth = 16;
                 chart.options.scales.x.ticks.font.size = 12;
-                chart.options.scales.y.ticks.font.size = 12; 
+                chart.options.scales.y.ticks.font.size = 12;
             }
             chart.update();
         },
