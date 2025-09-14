@@ -9,13 +9,13 @@
     height: var(--height-header);
 }
 
-.header__logo {
+.header-logo {
     font-weight: 700;
     font-size: var(--fs-logo);
     color: var(--color-logo);
 }
 
-.header__calendar {
+.header-calendar {
     font-weight: 700;
     font-size: var(--fs-calendar);
     color: var(--color-text-primary);
@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 
-.header__calendar:hover {
+.header-calendar:hover {
     border-color: var(--color-border-hover);
 }
 
@@ -37,7 +37,7 @@
     gap: var(--gap-nav);
 }
 
-.nav__options {
+.nav-options {
     display: none;
     gap: var(--spacing-nav-options);
     align-items: center;
@@ -47,7 +47,7 @@ a {
     text-decoration: none;
 }
 
-.nav__item {
+.nav-item {
     display: flex;
     align-items: center;
     color: var(--color-text-primary);
@@ -58,13 +58,13 @@ a {
     transition: opacity 0.2s ease;
 }
 
-.nav__icon {
+.nav-icon {
     width: var(--fs-text-primary);
     height: var(--fs-text-primary);
     object-fit: contain;
 }
 
-.nav__item:hover {
+.nav-item:hover {
     opacity: 0.8;
     color: #c6c6c6;
 }
@@ -95,7 +95,7 @@ a {
 
 
 @media (min-width: 567px) {
-    .nav__options {
+    .nav-options {
         display: flex;
     }
 }
