@@ -6,23 +6,29 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 30px;
+    height: var(--height-header);
 }
 
 .header__logo {
-    font-weight: 800;
+    font-weight: 700;
     font-size: var(--fs-logo);
+    color: var(--color-logo);
 }
 
 .header__calendar {
     font-weight: 700;
     font-size: var(--fs-calendar);
     color: var(--color-text-primary);
-    background-color: var(--color-calendar-bg);
-    border-radius: 12px;
+    background-color: var(--color-secondary-bg);
+    box-shadow: var(--shadow-card);
+    border: var(--border-card);
+    border-radius: var(--radius-card);
     padding: 6px 16px;
-    border: none;
     cursor: pointer;
+}
+
+.header__calendar:hover {
+    border-color: var(--color-border-hover);
 }
 
 .nav-bar {
@@ -46,10 +52,16 @@ a {
     align-items: center;
     color: var(--color-text-primary);
     gap: var(--gap-item);
-    font-size: var(--fs-nav-item);
+    font-size: var(--fs-text-primary);
     font-weight: 500;
     cursor: pointer;
     transition: opacity 0.2s ease;
+}
+
+.nav__icon {
+    width: var(--fs-text-primary);
+    height: var(--fs-text-primary);
+    object-fit: contain;
 }
 
 .nav__item:hover {
@@ -57,11 +69,6 @@ a {
     color: #c6c6c6;
 }
 
-.nav__icon {
-    width: var(--size-icon);
-    height: var(--size-icon);
-    object-fit: contain;
-}
 
 .profile-avatar {
     width: var(--size-avatar);
@@ -84,7 +91,7 @@ a {
     flex-direction: column;
     gap: 10px;
     width: 100%;
-} 
+}
 
 
 @media (min-width: 567px) {
