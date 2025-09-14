@@ -25,27 +25,28 @@
 
 .status-card {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-bg-status);
-    border: 1px solid var(--color-border-status);
+    background-color: var(--color-tertiary-bg);
+    border: var(--border-tertiary);
     border-radius: var(--radius-card);
     padding: var(--gap-small) var(--gap-large);
-    box-shadow: var(--shadow-status);
+    height: fit-content;
     flex: 1;
+}
+.status-card:hover {
+    border-color: var(--color-border-tertiary-hover);
 }
 
 .status-info {
     display: flex;
     flex-direction: column;
-    flex: 1;
 }
 
 .status-label {
     font-family: var(--font-main);
     font-weight: 600;
-    font-size: var(--fs-status-label);
-    line-height: 1.4;
+    font-size: var(--fs-text-primary);
     color: var(--color-text-secondary);
 }
 
@@ -58,6 +59,8 @@
 }
 
 .status-change {
+    display: flex;
+    align-items: center;
     font-family: var(--font-main);
     font-weight: 600;
     font-size: var(--fs-status-change);
@@ -76,7 +79,7 @@
 .account-card {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-bg-card);
+    background-color: var(--color-primary-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
     padding: var(--gap-medium) var(--gap-large);
@@ -96,7 +99,7 @@
 .account-content {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-bg-card);
+    background-color: var(--color-primary-bg-card);
     padding: 6px 4px;
     overflow-y: auto;
 }
@@ -128,7 +131,7 @@
 
 .savings-card {
     display: flex;
-    background-color: var(--color-bg-card);
+    background-color: var(--color-primary-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-card);
@@ -166,7 +169,7 @@
     flex-direction: column;
     gap: var(--gap-medium);
     width: 40%;
-    background-color: var(--color-bg-card);
+    background-color: var(--color-primary-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
     padding: 14px 24px;
@@ -184,7 +187,7 @@
 .advice-content {
     display: flex;
     width: 100%;
-    background-color: var(--color-bg-card);
+    background-color: var(--color-primary-bg-card);
 }
 
 .advice-text {
@@ -222,7 +225,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: var(--color-bg-card);
+    background-color: var(--color-primary-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
     padding: var(--gap-large);
@@ -289,7 +292,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--gap-small);
-    background-color: var(--color-bg-card);
+    background-color: var(--color-secondary-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
     padding: 14px var(--gap-large);
@@ -313,7 +316,7 @@
 }
 
 .add-transaction-button {
-    background: var(--color-bg-card);
+    background: var(--color-primary-bg-card);
     border: none;
     font-size: 20px;
     color: var(--color-text-primary);
@@ -333,7 +336,7 @@
 .date-section {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-bg-card);
+    background-color: var(--color-primary-bg-card);
     margin: 0 8px 8px 0;
 }
 .date-header {
@@ -395,7 +398,7 @@
 /* ---------------- Add Transaction Card ---------------- */
 .bills-card {
     width: 300px;
-    background: var(--color-bg-card);
+    background: var(--color-primary-bg-card);
     border-radius: var(--radius-card);
     padding: var(--spacing-md);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -471,7 +474,7 @@
 /* Budgetted Items */
 /* ---------------------------------------------- */
 .categories-card {
-    background: var(--color-bg-card);
+    background: var(--color-primary-bg-card);
     border: 1px solid var(--color-border-status);
     border-radius: var(--radius-card);
     box-shadow: var(--color-shadow-card);
@@ -517,7 +520,7 @@
 }
 
 .cat-card {
-    background: var(--color-bg-status);
+    background: var(--color-primary-bg-status);
     border: 1px solid var(--color-budget-border);
     border-radius: 14px;
     padding: 14px;
@@ -725,7 +728,7 @@
     flex-direction: column;
     gap: var(--gap-large);
     width: 100%;
-    background-color: var(--color-bg-card);
+    background-color: var(--color-primary-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
     padding: var(--spacing-md) var(--spacing-lg);

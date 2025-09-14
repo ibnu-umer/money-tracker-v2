@@ -1,37 +1,40 @@
 :root {
     /* Typography */
-    --font-family: 'Inter', sans-serif;
+    --font-family: "Inter", sans-serif;
     --fs-logo: clamp(16px, 2vw, 22px);
     --fs-text-primary: clamp(12px, 1.8vw, 14px);
     --fs-text-secondary: clamp(10px, 1.5vw, 12px);
+    /* --fs-status-label: clamp(8px, 1vw, 12px);
+    --fs-status-amount: clamp(12px, 1.5vw, 18px);
+    --fs-status-change: clamp(8px, 1.2vw, 16px); */
 
     /* Sizes */
     --size-avatar: clamp(28px, 2.3vw, 36px);
     --height-header: 30px;
 
     /* Colors */
-    --color-main-bg: #0D1B2A;
-    --color-card-bg: #1E2A3C;
-    --color-modal-bg: #1B263B;
+    --color-primary-bg: #0d1b2a;
+    --color-secondary-bg: #1e2a3c;
+    --color-tertiary-bg: #2C3E55;
     --color-border: #434343;
-    --color-border-hover: #FFFFFF33;
-    --color-logo: #E0E1DD;
-    --color-text-primary: #FFFFFF;
-    --color-text-secondary: #A9B7C6;
+    --color-border-tertiary-hover: #ffffff2e;
+    --color-border-hover: #ffffff33;
+    --color-logo: #e0e1dd;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #a9b7c6;
 
     /* Effects */
-    --shadow-card: 0 2px 6px rgba(0,0,0,0.3);
+    --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.3);
     --border-card: 1px solid var(--color-border);
+    --border-tertiary: 1px solid #f59e0b80;
 
     /* Radius */
     --radius-btn: 8px;
     --radius-card: 12px;
 
+
+
     /* ------------------------------------------------ */
-
-
-
-
 
     --color-calendar-bg: #001977;
     --color-avatar-bg: #d9d9d9;
@@ -47,7 +50,7 @@
     --size-input: 32px;
 
     /* Spacing */
-    --main-border: clamp(10px,2vw, 30px);
+    --main-border: clamp(10px, 2vw, 30px);
     --gap-nav: clamp(12px, 1.5vw, 20px);
     --gap-item: 5px;
     --spacing-xs: 4px;
@@ -58,11 +61,11 @@
     --spacing-nav-options: clamp(16px, 1.8vw, 20px);
 
     /* Font families */
-    --font-main: 'Inter', sans-serif;
+    --font-main: "Inter", sans-serif;
 
     /* Colors */
-    --color-main-bg-card: #02004e;
-    --color-main-bg-status: #001059;
+    --color-primary-bg-card: #02004e;
+    --color-primary-bg-status: #001059;
     /* --color-border: #1200da; */
     --color-border-status: #0f00e6;
     /* --color-text-primary: #fff;
@@ -72,11 +75,11 @@
     --color-danger: #ff4d4f;
     --color-warning: #ffcc00;
     --color-info: #0a067d;
-    --color-shadow-status:  #1200da;
+    --color-shadow-status: #1200da;
     --color-shadow-card: #0714a7;
     --color-statistics-card: #05016a;
     --color-sg-progress: #107509;
-    --color-modal-bg: #00007f;
+    /* --color-tertiary-bg: #00007f; */
     --color-input-bg: #0e0e5f;
     --color-budget-border: #1f2937;
     --color-accent: #3b82f6;
@@ -86,9 +89,7 @@
     --glass: #ffffff08;
 
     /* Typography (fluid) */
-    --fs-status-label: clamp(8px, 1vw, 12px);
-    --fs-status-amount: clamp(12px, 1.5vw, 18px);
-    --fs-status-change: clamp(8px, 1.2vw, 16px);
+
     --fs-card-title: clamp(12px, 1.5vw, 16px);
     --fs-card-text: clamp(12px, 1.2vw, 14px);
     --fs-card-note: clamp(10px, 1.1vw, 14px);
@@ -122,7 +123,7 @@
     --shadow-status: 0 0 10px var(--color-shadow-status);
     /* --shadow-card: 0 0 10px var(--color-shadow-card); */
     --shadow-black: 0 0 10px #000000;
-    --shadow-hover: 0 4px 12px rgba(0,0,0,0.2);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.2);
 
     /* Widget sizes */
     --budget-item-width: clamp(230px, 2.5vw, 280px);
@@ -147,8 +148,6 @@
     --bp-desktop: 1280px;
 }
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -157,7 +156,7 @@
 
 body {
     font-family: var(--font-family);
-    background: var(--color-main-bg);
+    background: var(--color-primary-bg);
     color: var(--color-text);
     min-height: 100vh;
     overflow-x: hidden;
@@ -177,36 +176,33 @@ html {
     overflow-y: scroll;
 }
 
-
 /* Global scrollbar styles */
 /* ------------------------------------------------ */
 /* Firefox */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #450181 #2b2b2b;
+    scrollbar-width: thin;
+    scrollbar-color: #450181 #2b2b2b;
 }
 
 /* For Webkit browsers (Chrome, Edge, Safari) */
 *::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
+    height: 8px;
+    width: 8px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #002b80;
-  border-radius: 8px;
+    background: #002b80;
+    border-radius: 8px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #4cafef;
-  border-radius: 8px;
+    background-color: #4cafef;
+    border-radius: 8px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #2196f3;
+    background-color: #2196f3;
 }
-
-
 
 @media (min-width: 0px) {
     .main-container {
