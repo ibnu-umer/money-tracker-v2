@@ -1,63 +1,36 @@
 {% load static %}
 <header class="header">
-    <div class="header__logo">Money Tracker</div>
+    <div class="header-logo">Money Tracker</div>
 
-    {% if request.path == "/" %}
-        <div class="month-selector">
-            <button id="openMonthYear" data-modal-open="monthSelectorModal" class="header__calendar">2025 August</button>
-            <!-- Month Selector Modal -->  
-            <div id="monthSelectorModal" class="monthselector-modal hidden">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="form-title">Select Month&Year</div>
-                    </div>
-                        
-                    <div class="selector-content">
-                        <div class="selector-group">
-                            <div class="selector-label">Year</div>
-                            <select id="yearSelect" class="selector-dropdown">
-                                <!-- Years will be populated by JavaScript -->
-                            </select>
-                        </div>
-
-                        <div class="selector-group">
-                            <div class="selector-label">Month</div>
-                            <select id="monthSelect" class="selector-dropdown">
-                                <option value="0">January</option>
-                                <option value="1">February</option>
-                                <option value="2">March</option>
-                                <option value="3">April</option>
-                                <option value="4">May</option>
-                                <option value="5">June</option>
-                                <option value="6">July</option>
-                                <option value="7">August</option>
-                                <option value="8">September</option>
-                                <option value="9">October</option>
-                                <option value="10">November</option>
-                                <option value="11">December</option>
-                            </select>
-                        </div>
-                    </div>
-            
-                    <div class="buttons">
-                        <button class="selector-button cancel" data-modal-close>Cancel</button>
-                        <button class="selector-button" onclick=applyMonthSelection()>Apply</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {% endif %}
+    <div class="header-calendar">
+        <select id="yearDropdown" class="calendar-dropdown">
+        </select>
+        <select id="monthDropdown" class="calendar-dropdown">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+        </select>
+    </div>
 
     <div class="nav-bar">
-        <div class="nav__options">
-            <a href="{% url 'transactions' %}" class="nav__item">
-                <img src="{%static 'icons/filter-icon.png' %}" alt="Filter transactions" class="nav__icon"/>Filter
+        <div class="nav-options">
+            <a href="{% url 'transactions' %}" class="nav-item">
+                <img src="{%static 'icons/filter-icon.png' %}" alt="Filter transactions" class="nav-icon"/>Filter
             </a>
-            <a href="{% url 'categories' %}" class="nav__item">
-                <img src="{%static 'icons/hub-icon.png' %}" alt="Budget & Savings" class="nav__icon"/>Hub
+            <a href="{% url 'categories' %}" class="nav-item">
+                <img src="{%static 'icons/hub-icon.png' %}" alt="Budget & Savings" class="nav-icon"/>Hub
             </a>
-            <a href="{% url 'dashboard' %}" class="nav__item">
-                <img src="{%static 'icons/home-icon.png' %}" alt="Home Page" class="nav__icon"/>Home
+            <a href="{% url 'dashboard' %}" class="nav-item">
+                <img src="{%static 'icons/home-icon.png' %}" alt="Home Page" class="nav-icon"/>Home
             </a>
         </div>
         <div class="profile-settings">
@@ -73,3 +46,5 @@
         </div>
     </div>
 </header>
+<script src="{% static 'js/header.js' %}"></script>
+
