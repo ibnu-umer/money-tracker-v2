@@ -11,12 +11,12 @@
 }
 
 .modal-overlay {
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.6);
-    display:flex;
-    align-items:center;
-    justify-content:center
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ---------------Dropdown Modal----------------- */
@@ -33,7 +33,6 @@
     width: var(--width-ms-modal);
 }
 
-
 /* -----------------Profile Modal------------------ */
 .profile-settings {
     display: flex;
@@ -44,7 +43,7 @@
 .profile-modal {
     position: absolute;
     top: 40px;
-    background: var(--color-modal-bg);
+    background: var(--color-tertiary-bg);
     border-radius: 6px;
     box-shadow: var(--shadow-black);
     padding: 15px;
@@ -69,12 +68,10 @@
     background-color: #130067;
 }
 
-
 /* --------------Transaction Modal---------------- */
 .transaction-modal {
     width: var(--width-tr-modal);
 }
-
 
 /* -----------------Base Classes--------------------- */
 .data-modal-close {
@@ -96,7 +93,7 @@
 }
 
 .modal-content {
-    background: var(--color-modal-bg);  
+    background: var(--color-tertiary-bg);
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-black);
     padding: var(--spacing-lg);
@@ -120,7 +117,8 @@
     font-style: italic;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: var(--spacing-sm);
     border-radius: var(--radius-btn);
@@ -134,8 +132,6 @@ input, select {
 input::placeholder {
     color: var(--color-text-secondary);
 }
-
-
 
 /* ----------Month Selector Modal------------ */
 .selector-content {
@@ -181,10 +177,6 @@ input::placeholder {
     background: #767575;
 }
 
-
-
-
-
 /* ----------Transaction Modal------------ */
 .transaction-type {
     display: flex;
@@ -222,7 +214,8 @@ input::placeholder {
     margin-left: var(--spacing-sm);
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-btn);
@@ -256,50 +249,46 @@ input::placeholder {
     background: #049b04;
 }
 
-
-
 /* Budget Modal */
 /* ----------------------------------------- */
-
-
-
-
 
 /* Saving goals editor */
 /* ---------------------------------------- */
 
 .sg-add-modal {
-    background: var(--color-modal-bg);
+    background: var(--color-tertiary-bg);
     padding: var(--spacing-lg);
     border-radius: var(--radius-card);
     width: var(--sg-editor-width);
 }
 
-.form-row{
-    display:flex;
-    gap:8px
+.form-row {
+    display: flex;
+    gap: 8px;
 }
 
-input,select,textarea{
-    background:transparent;
-    border:1px solid #1a1818;
+input,
+select,
+textarea {
+    background: transparent;
+    border: 1px solid #1a1818;
     padding: var(--spacing-md);
     border-radius: var(--radius-card);
     color: var(--color-text-primary);
-    width:100%
+    width: 100%;
 }
 
-label{
+label {
     font-size: var(--fs-card-text);
-    color:var(--muted);
-    display:block;
+    color: var(--muted);
+    display: block;
     margin-bottom: var(--spacing-sm);
 }
 
 .editor-action-buttons {
-    display:flex;
+    display: flex;
     gap: var(--spacing-md);
-    justify-content:flex-end;
+    justify-content: flex-end;
 }
 
 .form-header {
@@ -308,8 +297,8 @@ label{
     justify-content: space-between;
 }
 .form-content {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     gap: var(--gap-medium);
     margin-top: var(--spacing-md);
 }
@@ -322,20 +311,19 @@ label{
     cursor: pointer;
 }
 
-
 .drawer {
     display: flex;
     position: fixed;
     top: 20px;
     bottom: 20px;
     flex-direction: column;
-    width: var(--sidebar-width); 
-    background: #0e18a1; 
-    box-shadow:0 20px 60px rgba(2,6,12,0.6);
+    width: var(--sidebar-width);
+    background: #0e18a1;
+    box-shadow: 0 20px 60px rgba(2, 6, 12, 0.6);
     border-radius: var(--radius-card);
-    color: #fff; 
-    height: 95%; 
-    padding: var(--spacing-lg); 
+    color: #fff;
+    height: 95%;
+    padding: var(--spacing-lg);
     gap: var(--spacing-lg);
     right: calc(-1 * var(--sidebar-width));
     transition: right 0.3s ease;
@@ -347,19 +335,19 @@ label{
 }
 
 .drawer-content {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .drawer-top-actions {
-    display:flex;
-    gap:8px;
-    align-items:center;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 .contrib {
-    display:flex;
-    gap:8px;
-    align-items:center;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }

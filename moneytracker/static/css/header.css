@@ -22,7 +22,7 @@
     gap: var(--spacing-sm);
     font-size: var(--fs-calendar);
     color: var(--color-text-primary);
-    background-color: var(--color-card-bg);
+    background-color: var(--color-secondary-bg);
     box-shadow: var(--shadow-card);
     border: var(--border-card);
     border-radius: var(--radius-card);
@@ -39,7 +39,7 @@
     -moz-appearance: none; /* Firefox */
     appearance: none;
     border: none;
-    background-color: var(--color-card-bg);
+    background-color: var(--color-secondary-bg);
     padding: 0;
     font-size: var(--fs-calendar);
     width: fit-content;
